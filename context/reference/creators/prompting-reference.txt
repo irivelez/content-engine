@@ -1,0 +1,627 @@
+Prompts and some posts from Ruben Hassid
+
+Prompt:
+
+Act like a world-class LinkedIn content strategist and growth analyst.
+
+Objective: Turn the user’s uploaded “best” and “worst” LinkedIn posts (text/screenshots + any metrics) into a repeatable, personalized playbook. Keep the work lightweight by operating in phases, not all at once.
+
+How to work:
+
+- If metrics are provided, use them. If not, infer cautiously and label assumptions.
+
+- Quote or reference exact lines/sections when you explain performance.
+
+- Be blunt and specific (no generic advice).
+
+PHASE 1 — Diagnosis (deliver this first, then stop and ask questions)
+
+1) Rapid patterns (max 7 bullets): what winners share, what losers share, 3 do-more, 3 stop.
+
+2) Post audit (for each post, max 10 lines):
+
+- Winner/Loser verdict + 2–4 reasons tied to specific lines
+
+- Keep / Change / Remove (bullets)
+
+- One “biggest lever” to improve it
+
+3) Winner DNA: a short checklist of repeatable ingredients (max 8 items).
+
+PHASE 2 — Execution plan (only after the user answers your questions)
+
+4) Double-down: 6 next-post concepts in the user’s voice; each includes 2 hook options + a 5-bullet outline + CTA.
+
+5) Repurpose: pick the top 2 winners and generate 2 repurpose angles each (choose: story, contrarian take, framework, case study) with mini-outlines.
+
+Collaboration (end PHASE 1 with questions):
+
+Ask 6 targeted questions to tailor PHASE 2 (ideal audience, goal, offer/CTA, voice boundaries, proof assets, cadence). Then propose 2 A/B tests and ask the user to pick one to run next.
+
+Take a deep breath and work on this problem step-by-step
+
+----
+
+Prompt:
+
+Act like an expert Content Strategist and Senior Editor for a leading digital publication. Your goal is to repurpose video content into high-value written pieces that drive engagement.
+
+Please analyze the following YouTube video: [YOUTUBE LINK].
+
+Part 1: The Extraction
+First, provide a comprehensive breakdown of the video content. Do not just summarize; extract the “meat” of the content using the following structure:
+Core Thesis: What is the single most important argument or lesson in one sentence?
+Key Data/Facts: List specific numbers, case studies, or hard facts mentioned.
+Golden Quotes: Extract 3–5 verbatim quotes that are punchy or profound.
+The Framework: If the speaker uses a specific step-by-step process or mental model, outline it clearly.
+
+Part 2: The Angles
+Based only on the extraction above, pitch 5 narrow, specific article angles.
+Constraint: Avoid generic titles like “Summary of [Video Name].”
+Requirement: Each angle must take a specific slice of the content and expand on it.
+Format: Provide a catchy headline plus a one-sentence premise for each angle.
+
+Example of a “Narrow Angle”
+Bad: How to do Sales.
+Good: The “3-Call Close” Technique: Why Most Salespeople Fail in the Follow-up.
+
+----
+
+Prompt:
+
+You are a specialized Ghostwriter for Thought Leaders on LinkedIn. Your task is to turn a specific angle into a high-retention, 10-slide carousel outline.
+
+The Input Angle: [WHAT YOU CHOSE ON THE PREVIOUS PROMPT]
+
+You must strictly focus on this angle, as closely as possible.
+
+The Source Material: The youtube video I shared.
+
+Your Formatting Rules:
+
+No Fluff: Every slide must provide a specific insight, a lightbulb moment, or a counter-intuitive fact.
+
+The Slide Breakdown:
+Slide 1: The Hook. A polarizing or curiosity-gap headline that stops the scroll.
+Slide 2: The Stakes. Why does this matter right now? What is the cost of inaction?
+Slide 3: The Insight. The core thesis or the Golden Quote from the video.
+Slides 4-8: The Value Meat. Break down the framework or facts into one aha moment per slide. Use specific data or steps from the video.
+Slide 9: The Summary. A TL;DR (Too Long; Didn’t Read) checklist for readers to save or screenshot.
+Slide 10: The CTA. A low-friction question to spark comments (e.g., Which of these 3 steps is your biggest bottleneck?).
+
+Structure each slide as:
+[Slide #] [Slide headline Content]
+[Text Content]
+
+---
+
+Prompts:
+
+1. Claude 4.5-Opus to write.
+
+☑ Use custom styles.
+☑ Search before writing.
+☑ Here's a prompt example:
+
+Prompt: "You're my research lead for "How to AI" newsletter. Find my next NL topic. What works: Counterintuitive AI findings (like my hit on rudeness improving ChatGPT), major launches the week they drop, hidden feature deep-dives, contrarian takes with data.
+Search: This week's AI news with viral potential Arxiv for surprising LLM papers, Underreported OpenAI/Anthropic/Google/Meta announcements, Emerging AI controversies. 
+Deliver 10 options, each with:
+Topic (2-5 words), Angle (the hook), Source (link), Why it fits (one sentence)
+Prioritize "I didn't know that" over obvious news."
+
+----
+
+2. Grok-4.1-Thinking to search.
+
+☑ The only AI that can search through Twitter.
+☑ The most accurate AI to find relevant news.
+☑ More prompts: https://lnkd.in/dUFKX9jg.
+
+Prompt: “Act as a public opinion researcher. Your goal is to gauge polarized views on a hot-button issue, defining success as categorizing 30+ X posts into pro/con/neutral buckets with engagement metrics, backed by web snippets for context. Employ X semantic search with a query like ‘debate on [topic]’ excluding biased sources, and web search with snippets for ‘site:reddit.com [topic] OR site:news.com [topic]’.”
+
+----
+
+3. Perplexity for market research.
+
+☑ The one AI made to search.
+☑ It has most of the LLMs inside, like ChatGPT.
+☑ I like the "Discover" tab, a better Google News.
+
+Prompt: "Analyze [topic] in [timeframe], delivering data-driven insights and quantitative forecasts. Cover [key aspects], compare [variants], and provide actionable recommendations. Structure output with an executive summary and clear sections, citing all sources."
+
+----
+
+Repurpose for Multi-agent systems / Agentic systems:
+
+"Browse to [arxiv website for AI papers]. AI/recent to view the latest AI papers. You must screenshot the website multiple times to collect at least 50 research papers total.
+
+Scan through the paper titles and abstracts on the page to identify the 5 best articles. Prioritize articles that help people get better at prompting LLMs. Examples of relevant topics include chain-of-thought prompting techniques, being rude to ChatGPT for better responses, prompt engineering strategies, and practical prompting tips. Avoid articles focused on helping researchers build better LLMs or technical model development. You successfully teach non-technical users of LLMs get better at prompt engineering. You do not help researchers.
+
+Extract the arXiv ID (format like arXiv:2511.20627) of the selected 5 papers (out of 50).
+
+Navigate to arxiv [extracted arXiv ID] to access the full paper.
+
+Analyze the full paper abstract and title content and create a comprehensive summary for each paper. The summary should be a summary analysis highlighting relevance to ChatGPT prompting, including main findings, how it applies to prompting, and practical takeaways for users, and most importantly, the surprising aspect of this paper.
+
+Here is a perfect example of a summary:
+
+[example of a good summary]
+
+For each selected paper, collect:
+- Paper Title 
+- Summary (summary with ChatGPT prompting relevance, main findings, application to prompting, and practical takeaways)
+- Direct Link (format: link[arXiv ID])
+
+Add all collected papers to Google Sheets with columns for Paper Title, Summary, and Direct Link. :action[Google Sheets]
+
+Final Goal: Collect exactly 5 relevant AI research papers focused on ChatGPT prompting techniques, save them to Google Sheets, and notify the team via Slack with ONE single message containing all 5 papers in numbered list format with bold field names, indented information."
+
+---
+
+Post:
+I have 734,221 followers on LinkedIn.
+
+I spend less time here than most people with 500:
+
+☑ 20 min: Prepare your daily post.
+☑ 30 min: Comment on your post and others'.
+☑ 10 min: Answer DMs and send new connections.
+☑ I wrote an entire guide to get 10,000 followers.
+☑ Get my free guide at: https://lnkd.in/eifHDEGu
+
+Here's the full breakdown:
+
+☑ 20 min: prepare your daily post.
+
+↳ Topic: Grok to find Reddit struggles.
+↳ Design: Canva to design, Nano Banana to edit.
+↳ Text: Claude to write.
+
+Copy this Grok prompt to find reddit struggles:
+
+PROMPT: "Find active subreddits where [target audience] discusses real problems with [topic]. For each subreddit, provide: Name, Member count, Activity level (posts per day, comment quality), 3-5 specific problems people discuss, Related subreddits worth checking. Rules: Focus on real conversations, not memes. Prefer engaged communities over large low-signal ones."
+
+Once you have the topic:
+→ find a design (Pinterest) 
+→ edit it (Nano Banana) or make one (Canva) 
+→ write the caption (Claude).
+
+Copy this Claude prompt to make viral hooks: 
+
+PROMPT: "These are my most viral hooks (2 lines in one hook) on Linkedin, ever. Let's try to recreate it but differently in the new topic (new topic: [your caption draft]): 
+///Hook 1 [VIRAL HOOK] 
+///Hook 2 [VIRAL HOOK] 
+///Hook 3 [VIRAL HOOK] 
+///Hook 4 [VIRAL HOOK]"
+
+____________
+
+☑ 30 min: comment on your post & others'.
+
+↳ Right before & after posting.
+↳ Comment more than you post.
+↳ Engage with your favorite creators & your feed.
+
+Warming up your account before and after posting is the single best growth indicator on LinkedIn.
+
+If you can't be social on social media, don't try to grow on social media.
+____________
+
+☑ 10 min: answer DMs & send connection requests.
+
+↳ Find 5 key connections per day using filters.
+↳ Always answer all DMs on time.
+↳ Never let this take longer than 10 minutes.
+
+How I find key players:
+Click search bar → Enter → People → Filter by: 
+2nd connections + Location + Following + Job title.
+____________
+
+1 hour a day is enough.
+
+Just like exercising 2 days a week is usually enough.
+
+Sure, some post 5x a day and live in the comments.
+
+But pick your fight. Be consistent, not delusional.
+
+I grew my employee to 10,000 followers in 17 days and I recorded the entire process.
+
+Access it here (with my prompts): https://lnkd.in/eifHDEGu
+
+---
+
+Post + Prompt:
+
+People will get mad at me.
+
+But here's how to vibecode a $1,000/mo app:
+
+(save this for later, I'm sharing every AI prompt)
+
+1. Grok to search (1) Reddit & (2) X users' pains.
+2. Blink.new to go from pain → operational app.
+3. Claude to go from app → viral Linkedin posts. 
+4. Linkedin for users. I explain the maths at the end.
+
+---
+
+1. Grok to search (1) Reddit & (2) X users' pains.
+
+Why Grok: it's the best AI to search. Better than ChatGPT or Gemini. The only one to access tweets.
+
+☑ A good app solves people's pain points. 
+☑ Ideally, just one pain point for one ICP.
+☑ Copy and paste this prompt on Grok:
+
+Prompt: 
+"Act like an expert market researcher specializing in user pain points from social media. Uncover frequent frustrations, complaints, and unmet needs about: [PROBLEM]
+
+Focus on recent authentic user posts on X (Twitter) and Reddit. Ignore ads.
+
+Step-by-step process:
+
+1. Search X deeply:
+ - Use x_semantic_search for complaint-focused queries (e.g., "frustrations with [PROBLEM]").
+ - Use x_keyword_search with negative terms.
+
+2. Search Reddit deeply:
+ - Use web_search site:reddit.com with: "[PROBLEM].
+ - For top 5-8 relevant threads, use browse_page: "Extract OP and top comments. Focus on complaints and quotes."
+
+Only include well-supported pain points."
+
+---
+
+2. Blink.new to go from pain → operational app.
+
+☑ Use your pain learnings to vibecode an app.
+☑ Vibecoding = building an app without coding.
+☑ Think ChatGPT, but to build app (with prompts).
+
+Use this prompt: 
+"Build a mobile-responsive full-stack web app that solves this problem: [PROBLEM]
+
+[PAIN POINTS ANALYSIS]
+Paste the full pain points research output here (summary, top pains with quotes, opportunities).
+
+Value prop: [ADD IT HERE]
+
+Key features (directly solve pains):
+- Auth: Email + Google/Apple login.
+- Payment: Stripe
+- ...
+
+UI vibe: [DESCRIBE IT]
+
+Make it fully functional, production-ready with error handling and responsive design."
+
+Why Blink: it's the best at this & they are partners.
+
+I made a guide here:
+↳ https://lnkd.in/dchBme3n.
+
+---
+
+3. Claude to go from app → viral Linkedin posts. 
+
+☑ Claude is the best at writing among LLMs.
+☑ Use Projects + Custom style to teach your style.
+☑ Made a guide: https://lnkd.in/e87Kdy5Z. 
+
+Here's a prompt example: 
+"These are my most viral hooks (2 lines in one hook) on Linkedin, ever. Let's try to recreate it but differently in the new topic (new topic: [your caption draft]): 
+///Hook 1 [VIRAL HOOK] 
+///Hook 2 [VIRAL HOOK] 
+///Hook 3 [VIRAL HOOK] 
+///Hook 4 [VIRAL HOOK]"
+
+---
+
+4. Linkedin for users. I explain the maths at the end.
+
+1x post a day
+= 5 conversations a day
+= 150 conversations a month
+
+If you solve a $200/year problem (at 3% CVR):
+
+150 conversations a month
+= 1,800 conversations a year
+= 54 paying customers at $200/year
+= $10,800 a year = $900 a month
+
+Linkedin is easy.
+
+And if you feel like I'm lying, check this:
+↳ https://lnkd.in/eifHDEGu.
+
+
+---
+
+Post + Prompts:
+
+116M people complain on Reddit (every single day).
+
+And that's how I find viral content ideas before you:
+
+1. Go to grok.
+2. Copy paste this prompt: 
+
+Prompt: "Find active subreddits where [YOUR TARGET AUDIENCE] discusses their problems. Include member count, activity level, and what problems people discuss there. Focus on communities with real conversations, not just meme dumps."
+
+3. Pick 3-5 subreddits that match your audience.
+4. Go to Reddit and enter the picked subreddit.
+5. Search these exact phrases (keep the quotes):
+
+"I can't stand"
+"I'm struggling with"
+"Biggest struggle"
+"Hardest part"
+"How can I"
+"How do you"
+"Can someone help"
+"Help me"
+"Tips"
+"Suggestions"
+"Any advice"
+
+6. Filter by: Top + Past Month.
+7. Find posts with 50+ upvotes and 20+ comments.
+8. Copy post title + description + top 3-5 comments.
+9. Go to Claude.
+10. Copy & paste this prompt (+ copied Reddit text):
+11. Use this prompt guide: https://lnkd.in/e87Kdy5Z
+
+Prompt: "You're a content strategist who turns audience problems into viral content ideas.
+
+Here's a real problem from Reddit:
+
+POST TITLE: [paste title]
+
+POST DESCRIPTION: [paste description]
+
+TOP COMMENTS:
+[paste 3-5 comments]
+
+Generate 15 content ideas from this:
+
+1. 5 "How to" articles (tactical, step-by-step)
+2. 5 listicles (tools, mistakes, tips, examples)
+3. 3 contrarian takes (challenge conventional advice)
+4. 2 frameworks (systematic approaches with memorable names)
+
+For each idea give me:
+- Headline (make it specific, not generic)
+- Hook (first line that pulls readers in)
+- Angle (what makes this different from existing content)
+
+Make headlines scroll-stopping. No bland "Ultimate Guide" garbage."
+
+12. Take your top 3 ideas and ask Grok:
+
+Prompt: "Has this topic been covered extensively? What angles are missing from existing coverage about [YOUR HEADLINE]?"
+
+People already told you what to write. Now go find it.
+
+♻️ Repost this image to help someone start today.
+
+----
+
+Post:
+❌ Bad prompt: "Act like a senior strategist."
+
+✅ Good prompt: "Act like a senior strategist. You're advising a 50-person SaaS company. The CEO cares about speed-to-market, not perfection."
+
+❌ Bad prompt: "Make it accurate."
+
+✅ Good prompt: "The facts should be verifiable - something a reader could fact-check in 2 minutes online using this website [link]."
+
+❌ Bad prompt: "First, analyze the data. Then, identify patterns. Finally, write conclusions."
+
+✅ Good prompt: "I need an analysis where stakeholders can understand the key patterns without a technical background."
+
+❌ Bad prompt: "Follow these rules: 1) Keep it brief, 2) Use simple language, 3) No jargon."
+
+✅ Good prompt: "This is for someone encountering this topic for the first time, so focus on clarity and practical examples."
+
+❌ Bad prompt: "Be concise."
+
+✅ Good prompt: "Each section should fit in a single paragraph so this works as a quick reference."
+
+❌ Bad prompt: "Explain it well."
+
+✅ Good prompt: "Someone should understand this without searching for definitions of technical terms."
+
+❌ Bad prompt: "Write me a strategy document."
+
+✅ Good prompt: "I need a strategy document that helps my team decide whether to adopt an AI tool. This is for non-technical product managers. Success means they can explain 3 key decisions to leadership, not that they understand the underlying architecture."
+
+Stop telling AI what to do.
+
+Start telling AI what success looks like.
+
+Stick to these 5 principles while prompting:
+
+1. Goals > Instructions
+Tell AI what you're trying to achieve, not how to achieve it.
+
+2. Constraints > Rules
+Specify boundaries and priorities. Let the model choose execution.
+
+3. Examples > Drescriptions
+Show what you want instead of describing it.
+
+4. Put important info at the start & end
+Not in the middle (AI literally forgets the middle).
+
+5. Less is more
+Every extra token exhausts AI's attention.
+
+Prompt engineering: "What you say."
+Context engineering: "Everything else the AI sees."
+
+----
+
+Prompts:
+
+1. Cut the Fluff
+
+Don't ask: "Make this shorter"
+"Read [text]. Remove every word that doesn't add meaning. Keep the message, lose the fat. Target: 50% shorter. Output: Clean version + list of what you cut and why. Write like you're charging $10 per word."
+
+2. Make Me Care
+
+Don't ask: "Make this more engaging"
+Ask: "Take [text] and add emotional weight. Find the human angle. Why should anyone stop scrolling for this? Output: Rewrite + the emotional trigger you used (fear, curiosity, desire, urgency). No drama, just truth that hits."
+
+3. Explain Like I'm Busy
+
+Don't ask: "Simplify this"
+Ask: "Rewrite [text] so a busy CEO gets it in 10 seconds. One core idea. No setup, no background, no "in today's world." Start with what matters. Output: Rewrite + the one sentence someone would remember tomorrow."
+
+4. Find My Voice
+
+Don't ask: "Match my tone"
+Ask: "Here's how I write [paste 3 samples]. Study my patterns, sentence length, word choice, rhythm, quirks. Now rewrite [text] so it sounds like me, not you. Output: Voice breakdown + rewrite + what you changed to match me."
+
+5. Make it Bold
+
+Don't ask: "Make this stronger"
+Ask: "This is too soft [text]. Make it bold. Add opinion. Take a stance. Boring is "tips for productivity." Better is "most productivity advice is garbage, here's what works." Output: Spicier version + the weak phrases you killed."
+
+6. Fix the Flow
+
+Don't ask: "Improve the writing"
+Ask: "[Paste text] reads choppy. Fix the rhythm. Mix short punchy lines with longer ones. Add transitions that don't feel forced. Output: Smooth version + before/after of your 3 biggest fixes"
+
+7. One Idea Only
+
+Don't ask: "Focus this"
+Ask: "[Paste text] tries to say too much. Find the single strongest point. Build everything around it. Cut the rest. Output: Focused rewrite + the ideas you removed and why they weakened the piece."
+
+8. Write for Skimmers
+
+Don't ask: "Make this scannable"
+Ask: "Rewrite [text] for people who won't read every word. Front-load the value. Make the first line earn the second. Structure it so skimming still delivers the point. Output: Skim-friendly version + what you moved and why."
+
+9. Hook Me in 2 Seconds
+
+Don't ask: "Write a better intro"
+Ask:"Turn [idea/text] into an opening line for [platform]. Make it impossible to scroll past. Use a pattern interrupt, unexpected stat, bold claim, weird question, or personal confession. Output: 5 hook options ranked by stopping power + why each works."
+
+
+--- 
+
+Prompt for Grok:
+
+Act like are a world-class researcher in front of a [audience]. Summarize the latest 2025-2026 trends on [topic] in bullet points: key stats, 3 emerging tools, 2 risks, 1 opportunity for consultants. Sources only from reputable sites (McKinsey, Gartner, a16z).
+
+----
+
+Post + Prompt:
+
+You ignore Reddit.
+
+But that's how I find trends before you:
+
+1. Go to Reddit. Find a relevant post in your niche.
+2. Add /.json to the end of that URL.
+3. Copy metadata (it has entire thread with replies).
+4. Go to Grok to extract pain, limitations & needs.
+5. Copy this Grok prompt (paste the meta data):
+6. Use this prompt guide: https://lnkd.in/dz9BGuPg
+
+Prompt:
+
+"Here's the JSON of a Reddit conversation around: "[REDDIT POST TOPIC]". Extract the pain points, make 5 viral hooks (2 lines in one hook) on the same.
+
+The viral hooks should be on the same format, style and tone as these 3 hooks that got results.
+
+///Hook 1
+[paste a good hook example]
+///Hook 2
+[paste a good hook example]
+///Hook 3
+[paste a good hook example]
+JSON: [REDDIT META DATA]"
+
+7. Go to Claude to turn the pain into a Linkedin post.
+8. Copy this Claude prompt (+ grok's answer):
+9. Use this prompt guide: https://lnkd.in/e87Kdy5Z
+
+Prompt:
+
+"Act like a LinkedIn ghostwriter who writes posts that get saved + shared.
+Goal: Create 5 LinkedIn posts on the new topic.
+Use my 4 example LinkedIn posts below that are the most viral ones on linkedin, ever. You must match their structure, pacing, formatting (short lines + whitespace + listical), and “voice” — but the ideas, wording, and hooks must be NEW.
+
+Rules:
+
+- Each post starts with a strong 2-line hook.
+- Keep it skimmable
+- With 1 clear takeaway + 1 framework (steps)
+- End with a CTA that "Repost for others to ......."
+- No fluff, no generic advice, no repeated angles across posts.
+- Do NOT copy phrases or lines from the examples.
+
+Here are the 4 example posts (study them first):
+
+///Example Post 1
+[PASTE POST]
+///Example Post 2
+[PASTE POST]
+///Example Post 3
+[PASTE POST]
+///Example Post 4
+[PASTE POST]
+Now write 5 new posts about: [TOPIC]"
+
+People already told you what to write. Now go find it.
+
+---
+
+Prompts:
+
+PROMPT 1: Search X
+
+Prompt: "Act as a public opinion researcher. Your goal is to gauge polarized views on a hot-button issue, defining success as categorizing 30+ X posts into pro/con/neutral buckets with engagement metrics, backed by web snippets for context. Employ X semantic search with a query like ‘debate on [topic]’ excluding biased sources, and web search with snippets for ‘site:reddit.com [topic] OR site:news.com [topic]’."
+
+___
+
+PROMPT 2: Search subreddits
+
+Prompt: "Act as an expert product/opportunity researcher who extracts actionable pain points and unmet needs from Reddit discussions before they become obvious trends.
+Focus on the following subreddits: [r/XXX, r/XXX, r/XXX].
+For each subreddit, do the following:
+1. Find the top 20 posts from the past 7 days sorted by Hot or Top.
+2. For the 5 most engaged posts, read the post content and the top 20 comments.
+3. Extract recurring pain points, frustrations, wishes, or “I wish there was a...” statements.
+4. Cluster similar complaints into clear themes.
+Output format per subreddit:
+- Subreddit name
+- 3 most promising pain points ranked by frequency/intensity
+- For each pain point: 2 direct quotes/examples, estimated severity (low/medium/high), and why this pain point could be an opportunity (product idea, content angle)
+At the end, list the top 3 cross-subreddit pain points that appear to be gaining momentum."
+
+___
+
+PROMPT 3: To find relevant news
+
+Prompt: "Act as a misinformation detective. Your goal is to debunk or confirm a viral claim, defining success as tracing its origin post, amplification chain (50+ retweets/quotes), and counter-evidence from credible web sources. Use X keyword search for ‘exact phrase of claim retweets_of_user_id:ID min_replies:10’, then web search with snippets for authoritative sites like ‘site:factcheck.org [claim]"
+
+___
+
+PROMPT 4: Find the best tweets
+
+"Search deeply, and find the last 5 viral tweets from @[account], and explain their theme and why they want viral. Over a million impressions is considered viral."
+
+___
+
+PROMPT 5: Find someone, quickly
+
+Prompt: "I need to find a [job title] for my [need], based in [country], who loves [quality]. Search through X, Linkedin, Upwork, Fiverr. Make a table."
+
+___
+
