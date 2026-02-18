@@ -18,11 +18,23 @@ This document defines Irina's unique voice, writing style, and tone for LinkedIn
 ### Primary Voice Attributes
 
 **Your Attributes**:
-- **Vulnerable but Confident**: I openly admit when I'm learning ("No sabía nada"), but I explain technical concepts with authority ("La diferencia técnica es..."). I'm comfortable being a beginner.
+- **Confident Builder**: I speak from experience because I already did it. Less "todavía estoy conectando los puntos", more "esto es lo que descubrí después de hacerlo todos los días." I highlight the value of what I build — even when the result is raw, shipping fast beats perfect.
 - **Technical but Accessible**: I break down complex engineering/AI concepts using simple analogies (e.g., "containers share the brain" for kernel explanation). I make the complex feel simple.
-- **Authentic Builder**: I document my journey in public. Real struggles, not just highlights. Timeline-based storytelling (2022, 2023, 2024) shows the messy path, not just the destination.
+- **Energetic and Direct**: I bring energy. Short, punchy, forward-moving. No hesitation, no over-qualifying. I did the thing, here's what happened.
 - **Contrarian Thinker**: I challenge conventional wisdom ("Plan B is overrated, go all-in on Plan A"). I'm not afraid to go against common advice when I have conviction.
 - **Value-First Educator**: Every post teaches something practical. I curate resources, share playbooks, demonstrate tools. Learning by doing, not just theory.
+
+### Voice Evolution
+
+**Direction**: Moving from vulnerable beginner → confident, authoritative builder who ships fast. The vulnerability was relatable and built the audience. Now the voice graduates to someone who HAS the experience and shares from authority, not uncertainty.
+
+**When unsure**: Ground in proven techniques from reference files (`hook-bank.md`, `post-templates.md`, `copywriting-frameworks.md`). These are extracted from creators with 700K+ followers. Use what works for others to move faster — don't wait for the voice to evolve organically.
+
+| Phase | Voice | Example |
+|-------|-------|---------|
+| Before | "Me había resistido a X hasta que no pude más" | Vulnerability-first |
+| Now | "Llevo meses usando X. Esto es lo que nadie te dice." | Confidence-first |
+| Next | "Construí X en Y minutos. Así es como tú también puedes." | Authority + generosity |
 
 ---
 
@@ -73,7 +85,7 @@ What emotions do you commonly express?
 - ✅ Reference visuals immediately ("Esta foto no es un highlight...")
 - ✅ Use personal examples and real data from your journey
 - ✅ Start with years/timestamps when telling stories (2022, 2023, 2024)
-- ✅ Build credibility through vulnerability ("No sabía nada", "Todavía estoy conectando los puntos")
+- ✅ Build credibility through experience ("Llevo meses haciendo esto", "Esto es lo que descubrí")
 
 **Don'ts** (What you NEVER do):
 - ❌ Corporate buzzwords or fake corporate motivation
@@ -405,23 +417,24 @@ Write in clear, neutral Latin American Spanish that any Spanish-speaking profess
 
 ---
 
-## Red Flags
+## Anti-Pattern Checklist
 
-> **For detailed analysis of what doesn't work**, see [performance-analysis.md](performance-analysis.md).
+> Updated by pattern-analyzer from real performance data. Last updated: 2026-02-16.
 
-**Quick check before posting:**
-- Could this be posted by anyone? (If yes, not your voice)
-- Are you in Builder mode or Philosopher mode?
-- Is there a personal example from your experience?
-- Is this in Spanish? (English posts = worst performers)
-- Does it avoid "Reflexión de media noche" framing?
+**Before publishing, verify NONE of these apply:**
 
-**Critical violations:**
-🚩 Writing in English (audience is Spanish-speaking)
-🚩 Philosopher mode (abstract concepts vs building/doing)
-🚩 Generic LinkedIn guru language
-🚩 Borrowed authority without personal connection
-🚩 No personal example or "I did this" anchor
+1. Philosopher mode — abstract reflection without specific action taken
+2. English on LinkedIn — audience is Spanish-speaking, always
+3. Borrowed authority — reflecting on what famous people said/did without personal stake
+4. Encyclopedia lists — explaining concepts without "I used this when..." grounding
+5. "Reflexión de media noche" — signals random thought, not structured insight
+6. Generic motivation — sunset photos, life advice without tech substance
+7. Company commentary — commenting on what companies do without personal action
+8. Event recaps without takeaway — "I was there" without "here's what I learned specifically"
+9. Abstract philosophy about simplicity/meta-thinking — "Tu cerebro ama complicar" without tech grounding
+10. Promo-first posts — asking before giving value
+
+**Quick test**: "What did I BUILD / FIND / DO?" — if you can't answer specifically, reframe or kill the idea.
 
 ---
 
@@ -475,7 +488,7 @@ When using this document:
 ### Voice Preservation Checklist
 Before finalizing any content, ask:
 - ✅ Does this sound like Irina would say it?
-- ✅ Is there vulnerability + confidence balance?
+- ✅ Does it sound confident and energetic (not hesitant or over-qualifying)?
 - ✅ Are tech terms kept in English appropriately?
 - ✅ Is the emoji system used correctly (punctuation, not decoration)?
 - ✅ Is there a personal example or real experience?

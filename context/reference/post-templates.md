@@ -536,13 +536,33 @@ Spanish: "Lo aprendí a las malas" ✓ (natural idiom)
 
 ## Your Custom Templates
 
-### Template [Name]:
+### Template: Something Crazy Happened
 ```
-[Your custom template structure]
+Yesterday, I did {crazy thing for work}.
+
+That same action lead to:
+
+- {Result 1}
+- {Result 2}
+- {Result 3}
+
+{Context}
+
+Here's {number} reason's it worked:
+
+- {Reason 1}
+- {Reason 2}
+- {Reason 3}
+
+The best part? I didn't have to do {Hard thing}
+
+I simply did {simple thing}
+
+PS:…
 ```
 
-**Use when**: [Scenarios]
-**Why it works for you**: [Explanation]
+**Use when**: You did something and got unexpected results. Perfect for Builder Mode — showing what you built/tried and what happened.
+**Source**: Literally Academy (Lara Acosta)
 
 ---
 
