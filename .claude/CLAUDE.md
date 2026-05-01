@@ -73,8 +73,9 @@ Sun morning    Irina reads the review. Doctrine update suggestions stay in
 
 ## Source-of-truth rules
 
-- **LinkedIn URL = ground truth** for what shipped. `output/linkedin/shipped/` is a workflow status marker, NOT a faithful record (Irina edits at posting time).
-- **Don't duplicate shipped content locally.** For voice/hook analysis, fetch live from LinkedIn URLs using activity IDs in `data/weekly-review/*.json`.
+- **LinkedIn URL = ground truth** for what shipped. `output/linkedin/shipped/` is a workflow kanban marker, NOT a faithful record of the live text (Irina edits at posting time).
+- **For voice/hook analysis,** fetch live from LinkedIn URLs using activity IDs in `data/weekly-review/*.json` — don't trust the local copy as canonical text.
+- **Content ships as packages.** A "post" can be a single `.md`, or a `.md` + carousel `.pdf` + thumbnail `.png` + companion images. When a piece needs multiple assets, group them in a per-post subfolder under `drafts/` or `shipped/`. The shipped folder holds the post and its companion assets — no metadata files, no URL bookkeeping.
 - **Don't cross-reference local archives** when an external feed is already curated and timely (rule from 2026-04-30; trust the daily fetcher's freshness signal).
 - **Never fabricate personal claims.** If unsure whether Irina built/tried/discovered something, omit the claim or set `requires_personal_experience: true` in `/angles` output.
 
@@ -85,13 +86,13 @@ content-engine/
 ├── .claude/{CLAUDE.md, agents/, skills/}
 ├── context/{audience-profile.md, voice/, reference/, brand/}
 ├── input/{discovery-config.json, daily/}
-├── output/{angles/, linkedin/{drafts,shipped}, newsletter/{drafts,published,assets}, lead-magnets/, talks/}
+├── output/{angles/, linkedin/{drafts,shipped}, newsletter/{drafts,published,assets}, lead-magnets/}
 ├── data/{post-analytics/, audience-analytics/, weekly-review/}
 ├── scripts/{fetch-sources.js, performance-loop.py, weekly-commit.sh, *.plist}
 └── archive/  ← dropped agents/skills/outputs (recoverable)
 ```
 
-`output/linkedin/shipped/` is the **workflow kanban** — body-only files, written here when a draft ships. NOT the source of truth (LinkedIn URL is). It exists to mark history; metadata lives elsewhere.
+`output/linkedin/shipped/` is the **workflow kanban**. When a draft ships, move the `.md` (and any companion assets — carousel pdfs, thumbnails, infographics) here. NOT the source of truth — LinkedIn URL is. Metadata is not stored here; this folder is purely a historical shipping record.
 
 ## Fetcher
 
