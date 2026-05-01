@@ -17,21 +17,23 @@ File-based content engine for Irina's Spanish LinkedIn + Beehiiv newsletter. No 
 | Component | Role |
 |-----------|------|
 | `scripts/fetch-sources.js` | Daily fetcher (launchd 8 AM). Pushes to `the-feed` GitHub. |
-| `.claude/skills/angles/` | `/angles [date]` — raw items → ranked English angles. |
-| `.claude/agents/content-architect.md` | Director: idea → brief + 3 hooks. Never writes prose. |
-| `.claude/agents/post-polisher.md` | Reviews her Spanish draft. Verdict + hook alternatives. |
-| `.claude/agents/newsletter-writer.md` | Drafts Beehiiv newsletters in Spanish. She edits. |
-| `.claude/agents/chief-of-staff.md` | Sunday weekly review + Pattern Compass. |
-| `.claude/agents/lead-magnet-architect.md` | Lead magnet + landing page (secondary). |
+| `.claude/skills/angles/` | `/angles [date]` — raw items → ranked English angles. Output: `output/angles/`. |
+| `.claude/agents/content-architect.md` | Director for raw ideas (not from `/angles`): idea → brief + 3 hooks. For newsletters, invokes `newsletter-writer` end-to-end. Never writes Spanish prose for posts. |
+| `.claude/agents/post-polisher.md` | Reviews her Spanish draft. Verdict + 3 sharper hooks + structural cuts. |
+| `.claude/agents/newsletter-writer.md` | Drafts Beehiiv newsletters in Spanish (1000–1500 words, builder vs analyst mode). She edits. Output: `output/newsletter/drafts/`. |
+| `.claude/agents/chief-of-staff.md` | Sunday weekly review + Pattern Compass. Output: `data/weekly-review/{YYYY-WW}.md`. |
+| `.claude/agents/lead-magnet-architect.md` | Lead magnets + Spanish landing pages. Output: `output/lead-magnets/`. |
 | `scripts/performance-loop.py` | xlsx + Beehiiv API → `data/weekly-review/{week}-raw.json`. |
 | `scripts/weekly-commit.sh` | Sat 11 PM launchd: auto-commit xlsx exports. |
 | Cloud routine `weekly-content-review` | Sun 6:30 COT: cloud agent runs review. See `memory/project_sunday_automation.md`. |
 
 ## Workflows
 
-**LinkedIn post:** `/angles` → pick angle → Irina writes Spanish → `post-polisher` → publish.
+**LinkedIn post (from feed):** `/angles` → pick angle → Irina writes Spanish → `post-polisher` → publish (`drafts/` → `shipped/` is the kanban move).
 
-**Beehiiv newsletter:** pick angle → `newsletter-writer` → Irina edits → publish.
+**Beehiiv newsletter (from feed):** `/angles` → pick `newsletter_candidate` → `newsletter-writer` → Irina edits → publish.
+
+**Raw idea (no angle source):** `content-architect` → brief + 3 hooks. For newsletters it invokes `newsletter-writer` end-to-end; for posts it stops at the brief and Irina continues into the LinkedIn flow.
 
 **Sunday review (autonomous):** xlsx exports Sat → weekly-commit → cloud routine Sun → `data/weekly-review/{YYYY-WW}.md`.
 
