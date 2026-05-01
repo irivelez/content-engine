@@ -35,23 +35,7 @@ If the agent isn't sure whether a claim is grounded → omit it.
 
 ---
 
-## 2. Audience Reality (April 2026)
-
-**Total followers (2026-04-30):** 3,731.
-
-**Composition (from her real .xlsx export):**
-- **62% Senior IC + Entry-level** (Valentina-tier in the audience profile)
-- **7% CXO** (Camila-tier)
-- **4.7% Founders** (Andrés-tier)
-- **30% from Bogotá**
-
-**Implication:** Optimize content for **Valentina** — let it bleed up to Andrés/Camila. The "Camila first" strategy was producing consultant-deck Spanish drafts that never shipped (24 graveyard drafts, Apr 15–23 batch). Top performers all hit Valentina and bled up.
-
-The audience profile still has 3 tiers; that's fine as a model. Just stop optimizing for the 7%.
-
----
-
-## 3. Style Rules
+## 2. Style Rules
 
 **Language:**
 - Always "tú", never "usted". Spanish LATAM (neutral Colombian base).
@@ -96,7 +80,7 @@ The audience profile still has 3 tiers; that's fine as a model. Just stop optimi
 
 ---
 
-## 4. Hook Patterns — VERIFIED (URL-anchored, Apr 22–29 2026)
+## 3. Hook Patterns — VERIFIED (URL-anchored, Apr 22–29 2026)
 
 The patterns below are drawn from her real LinkedIn URLs. Each entry cites activity ID + date + impressions. **For body verification, fetch the LinkedIn URL live** — `output/linkedin/shipped/` is NOT a faithful record of what's live (Irina edits at posting time).
 
@@ -140,7 +124,7 @@ The patterns below are drawn from her real LinkedIn URLs. Each entry cites activ
 
 ---
 
-## 5. Anti-Patterns — VERIFIED (do not use)
+## 4. Anti-Patterns — VERIFIED (do not use)
 
 These are her real underperformers. They share one feature: **abstract / no scene / no concrete behavior**.
 
@@ -168,7 +152,7 @@ These are her real underperformers. They share one feature: **abstract / no scen
 
 ---
 
-## 6. CTA Patterns
+## 5. CTA Patterns
 
 | CTA Type | Example | Use when |
 |----------|---------|----------|
@@ -180,7 +164,7 @@ These are her real underperformers. They share one feature: **abstract / no scen
 
 ---
 
-## 7. Content Type Playbook
+## 6. Content Type Playbook
 
 | Content Type | Hook | Structure | CTA |
 |-------------|------|-----------|-----|
@@ -192,7 +176,7 @@ These are her real underperformers. They share one feature: **abstract / no scen
 
 ---
 
-## 8. Quality Gates
+## 7. Quality Gates
 
 ### The Builder Test (CRITICAL — #1 performance predictor)
 
@@ -233,7 +217,7 @@ Every post accompanies a visual (photo, video, carousel). Reference the visual i
 
 ---
 
-## 9. Methodology Note (for agents)
+## 8. Methodology Note (for agents)
 
 - **LinkedIn is the only source of truth** for what shipped.
 - **Don't rely on local `output/linkedin/shipped/`** — those are workflow status markers, not faithful records. Final refinements happen at posting time.

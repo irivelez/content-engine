@@ -16,17 +16,17 @@ They work across LATAM in technology, consulting, telecom, and financial service
 ### Three Archetypes
 
 **Camila — The Corporate Strategist (ICP-1)**
-VP of Digital Transformation at a 2,000-person Colombian telecom. Reports to the CEO. Has budget authority but needs ammunition — proof, case studies, ROI framing — to justify AI investments to her board. Reads content during her morning commute (7:00 AM Bogota). Shares useful posts with her leadership team via WhatsApp. Thinks in quarters and business cases. Follows 3-4 AI voices but trusts the one who understands LATAM corporate reality.
+VP of Digital Transformation at a 2,000-person Colombian telecom. Reports to the CEO. Has budget authority but needs ammunition — proof, case studies, ROI framing — to justify AI investments to her board. Reads content during her morning commute (7:00 AM Bogota). Shares useful posts with her leadership team via WhatsApp. Thinks in quarters and business cases. Follows 3-4 AI voices but trusts the one who understands LATAM corporate reality. She doesn't delegate the actual using of AI — she ships her own automations on weekends and brings working examples to leadership meetings, not just slides.
 
-**Andrés — The Scaling Founder (ICP-2)**
-Co-founder of a 12-person SaaS company in Mexico City. Profitable but resource-constrained. Uses AI daily to do the work of a team twice his size. Reads content during lunch or late at night after his team logs off. Looking for tested workflows, not theory. Will pay for something that saves him 10 hours/week. Shares content with his co-founder via Slack with "we should try this."
-
-**Valentina — The Ambitious Professional (Base)**
+**Valentina — The Ambitious Professional (ICP-2)**
 Senior software engineer at Globant in Medellin, 4 years in. Knows AI is the career differentiator but hasn't figured out how to go from "interesting" to "integrated." Reads content on her phone during breaks. Saves posts she wants to try on the weekend. Shares builder content with colleagues. Today she's learning; in 3 years she's making buying decisions.
+
+**Andrés — The Scaling Founder (ICP-3)**
+Co-founder of a 12-person SaaS company in Mexico City. Profitable but resource-constrained. Uses AI daily to do the work of a team twice his size. Reads content during lunch or late at night after his team logs off. Looking for tested workflows, not theory. Will pay for something that saves him 10 hours/week. Shares content with his co-founder via Slack with "we should try this."
 
 ### The Primary Bet
 
-For the next 90 days, every piece of content is optimized for Camila first. Andrés benefits as a secondary effect. Valentina is welcome but not the target.
+Each piece of content targets one ICP at a time. Cadence priority: **Camila first, Valentina second, Andrés third.** Most pieces default to Camila; Valentina pieces are in regular rotation; Andrés pieces are interspersed.
 
 ---
 
@@ -65,8 +65,8 @@ The content operates in one specific domain: **agentic AI systems** — AI that 
 **Where each archetype is on the agentic adoption curve:**
 
 - **Camila (ICP-1)**: Knows "AI agents" is the next conversation her board will have. Has seen demos, maybe a proof of concept internally. Needs to understand what agentic systems mean for her organization's operations, headcount, and competitive position. Needs the business case, not the architecture.
-- **Andrés (ICP-2)**: Already using AI tools daily but mostly in single-task mode (chat, copilot, basic automation). Ready to build multi-step workflows and autonomous systems that run parts of his business. Needs tested agentic workflows he can implement — which tools, which patterns, what works in production.
-- **Valentina (Base)**: Has heard "AI agents" but it feels advanced and out of reach. Needs to see that building with agentic tools (Claude Code, n8n, Make) is accessible — not just for developers or companies with big budgets. Needs the "I built this and you can too" bridge.
+- **Valentina (ICP-2)**: Has heard "AI agents" but it feels advanced and out of reach. Needs to see that building with agentic tools (Claude Code, n8n, Make) is accessible — not just for developers or companies with big budgets. Needs the "I built this and you can too" bridge.
+- **Andrés (ICP-3)**: Already using AI tools daily but mostly in single-task mode (chat, copilot, basic automation). Ready to build multi-step workflows and autonomous systems that run parts of his business. Needs tested agentic workflows he can implement — which tools, which patterns, what works in production.
 
 **Content implications:**
 - Every topic should connect to how agentic systems change the game — not just "AI tips" but "what happens when AI acts, not just answers"
@@ -101,16 +101,16 @@ The content operates in one specific domain: **agentic AI systems** — AI that 
 ## 4. Jobs to Be Done (Content-Specific)
 
 ### Functional Jobs
-- "Help me understand what [trend/tool/announcement] means for my company" (ICP-1, ICP-2)
-- "Show me a workflow I can implement this week" (ICP-2, Base)
+- "Help me understand what [trend/tool/announcement] means for my company" (ICP-1, ICP-3)
+- "Show me a workflow I can implement this week" (ICP-2, ICP-3)
 - "Give me a framework to explain AI adoption to my leadership" (ICP-1)
 - "Filter the AI noise — tell me what actually matters" (all tiers)
-- "Show me what's real vs. hype so I don't waste budget/time" (ICP-1, ICP-2)
+- "Show me what's real vs. hype so I don't waste budget/time" (ICP-1, ICP-3)
 
 ### Emotional Jobs
 - "Make me feel like I'm ahead of the curve, not behind it" (all tiers)
-- "Give me confidence that I can do this — even if I'm not technical" (Base)
-- "Validate that betting on AI is the right move" (ICP-2)
+- "Give me confidence that I can do this — even if I'm not technical" (ICP-2)
+- "Validate that betting on AI is the right move" (ICP-3)
 - "Make the complex feel achievable" (all tiers)
 
 ### Social Jobs
@@ -121,9 +121,9 @@ The content operates in one specific domain: **agentic AI systems** — AI that 
 ### Decision Jobs (the specific decisions they face)
 - ICP-1: "Should we invest in AI training for our team? Which approach? How do I justify the budget?"
 - ICP-1: "Which AI tools should we adopt at the enterprise level?"
-- ICP-2: "Which AI tools should I bet my business on? How do I integrate them without breaking what works?"
-- ICP-2: "Can I automate X without hiring another person?"
-- Base: "How do I apply AI to my specific role? What should I learn first?"
+- ICP-2: "How do I apply AI to my specific role? What should I learn first?"
+- ICP-3: "Which AI tools should I bet my business on? How do I integrate them without breaking what works?"
+- ICP-3: "Can I automate X without hiring another person?"
 
 **Frequency**: Daily scan (LinkedIn, 2-3 min per post). Weekly deep-dive (newsletter, 6-8 min). Quarterly strategic input (reports, frameworks).
 
@@ -211,7 +211,7 @@ When evaluating a topic, angle, or draft, run these checks:
 
 ### Topic filter (should I cover this?)
 1. Would Camila (ICP-1) bring this up in a leadership meeting?
-2. Would Andrés (ICP-2) try to implement this in his business?
+2. Would Valentina (ICP-2) save it to try on the weekend?
 3. Does this connect to a decision the audience is actively making?
 4. Is there a LATAM-specific angle that English-language coverage misses?
 
@@ -263,8 +263,8 @@ Claro Colombia: 4% | Globant, AWS, Mercado Libre, Microsoft, Hitss Colombia, Ora
 
 ### Revenue Tiers (mapped from demographics)
 - **ICP-1** (Directors, VPs, CXOs, Owners, Managers at 51+ companies): ~24% of audience — high-ticket ($2K-10K per engagement)
-- **ICP-2** (Founders, Co-Founders, CEOs of profitable businesses): ~10% of audience — medium-ticket ($500-3K)
-- **Base** (Senior + Entry professionals, engineers, PMs): ~55-60% of audience — low-ticket ($10-100) + amplification
+- **ICP-2** (Senior + Entry professionals, engineers, PMs): ~55-60% of audience — low-ticket ($10-100) + amplification
+- **ICP-3** (Founders, Co-Founders, CEOs of profitable businesses): ~10% of audience — medium-ticket ($500-3K)
 
 ### Income Context (LATAM)
 | Role | Typical Monthly (USD) | Purchasing Power |

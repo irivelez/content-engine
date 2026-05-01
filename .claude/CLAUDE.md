@@ -9,7 +9,8 @@ File-based content engine for Irina's Spanish LinkedIn + Beehiiv newsletter. No 
 **Voice ownership:**
 - LinkedIn posts: AI never writes Spanish prose. AI gives hooks + structural beats; Irina writes.
 - Beehiiv newsletters: AI drafts; Irina edits.
-- Audience (Apr 2026): 3,731 followers · 62% Senior IC + Entry. Optimize for the Valentina archetype; let it bleed up.
+
+**Audience:** see `context/audience-profile.md` (canonical).
 
 ## Active components
 
