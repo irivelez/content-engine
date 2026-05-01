@@ -1,0 +1,312 @@
+<!--
+  AI FAST TRACK — HERO SNIPPET (for Beehiiv Custom HTML Block)
+  Updated: 2026-04-17 — removed iframe (Beehiiv blocks its own embed)
+
+  HOW TO USE:
+    1. Beehiiv → Website Builder → /ai-fast-track
+    2. Add Block → Custom HTML
+    3. Copy everything BELOW this comment (from <style> onwards)
+    4. Paste into the Custom HTML block
+    5. BELOW that block, add a native Subscribe Form block from the insert panel
+       (this is the form you already created and styled — ID 68cdf32d-...)
+    6. Save → Preview → Publish
+
+  NEW LAYOUT FLOW (visible to the reader):
+    Custom HTML Block   →  [Eyebrow · Headline · Deck · Byline · Microcopy · Book mockup]
+    Subscribe Form Block →  [Email input + Empezar ahora button]
+
+  WHY MICROCOPY IS ABOVE THE FORM (not below):
+    Pre-framing objections BEFORE the ask lifts conversion.
+    Reader sees "Gratis · 15 min/día · Sin tarjeta" → then the form → commits with zero hesitation.
+    (Lara Acosta pattern.)
+-->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+.mb-hero, .mb-hero * { margin: 0; padding: 0; box-sizing: border-box; }
+
+.mb-hero {
+  background: #0A0A0C;
+  color: #FBE8D9;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding: 80px 24px 24px;
+}
+
+.mb-hero .container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.mb-hero .grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.mb-hero .eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: #FF5941;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 28px;
+}
+
+.mb-hero h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(44px, 7.5vw, 96px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  color: #FBE8D9;
+  margin-bottom: 20px;
+}
+
+.mb-hero .deck {
+  font-size: clamp(18px, 2.1vw, 22px);
+  color: #FBE8D9;
+  opacity: 0.85;
+  max-width: 560px;
+  line-height: 1.5;
+  margin-top: 24px;
+  font-weight: 400;
+}
+
+.mb-hero .byline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: #88898C;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-top: 32px;
+}
+.mb-hero .byline strong { color: #FBE8D9; font-weight: 600; }
+
+/* Microcopy — sits immediately above the Beehiiv subscribe form block */
+.mb-hero .microcopy {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #88898C;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-top: 40px;
+}
+.mb-hero .microcopy .dot { color: #FF5941; font-weight: 800; margin: 0 10px; }
+
+/* Book mockup */
+.mb-hero .book-stage {
+  perspective: 1800px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.mb-hero .book {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  transform-style: preserve-3d;
+  transform: rotateY(-24deg) rotateX(2deg);
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mb-hero .book:hover { transform: rotateY(-16deg) rotateX(2deg); }
+.mb-hero .book-cover {
+  position: absolute;
+  inset: 0;
+  background: #0A0A0C;
+  border: 1px solid rgba(251, 232, 217, 0.1);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: -26px 26px 60px rgba(0, 0, 0, 0.55), -8px 8px 24px rgba(255, 89, 65, 0.06);
+  overflow: hidden;
+}
+.mb-hero .book-cover::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 6px;
+  background: #FF5941;
+}
+.mb-hero .book-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 10%, rgba(255, 89, 65, 0.10) 0, transparent 45%);
+  pointer-events: none;
+}
+.mb-hero .book-pages {
+  position: absolute;
+  top: 6px; bottom: 6px;
+  right: -8px;
+  width: 8px;
+  background: repeating-linear-gradient(90deg, #FBE8D9 0, #FBE8D9 1px, #EFE5D6 1px, #EFE5D6 2px);
+}
+.mb-hero .book-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.mb-hero .book-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: #88898C;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mb-hero .book-header .mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #FBE8D9;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: -0.01em;
+}
+.mb-hero .book-header .mark-block {
+  width: 6px;
+  height: 10px;
+  background: #FF5941;
+  display: inline-block;
+}
+.mb-hero .book-title-block { margin-top: 24px; }
+.mb-hero .book-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #FF5941;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.mb-hero .book-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: #FBE8D9;
+  margin-bottom: 14px;
+}
+.mb-hero .book-title .lime { color: #D4FF3A; }
+.mb-hero .book-subtitle {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #FBE8D9;
+  opacity: 0.78;
+}
+.mb-hero .book-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.mb-hero .book-badge {
+  display: inline-block;
+  background: #D4FF3A;
+  color: #0A0A0C;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  padding: 5px 10px;
+}
+.mb-hero .book-author {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: #88898C;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: right;
+}
+.mb-hero .book-author strong {
+  display: block;
+  color: #FBE8D9;
+  font-weight: 600;
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+@media (max-width: 980px) {
+  .mb-hero .grid { grid-template-columns: 1fr; gap: 48px; }
+  .mb-hero .book-column { order: -1; justify-self: center; }
+}
+@media (max-width: 768px) {
+  .mb-hero { padding: 56px 20px 20px; }
+  .mb-hero .book { width: 240px; height: 330px; }
+  .mb-hero .book-title { font-size: 34px; }
+}
+</style>
+
+<section class="mb-hero">
+  <div class="container">
+    <div class="grid">
+
+      <!-- Text column -->
+      <div>
+        <p class="eyebrow">▌▌▌&nbsp;&nbsp;CURSO · 7 DÍAS · POR EMAIL</p>
+
+        <h1>De usuario a power user de Claude en 7 días.</h1>
+
+        <p class="deck">
+          7 emails. 7 frameworks. Los mismos que uso cada semana para construir con Claude.
+        </p>
+
+        <p class="microcopy">
+          Gratis <span class="dot">·</span> 15 min / día <span class="dot">·</span> Sin tarjeta de crédito
+        </p>
+      </div>
+
+      <!-- Book column -->
+      <div class="book-column">
+        <div class="book-stage">
+          <div class="book">
+            <div class="book-pages"></div>
+            <div class="book-cover">
+              <div class="book-inner">
+
+                <div class="book-header">
+                  <span class="mark"><span class="mark-block"></span> MODO BUILD</span>
+                  <span>NO.01</span>
+                </div>
+
+                <div class="book-title-block">
+                  <p class="book-eyebrow">▌▌▌ AI FAST TRACK</p>
+                  <h2 class="book-title">De usuario a <span class="lime">power user</span> de Claude.</h2>
+                  <p class="book-subtitle">Curso por email. 7 días. 7 frameworks.</p>
+                </div>
+
+                <div class="book-footer">
+                  <span class="book-badge">7 DÍAS</span>
+                  <div class="book-author">
+                    Por
+                    <strong>Irina Vélez</strong>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Template — Señal · Modo Build</title>
+  <!--
+    REUSABLE LANDING PAGE TEMPLATE — Señal Design System (v2)
+    Created: 2026-04-15
+
+    Purpose: Starting point for every Modo Build landing page.
+    AI Fast Track is the first application — replace all [PLACEHOLDERS] with real content.
+    Future landing pages: duplicate this file, customize.
+
+    Canvas: Dark obsidian (landing pages default to dark per landing-page-guidelines.md)
+    Palette:
+      Obsidian #0A0A0C  · background (70%)
+      Paper    #FBE8D9  · body text, headlines (20%)
+      Coral    #FF5941  · CTAs, action accents (7%)
+      Lime     #D4FF3A  · data moments, metric callouts (2%)
+      Titanium #88898C  · metadata, footer (1%)
+
+    Typography (Google Fonts):
+      Display:  Manrope (weights 400-800)
+      Body:     Inter
+      Mono:     JetBrains Mono
+
+    Seven standard sections (per guidelines):
+      1. Nav (optional — only if site needs it)
+      2. Hero — oversized headline + deck + CTA
+      3. Outcome / Promise
+      4. Social Proof / Numbers
+      5. Curriculum / Deliverables
+      6. Author / ¿Por qué yo?
+      7. FAQ / Objection handling
+      8. Final CTA
+
+    Rules:
+      - Mobile first — test at 375px
+      - One primary CTA action (repeated 2-4 times)
+      - Coral button never used for anything else
+      - Lime only on obsidian or as fill-with-obsidian-text
+      - No stock photos, no AI-generated imagery, no gradients
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==== Reset ==== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0A0A0C;
+      color: #FBE8D9;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ==== Layout ==== */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; border-bottom: 1px solid rgba(246, 232, 228, 0.08); }
+    .section:last-of-type { border-bottom: none; }
+
+    /* ==== Typography ==== */
+    h1, h2, h3, h4 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; color: #FBE8D9; line-height: 0.95; letter-spacing: -0.03em; }
+    h1 { font-size: clamp(48px, 9vw, 112px); font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; }
+    h2 { font-size: clamp(36px, 6vw, 64px); font-weight: 700; }
+    h3 { font-size: clamp(24px, 3.5vw, 36px); font-weight: 600; }
+    h4 { font-size: clamp(18px, 2vw, 22px); font-weight: 600; }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      color: #FF5941;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 24px;
+    }
+
+    .deck { font-size: clamp(18px, 2.2vw, 24px); color: #FBE8D9; opacity: 0.85; max-width: 640px; line-height: 1.4; margin-top: 24px; }
+
+    /* ==== Components ==== */
+    .cta-btn {
+      display: inline-block;
+      background: #FF5941;
+      color: #0A0A0C;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 20px 40px;
+      text-decoration: none;
+      letter-spacing: 0;
+      border: none;
+      cursor: pointer;
+      transition: transform 150ms ease;
+    }
+    .cta-btn:hover { transform: translate(0, -2px); }
+    .cta-btn-secondary {
+      color: #88898C;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .data-tag {
+      display: inline-block;
+      background: #D4FF3A;
+      color: #0A0A0C;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      padding: 4px 10px;
+    }
+
+    .pull-quote {
+      border-left: 4px solid #FF5941;
+      padding-left: 40px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 600;
+      color: #FBE8D9;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+
+    /* ==== Ornament ==== */
+    .signal-bars { display: inline-flex; gap: 3px; align-items: flex-end; }
+    .signal-bars span { width: 3px; background: #FF5941; }
+    .signal-bars span:nth-child(1) { height: 6px; }
+    .signal-bars span:nth-child(2) { height: 14px; }
+    .signal-bars span:nth-child(3) { height: 20px; }
+    .signal-bars span:nth-child(4) { height: 14px; }
+    .signal-bars span:nth-child(5) { height: 6px; }
+
+    /* ==== Responsive helpers ==== */
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     NAV (optional — delete if the page doesn't need site nav)
+     ============================================================ -->
+<nav class="section" style="padding: 24px 0; border: none;">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <a href="https://modobuild.beehiiv.com" style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; font-size: 18px; font-weight: 700; letter-spacing: -0.02em;">
+      MODO BUILD
+    </a>
+    <a href="https://modobuild.beehiiv.com" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: #88898C;">
+      Newsletter →
+    </a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     01. HERO — oversized headline + deck + primary CTA
+     ============================================================ -->
+<section class="section" style="padding-top: 80px; padding-bottom: 120px;">
+  <div class="container">
+    <p class="eyebrow">
+      ▌▌▌&nbsp;&nbsp;[Curso · 7 días · Gratis]
+    </p>
+
+    <h1 style="margin-bottom: 32px;">
+      [Hook — 6-12 palabras declarativas,<br>promesa clara, específica]
+    </h1>
+
+    <p class="deck" style="margin-bottom: 48px;">
+      [Deck — una línea que expande el hook, máximo 20 palabras, con un resultado medible]
+    </p>
+
+    <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+      <a href="[PRIMARY_CTA_URL]" class="cta-btn">
+        [Empezar ahora] &nbsp;→
+      </a>
+      <a href="#curriculum" class="cta-btn-secondary">
+        Ver el programa
+      </a>
+    </div>
+
+    <!-- Optional: proof strip immediately below hero -->
+    <div style="margin-top: 80px; display: flex; gap: 32px; flex-wrap: wrap; align-items: center;">
+      <span class="data-tag">Gratis</span>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #88898C; text-transform: uppercase; letter-spacing: 0.15em;">
+        [1,200+ estudiantes]
+      </span>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #88898C; text-transform: uppercase; letter-spacing: 0.15em;">
+        [7 días · 30 min/día]
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     02. OUTCOME / "Qué vas a lograr"
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">▌&nbsp;&nbsp;Qué vas a lograr</p>
+    <h2 style="margin-bottom: 64px; max-width: 800px;">
+      [Lo que estarás haciendo al<br>terminar este curso]
+    </h2>
+
+    <ul style="list-style: none; display: grid; gap: 32px;">
+      <li style="display: flex; gap: 24px; align-items: flex-start;">
+        <span style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; font-size: 32px; font-weight: 700; color: #FF5941; line-height: 1; flex-shrink: 0;">→</span>
+        <div>
+          <h3 style="margin-bottom: 8px;">[Outcome específico #1]</h3>
+          <p style="color: #FBE8D9; opacity: 0.8;">[Una línea que explica el resultado concreto y medible]</p>
+        </div>
+      </li>
+      <li style="display: flex; gap: 24px; align-items: flex-start;">
+        <span style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; font-size: 32px; font-weight: 700; color: #FF5941; line-height: 1; flex-shrink: 0;">→</span>
+        <div>
+          <h3 style="margin-bottom: 8px;">[Outcome específico #2]</h3>
+          <p style="color: #FBE8D9; opacity: 0.8;">[Línea específica]</p>
+        </div>
+      </li>
+      <li style="display: flex; gap: 24px; align-items: flex-start;">
+        <span style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; font-size: 32px; font-weight: 700; color: #FF5941; line-height: 1; flex-shrink: 0;">→</span>
+        <div>
+          <h3 style="margin-bottom: 8px;">[Outcome específico #3]</h3>
+          <p style="color: #FBE8D9; opacity: 0.8;">[Línea específica]</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     03. SOCIAL PROOF / Numbers
+     Perfect place for lime data callouts
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">▌&nbsp;&nbsp;Números que importan</p>
+    <h2 style="margin-bottom: 80px; max-width: 800px;">
+      [Cuántos ya lo están haciendo]
+    </h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 64px;">
+      <div>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #FBE8D9; opacity: 0.5; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 16px;">
+          [Estudiantes]
+        </p>
+        <p style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; font-size: clamp(72px, 10vw, 128px); font-weight: 800; color: #D4FF3A; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 16px;">
+          [1,247]
+        </p>
+        <p style="color: #FBE8D9; opacity: 0.7;">[Contexto del número]</p>
+      </div>
+      <div>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #FBE8D9; opacity: 0.5; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 16px;">
+          [Tasa de finalización]
+        </p>
+        <p style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; font-size: clamp(72px, 10vw, 128px); font-weight: 800; color: #D4FF3A; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 16px;">
+          [84%]
+        </p>
+        <p style="color: #FBE8D9; opacity: 0.7;">[Contexto]</p>
+      </div>
+      <div>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #FBE8D9; opacity: 0.5; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 16px;">
+          [Tiempo promedio]
+        </p>
+        <p style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; font-size: clamp(72px, 10vw, 128px); font-weight: 800; color: #D4FF3A; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 16px;">
+          [30min]
+        </p>
+        <p style="color: #FBE8D9; opacity: 0.7;">[Por día]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     04. CURRICULUM / Deliverables
+     Numbered list with Manrope numerals in coral
+     ============================================================ -->
+<section class="section" id="curriculum">
+  <div class="container">
+    <p class="eyebrow">▌&nbsp;&nbsp;Qué incluye</p>
+    <h2 style="margin-bottom: 80px; max-width: 800px;">
+      [El programa día por día]
+    </h2>
+
+    <div style="display: grid; gap: 48px;">
+      <article style="display: grid; grid-template-columns: 80px 1fr; gap: 32px; align-items: start; padding-bottom: 48px; border-bottom: 1px solid rgba(246, 232, 228, 0.08);">
+        <span style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; font-size: 56px; font-weight: 800; color: #FF5941; line-height: 1; letter-spacing: -0.04em;">01.</span>
+        <div>
+          <h3 style="margin-bottom: 12px;">[Título del día 1]</h3>
+          <p style="color: #FBE8D9; opacity: 0.8; margin-bottom: 16px;">
+            [Descripción de 1-2 líneas de lo que harás en este módulo]
+          </p>
+          <span class="data-tag">[30 min]</span>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: 80px 1fr; gap: 32px; align-items: start; padding-bottom: 48px; border-bottom: 1px solid rgba(246, 232, 228, 0.08);">
+        <span style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; font-size: 56px; font-weight: 800; color: #FF5941; line-height: 1; letter-spacing: -0.04em;">02.</span>
+        <div>
+          <h3 style="margin-bottom: 12px;">[Título del día 2]</h3>
+          <p style="color: #FBE8D9; opacity: 0.8; margin-bottom: 16px;">[Descripción]</p>
+          <span class="data-tag">[30 min]</span>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: 80px 1fr; gap: 32px; align-items: start; padding-bottom: 48px; border-bottom: 1px solid rgba(246, 232, 228, 0.08);">
+        <span style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; font-size: 56px; font-weight: 800; color: #FF5941; line-height: 1; letter-spacing: -0.04em;">03.</span>
+        <div>
+          <h3 style="margin-bottom: 12px;">[Título del día 3]</h3>
+          <p style="color: #FBE8D9; opacity: 0.8; margin-bottom: 16px;">[Descripción]</p>
+          <span class="data-tag">[30 min]</span>
+        </div>
+      </article>
+
+      <!-- Repeat for days 4-7 -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     05. AUTHOR / "¿Por qué yo?"
+     Short, direct, Builder Mode voice
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start;">
+      <div>
+        <p class="eyebrow" style="margin-bottom: 16px;">▌&nbsp;&nbsp;Quién escribe</p>
+        <!-- Optional: treated photo (duotone obsidian × paper). Remove if no photo. -->
+        <img src="[PHOTO_URL]" alt="Irina Vélez" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; background: #1A1A1E;">
+      </div>
+      <div>
+        <h2 style="margin-bottom: 32px;">¿Por qué yo?</h2>
+        <p style="font-size: 22px; line-height: 1.5; color: #FBE8D9; margin-bottom: 24px;">
+          [Frase de apertura directa — Builder Mode. Qué has construido, por qué importa para el estudiante]
+        </p>
+        <p style="color: #FBE8D9; opacity: 0.85; line-height: 1.6; margin-bottom: 24px;">
+          [Segundo párrafo, 2-3 líneas — credenciales en el contexto específico, resultados concretos]
+        </p>
+        <p style="color: #FBE8D9; opacity: 0.85; line-height: 1.6;">
+          [Cierre que conecta tu experiencia con la de ellos]
+        </p>
+        <a href="https://irinavelez.com" class="cta-btn-secondary" style="margin-top: 32px; display: inline-block;">
+          Más sobre mí →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     06. PULL QUOTE / Transformation promise
+     Optional — use max 1 per page
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <blockquote class="pull-quote">
+      [Frase contrarian o transformación — 15-25 palabras, la promesa en su forma más declarativa]
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============================================================
+     07. FAQ / Objection handling
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">▌&nbsp;&nbsp;Preguntas frecuentes</p>
+    <h2 style="margin-bottom: 80px; max-width: 800px;">Lo que casi todos preguntan.</h2>
+
+    <div style="display: grid; gap: 48px;">
+      <div>
+        <h3 style="margin-bottom: 16px; font-size: 24px;">
+          [¿Pregunta de objeción común<span style="color: #FF5941;">?</span>]
+        </h3>
+        <p style="color: #FBE8D9; opacity: 0.85; max-width: 720px; line-height: 1.6;">
+          [Respuesta directa, específica, sin hedging — aborda la objeción real]
+        </p>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px; font-size: 24px;">
+          [¿Otra objeción<span style="color: #FF5941;">?</span>]
+        </h3>
+        <p style="color: #FBE8D9; opacity: 0.85; max-width: 720px; line-height: 1.6;">[Respuesta]</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px; font-size: 24px;">
+          [¿Tercera pregunta<span style="color: #FF5941;">?</span>]
+        </h3>
+        <p style="color: #FBE8D9; opacity: 0.85; max-width: 720px; line-height: 1.6;">[Respuesta]</p>
+      </div>
+      <!-- Typical: 4-6 total -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     08. FINAL CTA — massive, impossible to miss
+     ============================================================ -->
+<section class="section" style="padding: 160px 0; text-align: center;">
+  <div class="container">
+    <div class="signal-bars" style="justify-content: center; margin-bottom: 40px;">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <h2 style="font-size: clamp(48px, 8vw, 96px); font-weight: 800; letter-spacing: -0.04em; line-height: 0.95; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
+      [Repetición de la promesa en forma más fuerte]
+    </h2>
+
+    <p class="deck" style="margin: 0 auto 56px; text-align: center;">
+      [Un recordatorio de por qué vale la pena actuar ahora]
+    </p>
+
+    <a href="[PRIMARY_CTA_URL]" class="cta-btn" style="font-size: 20px; padding: 24px 48px;">
+      [Empezar ahora] &nbsp;→
+    </a>
+
+    <p style="margin-top: 32px;">
+      <a href="#" class="cta-btn-secondary">
+        O suscríbete a Modo Build semanal
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer style="padding: 48px 0 64px; border-top: 1px solid rgba(246, 232, 228, 0.08);">
+  <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; align-items: center;">
+    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #88898C; text-transform: uppercase; letter-spacing: 0.15em;">
+      Modo Build · NO.[N] · 2026
+    </p>
+    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #88898C; text-transform: uppercase; letter-spacing: 0.15em;">
+      <a href="https://irinavelez.com" style="color: #88898C;">Irina Vélez</a>
+      &nbsp;·&nbsp;
+      <a href="[PRIVACY_URL]" style="color: #88898C;">Privacidad</a>
+      &nbsp;·&nbsp;
+      <a href="[TERMS_URL]" style="color: #88898C;">Términos</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

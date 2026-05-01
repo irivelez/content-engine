@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ship primero. Sistema después. · Irina Vélez · Claude Code Meetup SF</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* Anthropic-inspired palette */
+    --cream:       #F0EEE6;   /* Anthropic cream */
+    --paper:       #FAF9F5;
+    --ink:         #141413;   /* Anthropic near-black */
+    --coral:       #CC785C;   /* Anthropic coral / "Claude orange" */
+    --coral-soft:  #E4A58A;
+    --muted-dark:  rgba(240,238,230,0.55);
+    --muted-light: rgba(20,20,19,0.55);
+    --line-dark:   rgba(240,238,230,0.14);
+    --line-light:  rgba(20,20,19,0.12);
+    --serif: "Instrument Serif", "Times New Roman", serif;
+    --sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;height:100%;width:100%;overflow:hidden;background:#000}
+  body{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+
+  /* Deck + slide scaling: 16:9, scales to fit viewport */
+  .deck{
+    position:relative;
+    width:100vw; height:100vh;
+    overflow:hidden;
+  }
+  .stage{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .slide{
+    position:absolute; inset:0;
+    width:1600px; height:900px;
+    left:50%; top:50%;
+    transform-origin:center center;
+    background:var(--cream);
+    opacity:0; pointer-events:none;
+    transition:opacity .45s ease;
+    display:flex; flex-direction:column;
+    padding:72px 96px 64px 96px;
+    overflow:hidden;
+  }
+  .slide.active{opacity:1; pointer-events:auto;}
+  .slide.dark{background:var(--ink); color:var(--cream)}
+  .slide.dark a{color:var(--coral-soft)}
+
+  /* Persistent chrome on every slide */
+  .chrome-top{
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:var(--sans); font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+    font-weight:500;
+    color:var(--muted-light);
+  }
+  .slide.dark .chrome-top{color:var(--muted-dark)}
+  .chrome-top .mark{display:inline-flex; align-items:center; gap:10px;}
+  .chrome-top .mark .star{
+    width:14px; height:14px; display:inline-block;
+  }
+  .chrome-top .right{display:flex; gap:18px; align-items:center}
+
+  .chrome-bottom{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    font-family:var(--mono); font-size:12px; letter-spacing:.02em;
+    color:var(--muted-light);
+    margin-top:auto;
+  }
+  .slide.dark .chrome-bottom{color:var(--muted-dark)}
+  .chrome-bottom .counter{font-variant-numeric:tabular-nums}
+
+  /* Main content area */
+  .body{
+    flex:1; display:flex; flex-direction:column; justify-content:center;
+    margin:24px 0;
+  }
+
+  /* Typography */
+  .eyebrow{
+    font-family:var(--sans); font-size:14px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--coral); font-weight:600; margin:0 0 28px 0;
+  }
+  .eyebrow .num{color:inherit; opacity:.85}
+  h1.display{
+    font-family:var(--serif); font-weight:400; font-size:148px; line-height:.95; letter-spacing:-.02em;
+    margin:0;
+  }
+  h1.display.smaller{font-size:120px}
+  h1.display em{font-style:italic; color:var(--coral)}
+  h2.section{
+    font-family:var(--serif); font-weight:400; font-size:112px; line-height:1.02; letter-spacing:-.015em;
+    margin:0 0 18px 0;
+  }
+  h2.section em{font-style:italic; color:var(--coral)}
+  h3.kicker{
+    font-family:var(--serif); font-weight:400; font-size:64px; line-height:1.05; letter-spacing:-.01em;
+    margin:0 0 18px 0;
+  }
+  .lede{
+    font-family:var(--serif); font-size:44px; line-height:1.18; letter-spacing:-.005em;
+    margin:0 0 10px 0;
+  }
+  .body-text{
+    font-family:var(--sans); font-size:22px; line-height:1.5; color:rgba(20,20,19,.78); max-width:900px;
+  }
+  .slide.dark .body-text{color:rgba(240,238,230,.78)}
+  .mono{font-family:var(--mono); font-size:14px; letter-spacing:.02em}
+
+  .footnote{
+    font-family:var(--sans); font-size:16px; color:var(--muted-light); font-style:italic;
+    border-top:1px solid var(--line-light); padding-top:14px; margin-top:28px; max-width:900px;
+  }
+  .slide.dark .footnote{color:var(--muted-dark); border-color:var(--line-dark)}
+
+  /* 3-card grid used on slides 2, 7, 15, 16 */
+  .cards{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; margin-top:8px;
+  }
+  .card{
+    border:1px solid var(--line-light);
+    padding:34px 32px 32px 32px;
+    border-radius:2px;
+    background:rgba(255,255,255,.35);
+    display:flex; flex-direction:column; gap:16px; min-height:330px;
+  }
+  .slide.dark .card{background:rgba(255,255,255,.03); border-color:var(--line-dark)}
+  .card .num{
+    font-family:var(--mono); font-size:13px; color:var(--coral); letter-spacing:.14em;
+  }
+  .card h4{
+    font-family:var(--serif); font-weight:400; font-size:44px; line-height:1.05; margin:0; letter-spacing:-.01em;
+  }
+  .card h4 em{font-style:italic; color:var(--coral)}
+  .card p{
+    margin:0; font-family:var(--sans); font-size:16px; line-height:1.5; color:rgba(20,20,19,.7);
+  }
+  .slide.dark .card p{color:rgba(240,238,230,.7)}
+  .card .tag{
+    margin-top:auto; font-family:var(--mono); font-size:12px; color:rgba(20,20,19,.55); letter-spacing:.04em;
+  }
+  .slide.dark .card .tag{color:rgba(240,238,230,.55)}
+
+  /* Two-column layout */
+  .two{
+    display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
+  }
+  .two.wide-left{grid-template-columns:1.2fr 1fr}
+  .two.wide-right{grid-template-columns:1fr 1.3fr}
+  .two > *{min-width:0}
+  .two .shot{max-width:100%}
+  .two .shot img{width:100%; height:auto; max-width:100%}
+
+  /* Big stats block (slide 6) */
+  .stats{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:24px;
+  }
+  .stat{border-top:1px solid var(--line-light); padding-top:16px}
+  .slide.dark .stat{border-color:var(--line-dark)}
+  .stat .n{font-family:var(--serif); font-weight:400; font-size:80px; line-height:1; letter-spacing:-.02em; color:var(--ink)}
+  .slide.dark .stat .n{color:var(--cream)}
+  .stat .n em{font-style:italic; color:var(--coral)}
+  .stat .l{font-family:var(--mono); font-size:12px; letter-spacing:.14em; color:var(--muted-light); text-transform:uppercase; margin-top:6px}
+  .slide.dark .stat .l{color:var(--muted-dark)}
+
+  /* Image framing */
+  .shot{
+    border:1px solid var(--line-light); border-radius:4px; overflow:hidden;
+    background:#F6F4EE;
+    box-shadow:0 20px 60px -30px rgba(20,20,19,.3), 0 6px 20px -10px rgba(20,20,19,.15);
+    position:relative;
+    display:flex; flex-direction:column;
+  }
+  .shot img, .shot video{display:block; width:100%; height:auto; max-height:520px; object-fit:contain; object-position:center; background:#fff}
+  .shot.shot-prompt img{padding:56px 48px; background:#F6F4EE; max-height:420px}
+  .shot.shot-term img{padding:28px; background:#1b1b1a; max-height:300px}
+  .shot.shot-takeaway img{background:#0f0f0e; max-height:480px; object-fit:contain}
+  .shot.shot-skill img{background:#fff; max-height:480px; object-fit:contain; padding:24px}
+  .shot .caption{
+    font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted-light); padding:10px 14px; border-top:1px solid var(--line-light); background:var(--paper);
+  }
+  .shot-dark .shot{background:#1b1b1a; border-color:var(--line-dark); box-shadow:0 20px 60px -30px rgba(0,0,0,.6)}
+  .shot-dark .shot .caption{color:var(--muted-dark); background:#111; border-color:var(--line-dark)}
+
+  /* Quote */
+  .quote{
+    font-family:var(--serif); font-weight:400; font-size:88px; line-height:1.05; letter-spacing:-.015em;
+  }
+  .quote em{font-style:italic}
+  .quote .q-open{color:var(--coral); font-size:140px; line-height:0; vertical-align:-.18em; margin-right:6px}
+  .quote-attrib{margin-top:32px; display:flex; flex-direction:column; gap:6px}
+  .quote-attrib .name{font-family:var(--sans); font-weight:600; font-size:18px; letter-spacing:.02em}
+  .quote-attrib .role{font-family:var(--sans); font-size:15px; color:var(--muted-light)}
+  .slide.dark .quote-attrib .role{color:var(--muted-dark)}
+
+  /* Arrow transitions (chat → skill, input → output → taste) */
+  .flow{
+    display:grid; grid-template-columns:1fr auto 1fr; gap:40px; align-items:center; margin-top:30px;
+  }
+  .flow-3{grid-template-columns:1fr auto 1fr auto 1fr}
+  .flow .node{
+    border:1px solid var(--line-light); border-radius:2px; padding:32px; background:rgba(255,255,255,.35); min-height:260px;
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .slide.dark .flow .node{border-color:var(--line-dark); background:rgba(255,255,255,.03)}
+  .flow .node .tag{font-family:var(--mono); font-size:12px; letter-spacing:.14em; color:var(--coral); text-transform:uppercase}
+  .flow .node h5{font-family:var(--serif); font-weight:400; font-size:52px; line-height:1; margin:0; letter-spacing:-.01em}
+  .flow .node .dsc{font-family:var(--sans); font-size:16px; line-height:1.5; color:rgba(20,20,19,.7)}
+  .slide.dark .flow .node .dsc{color:rgba(240,238,230,.7)}
+  .flow .node.accent{background:rgba(204,120,92,.08); border-color:var(--coral)}
+  .slide.dark .flow .node.accent{background:rgba(204,120,92,.12)}
+  .flow .arrow{
+    font-family:var(--serif); font-size:60px; color:var(--coral); line-height:1;
+  }
+
+  /* Two big labels CC vs Cowork (slide 12) */
+  .split{display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:12px}
+  .split .side{border-top:2px solid var(--ink); padding-top:24px; min-height:380px}
+  .slide.dark .split .side{border-top-color:var(--cream)}
+  .split .side .lbl{font-family:var(--mono); font-size:13px; letter-spacing:.14em; color:var(--coral); text-transform:uppercase; margin-bottom:18px}
+  .split .side h4{font-family:var(--serif); font-weight:400; font-size:72px; line-height:1; letter-spacing:-.015em; margin:0 0 20px 0}
+  .split .side p{font-family:var(--sans); font-size:20px; line-height:1.5; color:rgba(20,20,19,.75); margin:0 0 12px 0}
+  .slide.dark .split .side p{color:rgba(240,238,230,.78)}
+  .split .side .tags{font-family:var(--mono); font-size:13px; color:var(--muted-light); margin-top:10px; letter-spacing:.02em}
+  .slide.dark .split .side .tags{color:var(--muted-dark)}
+
+  /* Video frames */
+  .video-frame{
+    border:1px solid var(--line-light); border-radius:4px; overflow:hidden; background:#000;
+    box-shadow:0 20px 60px -30px rgba(20,20,19,.3);
+    position:relative;
+  }
+  .video-frame video, .video-frame iframe{display:block; width:100%; height:100%; border:0}
+  .aspect-16-9{aspect-ratio:16/9}
+
+  /* YouTube link card (fallback when embedding is disabled) */
+  .yt-card{
+    display:block; text-decoration:none; color:inherit;
+    border:1px solid var(--line-dark); border-radius:6px; overflow:hidden;
+    background:#111; transition:transform .2s ease, border-color .2s ease;
+  }
+  .yt-card:hover{transform:translateY(-2px); border-color:var(--coral)}
+  .yt-thumb{position:relative; aspect-ratio:16/9; background:#000; overflow:hidden}
+  .yt-thumb img{width:100%; height:100%; object-fit:cover; display:block}
+  .yt-play{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(to bottom, rgba(0,0,0,.0), rgba(0,0,0,.35));
+    pointer-events:none;
+  }
+  .yt-play svg{width:88px; height:62px; filter:drop-shadow(0 6px 20px rgba(0,0,0,.6))}
+  .yt-meta{padding:18px 22px; display:flex; flex-direction:column; gap:6px; background:#1a1a19}
+  .yt-title{font-family:var(--serif); font-size:22px; line-height:1.2; color:var(--cream)}
+  .yt-sub{font-family:var(--sans); font-size:13px; color:rgba(240,238,230,.65); letter-spacing:.01em}
+  .yt-link{font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--coral); margin-top:4px}
+
+  /* Github card slide 13 */
+  .github-card{
+    border:1px solid var(--line-light); padding:28px 32px; border-radius:2px;
+    display:flex; flex-direction:column; gap:10px; background:rgba(255,255,255,.4);
+  }
+  .slide.dark .github-card{background:rgba(255,255,255,.03); border-color:var(--line-dark)}
+  .github-card .gh-lbl{font-family:var(--mono); font-size:12px; letter-spacing:.14em; color:var(--coral); text-transform:uppercase}
+  .github-card .gh-path{font-family:var(--mono); font-size:28px; font-weight:500}
+  .github-card .gh-dsc{font-family:var(--sans); font-size:16px; color:rgba(20,20,19,.7); line-height:1.5}
+  .slide.dark .github-card .gh-dsc{color:rgba(240,238,230,.7)}
+
+  /* Takeaway list (slide 16) */
+  .takeaways{display:flex; flex-direction:column; gap:32px; margin-top:20px}
+  .takeaway{display:grid; grid-template-columns:80px 1fr; gap:40px; align-items:start; padding-bottom:32px; border-bottom:1px solid var(--line-light)}
+  .takeaway:last-child{border-bottom:none}
+  .slide.dark .takeaway{border-bottom-color:var(--line-dark)}
+  .takeaway .t-num{font-family:var(--serif); font-size:56px; line-height:1; color:var(--coral)}
+  .takeaway .t-title{font-family:var(--serif); font-size:46px; line-height:1.08; letter-spacing:-.01em; margin:0 0 10px 0}
+  .takeaway .t-body{font-family:var(--sans); font-size:18px; line-height:1.5; color:rgba(20,20,19,.7); margin:0; max-width:900px}
+  .slide.dark .takeaway .t-body{color:rgba(240,238,230,.75)}
+
+  /* QR / close slide */
+  .closing-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; margin-top:24px}
+  .closing-grid.single{grid-template-columns:minmax(0,560px); justify-content:center}
+  .closing-card{
+    border:1px solid var(--line-dark); padding:32px; border-radius:2px;
+    display:flex; flex-direction:column; gap:14px; background:rgba(255,255,255,.03);
+    min-height:320px;
+  }
+  .closing-card .cl-lbl{font-family:var(--mono); font-size:13px; letter-spacing:.18em; color:var(--coral); text-transform:uppercase}
+  .closing-card .cl-title{font-family:var(--serif); font-size:44px; line-height:1.05; margin:0}
+  .closing-card .cl-body{font-family:var(--sans); font-size:16px; color:rgba(240,238,230,.7); line-height:1.5; margin:0}
+  .closing-card .cl-link{margin-top:auto; font-family:var(--mono); font-size:16px; color:var(--cream); border-top:1px solid var(--line-dark); padding-top:16px}
+
+  /* Hero image slide (single full asset) */
+  .hero-image{
+    display:flex; align-items:center; justify-content:center;
+    margin-top:12px; flex:1;
+  }
+  .hero-image .shot{max-height:560px; max-width:100%}
+  .hero-image .shot img{max-height:560px; width:auto}
+
+  /* Side-by-side skills+agents */
+  .skill-agent{display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:24px; align-items:start}
+  .skill-agent .item{display:grid; grid-template-rows:auto auto 1fr; gap:14px}
+  .skill-agent .item .hdr{font-family:var(--mono); font-size:13px; letter-spacing:.22em; color:var(--coral); text-transform:uppercase}
+  .skill-agent .item .dsc{font-family:var(--sans); font-size:17px; color:rgba(20,20,19,.7); line-height:1.45}
+  .slide.dark .skill-agent .item .dsc{color:rgba(240,238,230,.75)}
+  .skill-agent .item .tags{font-family:var(--mono); font-size:12px; color:var(--muted-light); letter-spacing:.02em}
+  .slide.dark .skill-agent .item .tags{color:var(--muted-dark)}
+  .skill-agent .item img{
+    width:100%; height:320px; object-fit:contain; object-position:center;
+    display:block; border-radius:6px; background:#0f0f0e; padding:32px;
+    border:1px solid rgba(240,238,230,.08);
+  }
+  .slide.dark .skill-agent .item img{border-color:rgba(240,238,230,.12); background:#0f0f0e}
+  .slide.dark .skill-agent .item img{border-color:var(--line-dark); background:#1b1b1a}
+
+  /* Cover (slide 1) */
+  .cover{
+    height:100%; display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .cover .stack{display:flex; flex-direction:column; gap:14px}
+  .cover .event-line{font-family:var(--mono); font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted-dark)}
+  .cover h1.display{font-size:184px; line-height:.92; letter-spacing:-.025em}
+  .cover .by{display:flex; gap:32px; align-items:baseline; margin-top:auto; padding-top:24px; border-top:1px solid var(--line-dark)}
+  .cover .by .speaker{font-family:var(--serif); font-size:44px; line-height:1; font-style:italic}
+  .cover .by .who{font-family:var(--sans); font-size:16px; color:var(--muted-dark); letter-spacing:.04em; display:flex; gap:12px; flex-wrap:wrap}
+
+  /* Anthropic star mark (stylized asterisk — original SVG) */
+  .asterisk{
+    display:inline-block; width:18px; height:18px; color:var(--coral); flex-shrink:0;
+  }
+  .asterisk svg{display:block}
+
+  /* Nav controls */
+  .nav{
+    position:fixed; bottom:22px; right:28px; z-index:50;
+    display:flex; gap:10px; align-items:center;
+    font-family:var(--mono); font-size:12px; letter-spacing:.1em;
+    color:rgba(255,255,255,.65); mix-blend-mode:difference;
+  }
+  .nav button{
+    background:transparent; border:1px solid rgba(255,255,255,.3);
+    color:inherit; width:36px; height:36px; border-radius:2px; cursor:pointer;
+    font-family:inherit; font-size:14px; display:flex; align-items:center; justify-content:center;
+    transition:background .2s ease;
+  }
+  .nav button:hover{background:rgba(255,255,255,.08)}
+  .progress{
+    position:fixed; top:0; left:0; height:2px; background:var(--coral);
+    width:0; z-index:100; transition:width .3s ease;
+  }
+  .help{
+    position:fixed; bottom:24px; left:28px; z-index:50;
+    font-family:var(--mono); font-size:11px; letter-spacing:.1em;
+    color:rgba(255,255,255,.55); mix-blend-mode:difference;
+  }
+  .help kbd{
+    font-family:inherit; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25);
+    padding:2px 6px; border-radius:2px; margin:0 2px;
+  }
+
+  /* Slide 5 specific: prompt card */
+  .prompt-card{
+    border:1px solid var(--line-light); border-radius:4px; padding:28px 32px;
+    background:var(--paper); font-family:var(--mono); font-size:20px; line-height:1.55;
+    white-space:pre-wrap; box-shadow:0 10px 30px -15px rgba(20,20,19,.2);
+    position:relative;
+  }
+  .prompt-card::before{
+    content:"PROMPT"; position:absolute; top:-10px; left:16px; background:var(--cream);
+    padding:0 8px; font-family:var(--mono); font-size:11px; letter-spacing:.2em; color:var(--coral);
+  }
+  .slide.dark .prompt-card{background:#1b1b1a; border-color:var(--line-dark); color:var(--cream)}
+  .slide.dark .prompt-card::before{background:var(--ink)}
+
+  .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:20px}
+  .chip{
+    font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    padding:8px 14px; border:1px solid var(--line-light); border-radius:999px; color:rgba(20,20,19,.7);
+  }
+  .slide.dark .chip{border-color:var(--line-dark); color:rgba(240,238,230,.75)}
+  .chip.solid{background:var(--coral); border-color:var(--coral); color:#fff}
+
+  /* Scaling */
+  @media (max-width:1400px), (max-height:800px){}
+
+  /* Utilities */
+  .mt-12{margin-top:12px} .mt-20{margin-top:20px} .mt-32{margin-top:32px} .mt-48{margin-top:48px}
+  .pill{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12px; padding:6px 12px; border:1px solid var(--line-light); border-radius:999px; letter-spacing:.12em; color:rgba(20,20,19,.7); text-transform:uppercase}
+  .slide.dark .pill{border-color:var(--line-dark); color:rgba(240,238,230,.75)}
+  .pill .dot{width:6px; height:6px; background:var(--coral); border-radius:50%}
+  .flag{font-size:14px}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<div class="deck" id="deck">
+
+<!-- ======================================================= -->
+<!-- SLIDE 1 — COVER (dark)                                    -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide dark active" data-slide="1">
+  <div class="cover">
+    <div class="chrome-top">
+      <span class="mark">
+        <span class="asterisk"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        Anthropic · Claude Code Meetup
+      </span>
+      <span>San Francisco · 22 abr 2026</span>
+    </div>
+
+    <div class="stack" style="margin-top:auto">
+      <div class="event-line">Claude Para Todos · 🇨🇴 La Edición Latina</div>
+      <h1 class="display" style="font-size:140px; line-height:1.02"><em>Cowork.</em></h1>
+      <div class="body-text" style="max-width:920px; margin-top:28px; font-size:36px; line-height:1.2; opacity:.92">
+        El asistente IA que todo founder necesita.
+      </div>
+      <div class="body-text" style="max-width:820px; margin-top:40px; font-size:22px; font-style:italic; opacity:.65">
+        Ship primero. Sistema después.
+      </div>
+    </div>
+
+    <div class="by">
+      <span class="speaker">Irina Vélez</span>
+    </div>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 2 — OPENING (light)                                -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide" data-slide="2">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow"><span class="num">01</span></div>
+    <h2 class="section">¿Quién es founder<br/>por primera vez?</h2>
+    <div class="cards mt-32">
+      <div class="card">
+        <div class="num">01</div>
+        <h4>Construyendo <em>producto</em></h4>
+        <p>Repos, tests, vibe coding. El flow de builders que ya saben dónde van.</p>
+        <div class="tag">repo · tests · vibe coding</div>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h4>Optimizando <em>el día a día</em></h4>
+        <p>Email, notas, reuniones. El operador que exprime cada hora.</p>
+        <div class="tag">email · notas · Gmail · Slack</div>
+      </div>
+      <div class="card" style="border-color:var(--coral); background:rgba(204,120,92,.08)">
+        <div class="num">03</div>
+        <h4>Siendo <em>founder</em></h4>
+        <p>Haciendo todo al tiempo. Sin procesos. Sin manual. Sin equipo.</p>
+        <div class="tag">haciendo todo al tiempo</div>
+      </div>
+    </div>
+    <div class="footnote">Los últimos son los más jodidos.</div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">02 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 3 — EL VACÍO (dark)                                -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide dark" data-slide="3">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow"><span class="num">02</span> · El vacío</div>
+    <div class="two wide-left">
+      <div>
+        <h2 class="section">Si eres founder<br/><em>por primera vez:</em></h2>
+      </div>
+      <div>
+        <div class="lede" style="color:var(--cream)">
+          no tienes procesos.<br/>
+          no tienes patterns.<br/>
+          no sabes qué va primero,<br/>
+          <span style="color:var(--coral)">ni qué va después.</span>
+        </div>
+        <div class="footnote" style="margin-top:40px">Y ese vacío no se automatiza.</div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">03 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 4 — LA TESIS (dark)                                -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide dark" data-slide="4">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body" style="justify-content:center">
+    <div class="eyebrow"><span class="num">03</span> · La tesis</div>
+    <div class="quote">
+      <span class="q-open">“</span>No puedes automatizar<br/>lo que todavía no <em>sabes</em><br/>cómo se hace.
+    </div>
+    <div class="footnote" style="margin-top:40px; font-size:22px; font-style:normal; font-family:var(--mono); letter-spacing:.08em; text-transform:uppercase">
+      Primero ship. Luego sistema.
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">04 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 5 — EL EJEMPLO (light)                             -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide" data-slide="5">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow"><span class="num">04</span> · El ejemplo</div>
+    <div class="two wide-right">
+      <div>
+        <h3 class="kicker">Estaba grabando mi primer video de <em>YouTube</em>.</h3>
+        <div class="body-text">Necesitaba un thumbnail. Abrí Cowork. Escribí esto:</div>
+        <div class="chips mt-32">
+          <span class="chip">sin skill</span>
+          <span class="chip">sin agent</span>
+          <span class="chip">sin MCP</span>
+          <span class="chip solid">un solo prompt</span>
+        </div>
+      </div>
+      <div>
+        <div class="shot shot-prompt">
+          <img src="assets/image-5-1.png" alt="Prompt: starting point" />
+          <div class="caption">Cowork · prompt inicial</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">05 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 6 — EL RESULTADO (light)                           -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide" data-slide="6">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow"><span class="num">05</span> · El resultado</div>
+    <div class="two wide-left">
+      <div>
+        <h3 class="kicker">Ese chat se convirtió en un <em>post</em>. El post con más <em>engagement</em> del mes.</h3>
+        <div class="stats">
+          <div class="stat"><div class="n"><em>22,121</em></div><div class="l">Impressions</div></div>
+          <div class="stat"><div class="n">176</div><div class="l">Reactions</div></div>
+          <div class="stat"><div class="n">46</div><div class="l">Comments</div></div>
+          <div class="stat"><div class="n">25</div><div class="l">Reposts</div></div>
+        </div>
+        <div class="footnote">Sin skill. Sin MCP. Solo shippeé.</div>
+      </div>
+      <div>
+        <div class="shot" style="max-height:600px; overflow:hidden">
+          <img src="assets/image-6-1.png" alt="LinkedIn post, winning post" style="max-height:600px; object-fit:cover; object-position:top"/>
+          <div class="caption">LinkedIn · 22K impressions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">06 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 7 — EL META-MOVE (light)                           -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide" data-slide="7">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow"><span class="num">06</span> · El meta-move</div>
+    <h2 class="section" style="font-size:88px">Después de shippear, le pedí a Claude <em>tres cosas</em>.</h2>
+    <div class="cards mt-32">
+      <div class="card">
+        <div class="num">01 · DESCRIBE</div>
+        <h4>Muéstrame <em>mi propio proceso.</em></h4>
+        <p>Claude, mira este chat y extrae las stages que yo seguí sin darme cuenta.</p>
+      </div>
+      <div class="card">
+        <div class="num">02 · OPTIMIZA</div>
+        <h4>Dónde está el <em>desperdicio.</em></h4>
+        <p>Qué pasos repetí. Dónde perdí tiempo. Qué decisiones pude haberme saltado.</p>
+      </div>
+      <div class="card">
+        <div class="num">03 · SISTEMATIZA</div>
+        <h4>Conviértelo en un <em>skill.</em></h4>
+        <p>Toma ese proceso, súbelo a .md, y la próxima vez que lo necesite, lo corremos solo.</p>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">07 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 8 — DESCRIBE (light)                               -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide" data-slide="8">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow"><span class="num">01</span> · Describe</div>
+    <div class="two wide-right">
+      <div>
+        <h3 class="kicker">Muéstrame <em>mi propio proceso.</em></h3>
+        <div class="body-text">Claude me devolvió las stages que yo no sabía que tenía.</div>
+        <div class="footnote">Yo lo hice. Claude lo vio. Y me lo mostró.</div>
+      </div>
+      <div>
+        <div class="shot shot-prompt">
+          <img src="assets/image-8-1.png" alt="Prompt · describe process" />
+          <div class="caption">Prompt · “describe el proceso”</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">08 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 9 — OPTIMIZA (light)                               -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide" data-slide="9">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow"><span class="num">02</span> · Optimiza</div>
+    <div class="two wide-right">
+      <div>
+        <h3 class="kicker">¿Dónde perdí <em>tiempo?</em></h3>
+        <div class="body-text">Los blind spots. Las partes donde reinventaba la rueda.</div>
+      </div>
+      <div>
+        <div class="shot shot-prompt">
+          <img src="assets/image-9-1.png" alt="Prompt · optimize" />
+          <div class="caption">Prompt · “optimiza el proceso”</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">09 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 10 — SISTEMATIZA (light)                           -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide" data-slide="10">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow"><span class="num">03</span> · Sistematiza</div>
+    <div class="two wide-left">
+      <div>
+        <h3 class="kicker" style="font-size:64px; line-height:1.05">Conviértelo en un <em>skill reusable.</em></h3>
+        <div class="body-text" style="margin-top:22px; max-width:520px">
+          De un chat efímero, a un archivo <code style="font-family:var(--mono); font-size:0.92em">.md</code>. Reusable. Versionable. Componible.
+        </div>
+        <div class="footnote" style="margin-top:28px; color:var(--coral)">Describir. Optimizar. Sistematizar.</div>
+      </div>
+      <div>
+        <div class="shot shot-skill">
+          <img src="file:///Users/irina/Desktop/assets/skill-reusable.png" alt="Skill reusable — video-content-pipeline"/>
+          <div class="caption">Personal skill · video-content-pipeline</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">10 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 11 — VALIDACIÓN (dark) + YOUTUBE EMBED             -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide dark" data-slide="11">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow"><span class="num">07</span> · Validación</div>
+    <div class="two wide-left">
+      <div>
+        <h3 class="kicker" style="font-size:64px; line-height:1.05">Tomé <em>2 takeaways.</em></h3>
+        <div class="body-text" style="margin-top:20px; max-width:520px">
+          Eric Schluntz. Researcher en Anthropic. Dio una charla en Code w/ Claude Conf.
+        </div>
+      </div>
+      <div>
+        <a class="yt-card" href="https://www.youtube.com/watch?v=78EYLieMpvc" target="_blank" rel="noopener">
+          <div class="yt-thumb">
+            <img
+              src="https://i.ytimg.com/vi/78EYLieMpvc/hqdefault.jpg"
+              onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/78EYLieMpvc/mqdefault.jpg'"
+              alt="Vibe Coding in Prod Responsibly — Eric Schluntz" />
+            <div class="yt-play" aria-hidden="true">
+              <svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#CC785C"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
+            </div>
+          </div>
+          <div class="yt-meta">
+            <div class="yt-title">Vibe Coding in Prod Responsibly</div>
+            <div class="yt-sub">Eric Schluntz · Code w/ Claude Conf</div>
+            <div class="yt-link">▶ youtube.com/watch?v=78EYLieMpvc</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">11 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 12 — TAKEAWAY 01 (dark, full-bleed image)          -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide dark" data-slide="12">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body" style="justify-content:center; align-items:center">
+    <img src="file:///Users/irina/Desktop/assets/takeway%201.png" alt="Takeaway 01" style="max-width:100%; max-height:620px; object-fit:contain; display:block"/>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">12 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 13 — TAKEAWAY 02 · MENTAL MODEL (light)            -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide" data-slide="13">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow">Takeaway · 02</div>
+    <div class="two wide-left">
+      <div>
+        <h3 class="kicker" style="font-size:60px; line-height:1.05">Piensa en el <em>mental model</em>.</h3>
+        <div class="body-text" style="margin-top:20px; max-width:520px">
+          ¿Cuál es el <em>input</em>? ¿Cuál es el <em>output</em>? Esa claridad es la que convierte un chat en un skill.
+        </div>
+        <div class="footnote" style="margin-top:28px; color:var(--coral)">Lo que necesita tu ojo → humano. Lo demás → autónomo.</div>
+      </div>
+      <div>
+        <div class="shot">
+          <img src="file:///Users/irina/Desktop/assets/takeaway2.png" alt="Mental model — input / output"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">13 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 14 — EJEMPLO CLAUDE CODE + DIGEST VIDEO (light)    -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide" data-slide="13">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow">Ejemplo · Claude Code</div>
+    <div class="two wide-right">
+      <div>
+        <h3 class="kicker">El <em>feed diario.</em></h3>
+        <div class="body-text">Un pipeline que corre solo cada mañana. Escanea fuentes. Escribe un digest.</div>
+        <div class="github-card mt-32">
+          <div class="gh-lbl">Open source</div>
+          <div class="gh-path">github.com/irivelez/the-feed</div>
+          <div class="gh-dsc">Daily digests · AI news curation · Zero manual work.</div>
+        </div>
+      </div>
+      <div>
+        <div class="video-frame aspect-16-9">
+          <video src="assets/digest.mov" muted playsinline controls preload="metadata" id="digestVideo"></video>
+        </div>
+        <div class="mono" style="margin-top:12px; color:var(--muted-light); font-size:12px; letter-spacing:.12em">▶ DEMO · THE-FEED PIPELINE</div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">14 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 15 — SKILLS + AGENTS (dark)                        -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide dark" data-slide="14">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow">Ejemplo · Contenido</div>
+    <h3 class="kicker">Skills y agents en <em>Claude Code.</em></h3>
+    <div class="body-text">Nada fancy. Archivos markdown. Cada uno hace una cosa bien.</div>
+    <div class="skill-agent mt-32">
+      <div class="item">
+        <div class="hdr">Skills</div>
+        <div class="dsc">Tareas pequeñas, reusables.</div>
+        <img src="assets/image-14-1.png" alt="Skills"/>
+      </div>
+      <div class="item">
+        <div class="hdr">Agents</div>
+        <div class="dsc">Roles con contexto propio.</div>
+        <img src="assets/image-14-2.png" alt="Agents"/>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">15 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 16 — PARA LLEVAR (light)                           -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide" data-slide="16">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Claude Code Meetup · SF · 22 abr 2026</span>
+    <span>@irina-velez</span>
+  </div>
+  <div class="body">
+    <div class="eyebrow"><span class="num">10</span> · Para llevar</div>
+    <h2 class="section" style="font-size:96px">Tres <em>cosas.</em></h2>
+    <div class="takeaways">
+      <div class="takeaway">
+        <div class="t-num">01</div>
+        <div>
+          <div class="t-title">Haz <em>la tarea</em> primero.</div>
+        </div>
+      </div>
+      <div class="takeaway">
+        <div class="t-num">02</div>
+        <div>
+          <div class="t-title">Piensa en el <em>mental model</em>.</div>
+        </div>
+      </div>
+      <div class="takeaway">
+        <div class="t-num">03</div>
+        <div>
+          <div class="t-title">El <em>taste</em> siempre es tuyo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">16 / 17</span>
+  </div>
+</div></div>
+
+<!-- ======================================================= -->
+<!-- SLIDE 17 — GRACIAS (dark)                                -->
+<!-- ======================================================= -->
+<div class="stage"><div class="slide dark" data-slide="17">
+  <div class="chrome-top">
+    <span class="mark"><span class="asterisk"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span> Anthropic · Claude Code Meetup</span>
+    <span>San Francisco · 22 abr 2026</span>
+  </div>
+  <div class="body" style="justify-content:center; align-items:center; text-align:center">
+    <h1 class="display" style="font-size:200px; line-height:1"><em>Gracias.</em></h1>
+    <div class="body-text" style="margin-top:48px; color:var(--cream); font-size:28px; font-family:var(--mono); letter-spacing:.02em">
+      linkedin.com/in/irina-velez
+    </div>
+  </div>
+  <div class="chrome-bottom">
+    <span class="pill"><span class="dot"></span> Irina Vélez</span>
+    <span class="counter">17 / 17</span>
+  </div>
+</div></div>
+
+</div>
+
+<div class="help">
+  <kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>space</kbd> next · <kbd>f</kbd> fullscreen · <kbd>g</kbd> grid
+</div>
+<div class="nav">
+  <button id="prevBtn" aria-label="Previous slide">‹</button>
+  <span id="navCounter">01 / 17</span>
+  <button id="nextBtn" aria-label="Next slide">›</button>
+</div>
+
+<script>
+(function(){
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  let current = 0;
+  const prog = document.getElementById('progress');
+  const navCounter = document.getElementById('navCounter');
+  const stages = Array.from(document.querySelectorAll('.stage'));
+
+  function pad(n){return String(n).padStart(2,'0')}
+  function show(i){
+    current = Math.max(0, Math.min(total-1, i));
+    slides.forEach((s,idx)=>{
+      s.classList.toggle('active', idx===current);
+    });
+    stages.forEach((st,idx)=>{
+      st.style.zIndex = idx===current ? 10 : 1;
+      st.style.pointerEvents = idx===current ? 'auto' : 'none';
+    });
+    prog.style.width = ((current+1)/total*100)+'%';
+    navCounter.textContent = pad(current+1)+' / '+pad(total);
+    // Pause videos on non-active slides
+    document.querySelectorAll('video').forEach(v=>{ if(!v.closest('.slide').classList.contains('active')){ v.pause(); }});
+    // Update hash for deep-linking (guarded — sandboxed iframes like about:srcdoc block this)
+    try { history.replaceState(null,'','#'+(current+1)); } catch(_) {}
+  }
+  function next(){show(current+1)}
+  function prev(){show(current-1)}
+
+  document.addEventListener('keydown',(e)=>{
+    if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault(); next();}
+    else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault(); prev();}
+    else if(e.key==='Home'){show(0);}
+    else if(e.key==='End'){show(total-1);}
+    else if(e.key==='f' || e.key==='F'){toggleFullscreen();}
+    else if(/^[0-9]$/.test(e.key)){const n=parseInt(e.key); if(n>0) show(n-1);}
+  });
+
+  document.getElementById('prevBtn').addEventListener('click',prev);
+  document.getElementById('nextBtn').addEventListener('click',next);
+
+  // Click-to-advance on the slide area (but not on interactive elements)
+  document.querySelectorAll('.stage').forEach(st=>{
+    st.addEventListener('click',(e)=>{
+      const tag = e.target.tagName;
+      if(['A','BUTTON','VIDEO','IFRAME','INPUT'].includes(tag)) return;
+      if(e.target.closest('video,iframe,.video-frame,a,button')) return;
+      // advance on right half, rewind on left half
+      const rect = st.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      if(x > rect.width/2) next(); else prev();
+    });
+  });
+
+  function toggleFullscreen(){
+    if(!document.fullscreenElement){document.documentElement.requestFullscreen().catch(()=>{});}
+    else{document.exitFullscreen();}
+  }
+
+  // Scale slide to viewport (fit by width and height)
+  function scaleSlides(){
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const sx = vw/1600;
+    const sy = vh/900;
+    const s = Math.min(sx, sy);
+    slides.forEach(sl=>{
+      sl.style.transform = `translate(-50%, -50%) scale(${s})`;
+    });
+  }
+  window.addEventListener('resize', scaleSlides);
+  scaleSlides();
+
+  // Deep-link to hash (guarded — location.hash may not be readable in some sandboxes)
+  let h = 1;
+  try { h = parseInt((location.hash||'#1').replace('#','')) || 1; } catch(_) { h = 1; }
+  show(isNaN(h) ? 0 : h-1);
+})();
+</script>
+</body>
+</html>

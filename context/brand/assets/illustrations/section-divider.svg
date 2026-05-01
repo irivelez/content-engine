@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 20" width="400" height="20" role="presentation" aria-hidden="true">
+  <!-- Señal section divider — 5 vertical signal bars in bell-curve rhythm, coral -->
+  <!-- Reads as transmission frequency; replaces classical dot pattern. -->
+  <rect x="188" y="8"  width="2" height="4"  fill="#FF5941"/>
+  <rect x="194" y="5"  width="2" height="10" fill="#FF5941"/>
+  <rect x="200" y="3"  width="2" height="14" fill="#FF5941"/>
+  <rect x="206" y="5"  width="2" height="10" fill="#FF5941"/>
+  <rect x="212" y="8"  width="2" height="4"  fill="#FF5941"/>
+</svg>

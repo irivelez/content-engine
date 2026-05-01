@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>El Stack Claude 2026 — Todo lo que necesitas saber en una guía</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #121A2A;
+    --bone: #F4EEE3;
+    --oxblood: #7B1E26;
+    --gold: #C9A96E;
+    --warm-white: #FAF7F2;
+    --obsidian: #000000;
+  }
+
+  @page {
+    size: A4;
+    margin: 20mm 18mm;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bone);
+    color: var(--navy);
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- COVER ---------- */
+  .cover {
+    page-break-after: always;
+    min-height: 257mm;
+    padding: 20mm 14mm;
+    background: var(--bone);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .cover::before {
+    content: "";
+    position: absolute;
+    top: 20mm;
+    left: 14mm;
+    right: 14mm;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .cover::after {
+    content: "";
+    position: absolute;
+    bottom: 20mm;
+    left: 14mm;
+    right: 14mm;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    padding-top: 6mm;
+  }
+
+  .cover-title-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30mm;
+  }
+
+  .cover-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 10mm;
+  }
+
+  .cover-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: 64pt;
+    line-height: 0.95;
+    color: var(--navy);
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .cover-title .accent {
+    color: var(--oxblood);
+  }
+
+  .cover-sub {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 22pt;
+    line-height: 1.3;
+    color: var(--navy);
+    margin-top: 12mm;
+    max-width: 140mm;
+  }
+
+  .cover-stats {
+    display: flex;
+    gap: 12mm;
+    margin-top: 20mm;
+    padding-top: 8mm;
+    border-top: 1px solid var(--gold);
+  }
+
+  .cover-stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cover-stat-number {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: 36pt;
+    line-height: 1;
+    color: var(--navy);
+  }
+
+  .cover-stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.7;
+    margin-top: 3mm;
+  }
+
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 6mm;
+  }
+
+  .cover-author {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 14pt;
+    color: var(--navy);
+  }
+
+  .cover-author small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 10pt;
+    color: var(--navy);
+    opacity: 0.7;
+    margin-top: 2mm;
+    letter-spacing: 0.05em;
+  }
+
+  .cover-issue {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    text-align: right;
+  }
+
+  /* ---------- SECTION STRUCTURE ---------- */
+  .section {
+    page-break-before: always;
+    padding: 0;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 6mm;
+    margin-bottom: 8mm;
+    padding-bottom: 4mm;
+    border-bottom: 1px solid var(--gold);
+  }
+
+  .section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11pt;
+    letter-spacing: 0.15em;
+    color: var(--oxblood);
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: 32pt;
+    line-height: 1.1;
+    color: var(--navy);
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 22pt;
+    line-height: 1.2;
+    color: var(--navy);
+    margin: 12mm 0 4mm;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 16pt;
+    line-height: 1.2;
+    color: var(--navy);
+    margin: 8mm 0 3mm;
+  }
+
+  h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11pt;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    margin: 6mm 0 2mm;
+  }
+
+  p {
+    margin: 0 0 4mm;
+    max-width: 160mm;
+  }
+
+  strong {
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  a {
+    color: var(--oxblood);
+    text-decoration: none;
+    border-bottom: 1px solid var(--oxblood);
+  }
+
+  /* ---------- LISTS ---------- */
+  ul {
+    padding: 0;
+    margin: 4mm 0;
+    list-style: none;
+  }
+
+  ul li {
+    padding-left: 8mm;
+    position: relative;
+    margin-bottom: 2mm;
+  }
+
+  ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--oxblood);
+    font-weight: 500;
+  }
+
+  ol {
+    padding-left: 6mm;
+    margin: 4mm 0;
+  }
+
+  ol li {
+    margin-bottom: 2mm;
+    padding-left: 2mm;
+  }
+
+  ol li::marker {
+    color: var(--oxblood);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+
+  /* ---------- TABLES ---------- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6mm 0;
+    font-size: 10pt;
+  }
+
+  th {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 3mm 3mm 3mm 0;
+    border-bottom: 2px solid var(--navy);
+    color: var(--navy);
+  }
+
+  td {
+    padding: 3mm 3mm 3mm 0;
+    border-bottom: 1px solid var(--gold);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ---------- CODE ---------- */
+  pre {
+    background: var(--navy);
+    color: var(--warm-white);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5pt;
+    line-height: 1.5;
+    padding: 5mm 6mm;
+    margin: 4mm 0;
+    overflow-x: auto;
+    border-left: 3px solid var(--oxblood);
+    page-break-inside: avoid;
+  }
+
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5pt;
+    background: rgba(123, 30, 38, 0.08);
+    padding: 0.5mm 1.5mm;
+    border-radius: 1mm;
+    color: var(--navy);
+  }
+
+  pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+  }
+
+  /* ---------- BLOCKQUOTE / PULL QUOTE ---------- */
+  blockquote {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 16pt;
+    line-height: 1.3;
+    color: var(--oxblood);
+    margin: 8mm 0;
+    padding: 0 0 0 6mm;
+    border-left: 2px solid var(--oxblood);
+  }
+
+  /* ---------- DIVIDER ---------- */
+  hr {
+    border: none;
+    height: 1px;
+    background: var(--gold);
+    margin: 8mm 0;
+  }
+
+  .divider-rule {
+    text-align: center;
+    margin: 10mm 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+  }
+
+  /* ---------- PROMPT BOX ---------- */
+  .prompt {
+    background: var(--warm-white);
+    border: 1px solid var(--gold);
+    padding: 4mm 5mm;
+    margin: 3mm 0 5mm;
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: var(--navy);
+    page-break-inside: avoid;
+  }
+
+  .prompt::before {
+    content: '"';
+    font-size: 18pt;
+    color: var(--oxblood);
+    font-weight: 900;
+    margin-right: 1mm;
+    line-height: 0;
+  }
+
+  /* ---------- ROUTE CARDS ---------- */
+  .route {
+    page-break-inside: avoid;
+    margin: 8mm 0;
+  }
+
+  .route-header {
+    border-left: 3px solid var(--oxblood);
+    padding-left: 5mm;
+    margin-bottom: 5mm;
+  }
+
+  .route-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    margin-bottom: 1mm;
+  }
+
+  .route-persona {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 18pt;
+    color: var(--navy);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .route-objective {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-size: 12pt;
+    color: var(--navy);
+    margin-top: 2mm;
+  }
+
+  .feature-card {
+    margin: 6mm 0;
+    padding-left: 6mm;
+    border-left: 1px solid var(--gold);
+  }
+
+  .feature-card h4 {
+    margin-top: 0;
+  }
+
+  .question-box {
+    margin: 8mm 0;
+    padding: 5mm 6mm;
+    background: var(--navy);
+    color: var(--warm-white);
+    border-left: 3px solid var(--oxblood);
+    page-break-inside: avoid;
+  }
+
+  .question-box .q-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2mm;
+  }
+
+  .question-box p {
+    margin: 0;
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-size: 13pt;
+    line-height: 1.4;
+  }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline-month {
+    margin: 6mm 0;
+    page-break-inside: avoid;
+  }
+
+  .timeline-month-header {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    padding-bottom: 2mm;
+    border-bottom: 1px solid var(--gold);
+    margin-bottom: 3mm;
+  }
+
+  .timeline-month ul {
+    margin: 0;
+  }
+
+  .timeline-month ul li {
+    margin-bottom: 1.5mm;
+    font-size: 10pt;
+  }
+
+  /* ---------- FINAL CTA PAGE ---------- */
+  .final-cta {
+    page-break-before: always;
+    min-height: 257mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .final-cta h2 {
+    font-size: 36pt;
+    color: var(--navy);
+    margin-bottom: 8mm;
+  }
+
+  .final-cta .accent {
+    color: var(--oxblood);
+  }
+
+  .colophon {
+    margin-top: 30mm;
+    padding-top: 6mm;
+    border-top: 1px solid var(--gold);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.1em;
+    color: var(--navy);
+    opacity: 0.7;
+  }
+
+  /* ---------- SHIFT TABLE ---------- */
+  .shift-table td {
+    font-size: 10.5pt;
+    padding: 2.5mm 3mm 2.5mm 0;
+  }
+
+  .shift-table td:first-child {
+    color: var(--navy);
+    opacity: 0.6;
+    padding-right: 5mm;
+    width: 45%;
+  }
+
+  .shift-table td:last-child {
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .shift-table td:last-child::before {
+    content: "→ ";
+    color: var(--oxblood);
+    font-weight: 700;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-top">
+    <span>Edición #01 · Abril 2026</span>
+    <span>Irina Vélez</span>
+  </div>
+
+  <div class="cover-title-block">
+    <div class="cover-eyebrow">Guía de referencia</div>
+    <h1 class="cover-title">El Stack<br>Claude <span class="accent">2026</span></h1>
+    <p class="cover-sub">Todo lo que necesitas saber en una guía. 50+ features. 3 rutas. 60 minutos.</p>
+
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <span class="cover-stat-number">50+</span>
+        <span class="cover-stat-label">Features</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-number">4</span>
+        <span class="cover-stat-label">Meses</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-number">3</span>
+        <span class="cover-stat-label">Rutas</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-number">35</span>
+        <span class="cover-stat-label">Páginas</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="cover-author">
+      Irina Vélez
+      <small>Construyendo el primer negocio de IA multimillonario de Latinoamérica</small>
+    </div>
+    <div class="cover-issue">Guía<br>de referencia<br>#01</div>
+  </div>
+</div>
+
+<!-- SECTION 1: INTRO -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h1 class="section-title">Por qué existe esta guía</h1>
+  </div>
+
+  <p>En los últimos 4 meses, Anthropic lanzó más de 50 features de Claude.</p>
+
+  <p>Algunas cambian cómo trabajas. Otras no. Y hay una diferencia enorme entre las dos.</p>
+
+  <p>Esta guía es el mapa completo. No un resumen de noticias, no una lista de features al azar, no una traducción del blog de Anthropic.</p>
+
+  <p>Es el stack completo, organizado por cómo lo vas a usar en tu empresa, en tu negocio, o en tu carrera. Con lo que funciona, lo que aún no funciona, y el orden para configurarlo sin perder tiempo.</p>
+
+  <h3>Tres promesas</h3>
+
+  <ul>
+    <li>Vas a saber qué features existen, qué hacen, y cuáles te sirven hoy (no en teoría)</li>
+    <li>Vas a tener un orden de prioridad para configurarlo todo en 60 minutos</li>
+    <li>Vas a saber también qué NO hace Claude — porque la honestidad es más útil que el hype</li>
+  </ul>
+
+  <p>Nada en esta guía requiere que sepas programar. Todo está accesible desde el plan que ya tienes (o un upgrade claro si lo necesitas).</p>
+</section>
+
+<!-- SECTION 2: MAPA COMPLETO -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h1 class="section-title">El mapa completo 2026</h1>
+  </div>
+
+  <p>Claude ya no es un chat. Es cuatro superficies conectadas, más una capa de modelos que las alimenta:</p>
+
+  <h3>Los 5 componentes del stack</h3>
+
+  <ul>
+    <li><strong>Modelos</strong> — El cerebro. Opus 4.6, Sonnet 4.6, Haiku 4.5. Distintas capacidades, distintos precios.</li>
+    <li><strong>Claude.ai (web + móvil)</strong> — El punto de entrada. Chat, memoria, visuales, extensión de Chrome.</li>
+    <li><strong>Claude Cowork (desktop)</strong> — El agente que vive en tu Mac o Windows. Trabaja en tus archivos reales.</li>
+    <li><strong>Claude Code (terminal)</strong> — Para construir. Agent Teams, skills, hooks, routines.</li>
+    <li><strong>API + plataforma</strong> — Para productizar. Managed Agents, Agent SDK, Compliance API.</li>
+  </ul>
+
+  <p>Cada superficie ganó capacidades en paralelo. La pregunta correcta no es "cuál uso" sino "cuál es mi superficie principal y cuáles son de apoyo."</p>
+
+  <h2>Timeline: 4 meses, 50+ features</h2>
+
+  <div class="timeline-month">
+    <div class="timeline-month-header">Enero 2026</div>
+    <ul>
+      <li>Claude Cowork Research Preview (12 ene)</li>
+      <li>Cowork en planes Pro (16 ene)</li>
+      <li>HIPAA-Ready Enterprise (12 ene)</li>
+      <li>Deprecación de Opus 4 y 4.1 del selector (16 ene)</li>
+    </ul>
+  </div>
+
+  <div class="timeline-month">
+    <div class="timeline-month-header">Febrero 2026</div>
+    <ul>
+      <li>Claude Opus 4.6 — 1M contexto, 128K output (5 feb)</li>
+      <li>Claude Sonnet 4.6 — default Pro y Free (17 feb)</li>
+      <li>Fast Mode para Opus 4.6 — research preview (7 feb)</li>
+      <li>Claude para Excel, PowerPoint — research preview (5 feb)</li>
+      <li>Analytics API (13 feb)</li>
+      <li>Self-Serve Enterprise (12 feb)</li>
+      <li>Cowork Plugins + Marketplace (24 feb)</li>
+      <li>Enterprise Connectors — 13 nuevos (24 feb)</li>
+      <li>Scheduled Tasks (25 feb)</li>
+      <li>Free Claude Max para OSS Maintainers (27 feb)</li>
+      <li>Claude Code Security — vulnerability scanner (20 feb)</li>
+    </ul>
+  </div>
+
+  <div class="timeline-month">
+    <div class="timeline-month-header">Marzo 2026</div>
+    <ul>
+      <li>Claude for Office — contexto compartido (11 mar)</li>
+      <li>Inline Visuals — charts y diagramas nativos (12 mar)</li>
+      <li>1M Context GA a precio estándar (13 mar)</li>
+      <li>Persistent Thread cross-device en Cowork (17 mar)</li>
+      <li>Channels — Telegram, Discord, iMessage (20 mar)</li>
+      <li>Computer Use — research preview (23 mar)</li>
+      <li>Auto Mode para Claude Code (24 mar)</li>
+      <li>Interactive Apps en mobile (25 mar)</li>
+      <li>Compliance API (30 mar)</li>
+      <li>Anthropic Institute (11 mar)</li>
+      <li>Partner Network +$100M (12 mar)</li>
+    </ul>
+  </div>
+
+  <div class="timeline-month">
+    <div class="timeline-month-header">Abril 2026</div>
+    <ul>
+      <li>Project Glasswing — Claude Mythos preview (7 abr)</li>
+      <li>Claude Managed Agents — beta pública (8 abr)</li>
+      <li>Cowork GA en Windows (9 abr)</li>
+      <li>Claude para Word — beta Team/Enterprise (abril)</li>
+      <li>Redesigned Claude Code Desktop — agentes en paralelo (14 abr)</li>
+      <li>Routines — automatizaciones en la nube de Claude Code (14 abr)</li>
+    </ul>
+  </div>
+
+  <blockquote>Ninguna otra empresa de IA está lanzando a esta velocidad. Y la mayoría de los que usan Claude a diario no conocen ni la mitad.</blockquote>
+</section>
+
+<!-- SECTION 3: LAS 3 RUTAS -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h1 class="section-title">Las 3 rutas por perfil</h1>
+  </div>
+
+  <p>No todos necesitan lo mismo. Esta guía funciona porque te permite saltar directo a tu perfil.</p>
+
+  <p>Elige uno — o lee los tres si lideras equipos con los tres perfiles.</p>
+
+  <div class="route">
+    <div class="route-header">
+      <div class="route-label">Ruta A</div>
+      <h2 class="route-persona">Ejecutivo con equipo y presupuesto</h2>
+      <p class="route-objective">Tu objetivo: convertir Claude en una línea del P&amp;L, no en un experimento.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>01 · Claude for Office + contexto compartido</h4>
+      <p>La feature que más ROI tiene para tu equipo. Tu equipo analiza en Excel, Claude construye la presentación en PowerPoint, redacta el memo en Word — todo con el mismo contexto. El tax que hoy se paga de "pasar datos a slides" desaparece.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>02 · Cowork plugins + marketplace privado</h4>
+      <p>Instalas plugins por función: Finanzas, Legal, Ventas, Marketing, Operaciones, HR. El equivalente a contratar 6 firmas especializadas, pero en un clic y sin onboarding. En plan Team o Enterprise, tu admin controla qué plugins ve cada persona.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>03 · Connectors (Google Workspace, Slack, Docusign, FactSet, Harvey)</h4>
+      <p>Claude conectado a tu stack real, no a lo que tu equipo le pegue en el chat. Son gratuitos y cambian la economía de cualquier reporte semanal.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>04 · Scheduled tasks</h4>
+      <p>El briefing diario de las 7am. El reporte de los viernes. La revisión de competencia cada lunes. Todo autónomo. Tu equipo deja de hacer trabajo repetitivo y empieza a hacer decisiones.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>05 · Audit logs + compliance API</h4>
+      <p>Tu CISO va a querer saber que existen dos mecanismos distintos. Los <strong>Audit Logs</strong> del admin console están disponibles en Team y Enterprise — registran actividad administrativa y de recursos (members, API keys, permisos, uploads), pero <strong>no incluyen prompts ni respuestas del chat</strong>. Para audit de contenido (chat, archivos), Anthropic tiene el <strong>Compliance API</strong> — exclusivo Enterprise bajo NDA, que sí extrae activity logs, chat data y file content para evidencia SOC 2 / ISO 27001.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>06 · Cowork GA en Windows (9 abril)</h4>
+      <p>Hasta hace 5 días, Cowork era solo Mac. Hoy está GA en ambos. Es el momento en que IT puede estandarizar y desplegar a toda la empresa con confianza.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>07 · Memory (cross-session)</h4>
+      <p>Claude deja de re-presentarse contigo en cada sesión. Recuerda tu empresa, tus prioridades, tu formato preferido. Rollout incremental — confirma la disponibilidad en tu plan.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>08 · Opus 4.6 con 1M de contexto a precio estándar</h4>
+      <p>Metes el board pack completo, el data room de una adquisición, o el corpus legal entero en un solo prompt. Sin segmentar. Sin perder hilo. A precio estándar desde el 13 de marzo.</p>
+    </div>
+
+    <div class="question-box">
+      <div class="q-label">Pregunta para el lunes</div>
+      <p>¿Cuántas horas a la semana está mi equipo haciendo trabajo que cualquiera de estas 8 features elimina?</p>
+    </div>
+  </div>
+
+  <div class="route">
+    <div class="route-header">
+      <div class="route-label">Ruta B</div>
+      <h2 class="route-persona">Founder que quiere escalar sin equipo</h2>
+      <p class="route-objective">Tu objetivo: operar como un equipo de 15 con 3 personas (o tú solo).</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>01 · Cowork + scheduled tasks + dispatch</h4>
+      <p>El combo que reemplaza un COO. Scheduled Tasks corre tu cadencia operativa. Dispatch te deja mandar tareas desde el celular cuando no estás frente al Mac. Tu operación se ejecuta mientras tú haces el trabajo que solo tú puedes hacer.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>02 · Agent teams (agentes en paralelo)</h4>
+      <p>En Claude Code, puedes correr varios agentes coordinados por un team lead. No hay un límite duro — la práctica común es 3-5 para tareas típicas, pero Anthropic ha documentado ejemplos con más de 15 agentes trabajando en paralelo. Experimental: se activa con <code>CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=true</code>.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>03 · /ultraplan</h4>
+      <p>Le dices lo que quieres construir. Claude arma el plan completo en una session en la nube. Tú lo revisas, lo ajustas, y él lo ejecuta. Planificación asíncrona sin bloquearte.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>04 · Routines (14 abril)</h4>
+      <p>Automatizaciones de Claude Code que corren en la infraestructura de Anthropic. Tu Mac no necesita estar encendida. Nightly repo hygiene, workflows triggereados por GitHub, agentes que responden a eventos.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>05 · Claude managed agents (beta pública)</h4>
+      <p>Productizar un agente propio sin montar Kubernetes, sin manejar sandboxing, sin implementar agent loops. Pagas $0.08 por session-hour + tokens. Notion, Rakuten, Sentry y Asana ya están en producción con esto.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>06 · Agent SDK</h4>
+      <p>El mismo agent loop que usa Claude Code, programable en Python y TypeScript. Si quieres capacidades tipo Claude Code dentro de tu propio producto, esto es el atajo.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>07 · Channels (Telegram / Discord / iMessage)</h4>
+      <p>Le mandas tareas a Claude Code desde el celular. Tu sesión en el Mac ejecuta. Un detalle importante: si cierras la terminal, la sesión muere. Usa tmux o screen si planeas tareas largas.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>08 · Prompt caching + batch API</h4>
+      <p>Reducción del costo entre 50% y 90% cuando el uso escala. El cache-hit cuesta 10% del costo de input estándar. Batch te da 50% de descuento en procesamiento asíncrono. Combinables.</p>
+    </div>
+
+    <div class="question-box">
+      <div class="q-label">Pregunta para hoy</div>
+      <p>¿Qué parte de mi operación no requiere mi intervención activa, pero todavía la estoy haciendo yo?</p>
+    </div>
+  </div>
+
+  <div class="route">
+    <div class="route-header">
+      <div class="route-label">Ruta C</div>
+      <h2 class="route-persona">Profesional que quiere dejar de sentirse atrás</h2>
+      <p class="route-objective">Tu objetivo: pasar de "uso ChatGPT a veces" a "opero el stack completo de Claude."</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>01 · Claude.ai memory (plan gratuito)</h4>
+      <p>El punto de partida. Claude te aprende con el tiempo. Sin costo. Activa en Settings. Importante: es summary-based, no retrieval-augmented — útil, pero no sustituye un sistema RAG real.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>02 · Claude para Excel + PowerPoint</h4>
+      <p>El upgrade de más alto apalancamiento para el trabajo que muchos profesionales ya hacen. Pivot tables, fórmulas complejas, generación de slides preservando tu plantilla. Tu próximo reporte debería pasar por aquí.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>03 · Claude en Chrome (extensión)</h4>
+      <p>Captura screenshots, lee páginas, llena formularios, graba workflows repetitivos. El piso de entrada es bajísimo. Disponible en Max beta, rollout en expansión.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>04 · Voice mode (móvil o Claude Code)</h4>
+      <p>Hablas en lugar de escribir. Español incluido. Baja drásticamente la barrera si escribir te frena.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>05 · Inline visuals</h4>
+      <p>Le das datos, obtienes un gráfico nativo en el chat. Sin pasar a otro tool. Útil para entender algo rápido o para meter una visualización en un documento.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>06 · Claude Cowork (plan Pro)</h4>
+      <p>El salto cualitativo. Un agente que trabaja en tus archivos reales. El "asistente de IA en mi Mac" que de verdad entrega.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>07 · Skills (plug-and-play)</h4>
+      <p>Hay skills pre-construidas por Anthropic que ya hacen cosas complejas. No necesitas construir desde cero. Empieza usándolas antes de crear las tuyas.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>08 · Interactive apps en móvil (25 marzo)</h4>
+      <p>Claude construye apps interactivas que ves y usas directamente desde el celular. Útil para prototipar ideas sin abrir una laptop.</p>
+    </div>
+
+    <div class="question-box">
+      <div class="q-label">Pregunta para esta semana</div>
+      <p>¿Cuál de estas features me mueve más del paso A al paso B? Empieza por esa. No necesitas las 8.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: SHIFTS MENTALES -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h1 class="section-title">Los 13 shifts mentales</h1>
+  </div>
+
+  <p>Si Claude cambió en 4 meses, la forma de usarlo también. Estos son los cambios de mindset que separan a quien saca 10% del valor de quien saca 10x:</p>
+
+  <table class="shift-table">
+    <tr>
+      <td>Copiar-pegar de Gmail al chat de Claude</td>
+      <td>Usar Connectors. Claude lee tu inbox con tu permiso.</td>
+    </tr>
+    <tr>
+      <td>Abrir Claude y re-explicarle tu empresa cada sesión</td>
+      <td>Activar Memory. Revisar el summary mensualmente.</td>
+    </tr>
+    <tr>
+      <td>Cortar documentos para que quepan en contexto</td>
+      <td>Usar 1M tokens a precio estándar. Meter el documento entero.</td>
+    </tr>
+    <tr>
+      <td>Correr un agente a la vez, secuencialmente</td>
+      <td>Agent Teams en paralelo, o Dispatch desde el celular.</td>
+    </tr>
+    <tr>
+      <td>Correr manualmente el mismo prompt cada lunes</td>
+      <td>Scheduled Tasks en Cowork, o Routines en Code.</td>
+    </tr>
+    <tr>
+      <td>Prender Claude solo cuando estás en tu escritorio</td>
+      <td>Channels (Telegram/Discord) + Dispatch desde el celular.</td>
+    </tr>
+    <tr>
+      <td>Tratar Claude como un chatbot que responde preguntas</td>
+      <td>Usarlo como un agente que ejecuta trabajo y reporta.</td>
+    </tr>
+    <tr>
+      <td>Subir un Excel solo para que lo resuma</td>
+      <td>Claude para Excel — edita el archivo en el mismo lugar.</td>
+    </tr>
+    <tr>
+      <td>Tomar screenshots y describir lo que ves</td>
+      <td>Claude en Chrome — captura y lee directo.</td>
+    </tr>
+    <tr>
+      <td>Montar tu propio sandbox, auth y estado de agente</td>
+      <td>Managed Agents. Enfócate en la lógica, no en la infra.</td>
+    </tr>
+    <tr>
+      <td>Preguntarte "¿Opus o Sonnet?" en cada tarea</td>
+      <td>Default a Sonnet 4.6. Usa Opus solo para razonamiento crítico.</td>
+    </tr>
+    <tr>
+      <td>Pagar Opus premium por prompts repetitivos</td>
+      <td>Prompt Caching. El contexto repetido cuesta 10%.</td>
+    </tr>
+    <tr>
+      <td>Probar Claude solo dentro de los productos de Anthropic</td>
+      <td>Claude corre en Cursor, Zed, GitHub Copilot, Vercel AI Gateway, Replit.</td>
+    </tr>
+  </table>
+
+  <blockquote>Si aplicas 3 de estos, ya estás por encima del 80% de los usuarios activos.</blockquote>
+</section>
+
+<!-- SECTION 5: SETUP 60 MIN -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <h1 class="section-title">Setup en 60 minutos</h1>
+  </div>
+
+  <p>Si acabas de leer esto, tienes 60 minutos, y quieres máximo impacto para mañana — este es el orden exacto.</p>
+
+  <h3>Minuto 0–5 · Elige el plan correcto</h3>
+  <ul>
+    <li>Solo Claude.ai + web: <strong>Pro ($20/mes)</strong> es suficiente para probar todo.</li>
+    <li>Cowork en desktop: <strong>Pro</strong> es el piso; <strong>Max</strong> te da más quota y prioridad.</li>
+    <li>Claude para Office: ya incluido en Pro.</li>
+    <li>Agent Teams, /ultraplan, Channels: instala Claude Code (CLI gratis, usa la quota de tu plan).</li>
+  </ul>
+
+  <h3>Minuto 5–15 · Activa memory</h3>
+  <ul>
+    <li>Claude.ai → Settings → Memory → activa.</li>
+    <li>Dale un prompt inicial: "Soy [rol] en [empresa]. Hacemos [qué]. Mis 3 prioridades actuales son X, Y, Z. Respóndeme en español."</li>
+  </ul>
+
+  <h3>Minuto 15–25 · Instala los connectors correctos</h3>
+  <ul>
+    <li>Google Workspace (Calendar + Drive + Gmail) = 90% del ROI de cualquier knowledge worker.</li>
+    <li>Slack si tu equipo lo usa.</li>
+    <li>DocuSign si firmas contratos con frecuencia.</li>
+  </ul>
+
+  <h3>Minuto 25–40 · Instala los add-ins de Claude para Office</h3>
+  <ul>
+    <li>Microsoft AppSource → "Claude by Anthropic" → instala Excel, PowerPoint, Word.</li>
+    <li>Abre tu última hoja de cálculo importante. Pregúntale: "Resume esto para un VP y constrúyeme un deck de 3 slides con los 3 insights clave."</li>
+  </ul>
+
+  <h3>Minuto 40–50 · Instala Claude Cowork</h3>
+  <ul>
+    <li>Desktop app → activa Cowork → dale acceso a 2 carpetas locales.</li>
+    <li>Primera tarea: "Organiza esta carpeta por tema y créame un README con lo que contiene."</li>
+    <li>Crea 1 Scheduled Task: "Cada mañana a las 8am, resume mis emails no leídos y los top 3 canales de Slack en una página de Notion."</li>
+  </ul>
+
+  <h3>Minuto 50–60 · Instala Claude Code (si construyes algo)</h3>
+  <pre><code>npm install -g @anthropic-ai/claude-code
+cd tu-proyecto
+claude</code></pre>
+  <ul>
+    <li>Prueba <code>/ultraplan</code> con un refactor pequeño.</li>
+    <li>Añade Channels: conecta un bot de Telegram. Mándale un mensaje desde tu celular para confirmar.</li>
+  </ul>
+
+  <h3>Bonus · Siguientes 60 minutos si tienes energía</h3>
+  <ul>
+    <li>Explora el Marketplace de Cowork Plugins. Instala 2 plugins relevantes para tu rol.</li>
+    <li>Instala la extensión de Chrome.</li>
+    <li>Si usas API, activa Prompt Caching.</li>
+  </ul>
+</section>
+
+<!-- SECTION 6: LAS 6 FEATURES -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-number">06</span>
+    <h1 class="section-title">Las 6 features que cambian todo</h1>
+  </div>
+
+  <p>Estas son las 6 features que vas a ver esta semana, una por día, en LinkedIn. Aquí las tienes antes y con más profundidad.</p>
+
+  <h2>6.1 · Cowork + context management</h2>
+
+  <h4>Qué es</h4>
+  <p>Una estructura de carpetas que le da contexto permanente a Claude Cowork. Una vez configurada, mejora cada semana.</p>
+
+  <h4>Por qué importa</h4>
+  <p>La mayoría de usuarios de Cowork escriben prompts largos cada sesión y obtienen resultados genéricos. El problema nunca fue el prompt. Es que Claude no te conoce.</p>
+
+  <h4>La estructura</h4>
+  <pre><code>CLAUDE COWORK/
+├── CONTEXT/              ← quién eres, cómo escribes, cómo quieres trabajar
+├── PROJECTS/             ← una subcarpeta por proyecto
+├── TEMPLATES/            ← plantillas de entregables recurrentes
+├── ASSETS/               ← imágenes, logos, datasets
+└── REFERENCE/            ← documentos que informan todo tu trabajo</code></pre>
+
+  <h4>La carpeta que nadie menciona</h4>
+  <p>REFERENCE. Ahí viven los documentos transversales — contratos marco, guías de marca, investigaciones de mercado, manuales internos. Sin esto, le repites el contexto a Claude en cada sesión.</p>
+
+  <h4>La prueba</h4>
+  <p>Los archivos <code>voice-and-style.md</code>, <code>audience-profile.md</code> y <code>CLAUDE.md</code> de este sistema de contenido son este patrón. Claude ya me conoce antes de que escriba una palabra.</p>
+
+  <h4>Acción</h4>
+  <p>Crea la carpeta hoy. Llena CONTEXT primero (3 archivos, 30 minutos). Añade REFERENCE cuando identifiques documentos que usas en múltiples proyectos.</p>
+
+  <div class="divider-rule">· · ·</div>
+
+  <h2>6.2 · Connectors</h2>
+
+  <h4>Qué es</h4>
+  <p>Integraciones nativas que conectan Claude Cowork con tus herramientas reales — Gmail, Google Drive, Slack, Calendar, Docusign, y más de 50 más.</p>
+
+  <h4>Lo que cambia</h4>
+  <p>No son integraciones superficiales. Claude navega tu Drive autónomamente, lee documentos, sintetiza entre fuentes, redacta emails, revisa contratos. Con acceso real, no con lo que tú le pegues.</p>
+
+  <h4>Setup en 2 minutos</h4>
+  <ul>
+    <li>Settings → Connectors</li>
+    <li>Busca la integración</li>
+    <li>Click "Add"</li>
+    <li>Autentica</li>
+    <li>Listo. Una vez. Para siempre.</li>
+  </ul>
+
+  <p><strong>Gratis en todos los planes.</strong> Incluso el gratuito.</p>
+
+  <h4>3 prompts para empezar hoy</h4>
+
+  <p><em>Con Gmail + Slack:</em></p>
+  <div class="prompt">Revisa mis mensajes de Slack de los últimos 7 días y dame un resumen de lo que necesita follow-up. Organízalo por urgencia.</div>
+
+  <p><em>Con Google Drive:</em></p>
+  <div class="prompt">Encuentra el documento más reciente sobre [proyecto] en mi Drive. Léelo y dame los 3 puntos más importantes.</div>
+
+  <p><em>Con Calendar:</em></p>
+  <div class="prompt">Revisa mi calendario de esta semana, identifica conflictos, y redacta un email para reprogramar la reunión de menor prioridad.</div>
+
+  <div class="question-box">
+    <div class="q-label">La pregunta</div>
+    <p>¿Cuántas horas a la semana pasas moviendo información entre herramientas manualmente? Ese es el tiempo que Connectors te devuelve.</p>
+  </div>
+
+  <div class="divider-rule">· · ·</div>
+
+  <h2>6.3 · Plugins por rol</h2>
+
+  <h4>Qué es</h4>
+  <p>Plugins pre-construidos por función. No son plugins genéricos — ya saben tu trabajo. Cada uno incluye comandos, connectors y flujos listos.</p>
+
+  <h4>Roles oficiales disponibles</h4>
+  <p>Ventas, Marketing, Legal, Finanzas, Data, Producto, Customer Support, HR, Operaciones, Diseño, Ingeniería, Brand Voice.</p>
+
+  <h4>Cómo usarlos</h4>
+  <p>Instalas en 1 clic desde el marketplace. Activas escribiendo <code>/</code> en cualquier chat.</p>
+
+  <ul>
+    <li><code>/marketing:draft-content</code> — toma tu brand voice, tu audiencia, tus plantillas y redacta el contenido.</li>
+    <li><code>/sales:call-prep</code> — investiga la cuenta y prepara los talking points.</li>
+    <li><code>/legal:review</code> — lee el contrato y te señala las cláusulas riesgosas.</li>
+    <li><code>/data:explore</code> — subes un CSV, resume columnas, detecta anomalías, escribe SQL.</li>
+    <li><code>/productivity:start</code> — revisa tu agenda y te prepara el día.</li>
+  </ul>
+
+  <h4>El detalle que cambia todo</h4>
+  <p>Después de instalar, escribe:</p>
+  <div class="prompt">Customize the [nombre-del-plugin] plugin for me based on my company.</div>
+  <p>Claude te pregunta sobre tus flujos, tu terminología, tus preferencias. Y las recuerda.</p>
+
+  <h4>En Team y Enterprise</h4>
+  <p>El admin controla marketplaces privados con plugins internos. Tu empresa despliega especialistas de IA entrenados en su propia operación.</p>
+
+  <div class="divider-rule">· · ·</div>
+
+  <h2>6.4 · Scheduled tasks</h2>
+
+  <h4>Qué es</h4>
+  <p>Tareas recurrentes o bajo demanda que corren solas en Claude Cowork. Se combinan con Connectors y plugins.</p>
+
+  <h4>El ejemplo del viernes</h4>
+  <div class="prompt">Cada viernes a las 10:30 a.m., revisa los documentos en /reportes-semanales de mi Drive y los mensajes de #métricas en Slack de los últimos 7 días. Compila: números clave, avances por área, riesgos. Guárdalo en /reportes-semanales/YYYY-MM-DD-cierre.md y déjalo como borrador en Gmail dirigido a mi equipo con el asunto "Cierre de semana - [fecha]".</div>
+
+  <p>Una instrucción. Un viernes. Después: nunca más lo haces manualmente.</p>
+
+  <h4>Setup</h4>
+  <ul>
+    <li>Claude Desktop → Customize</li>
+    <li>Crea tu Scheduled Task</li>
+    <li>Conecta Gmail y Drive en Connectors</li>
+    <li>Deja tu computadora encendida a esa hora</li>
+  </ul>
+
+  <h4>Lo que tienes que saber</h4>
+  <p>Scheduled Tasks en Cowork requiere que tu Mac esté encendida a la hora de ejecución. Si necesitas independencia de dispositivo, mira Routines (la versión de Claude Code).</p>
+
+  <h4>Qué otras tareas corren solas</h4>
+  <ul>
+    <li>8 a.m. — Brief de noticias de IA</li>
+    <li>Mediodía — Check de competencia</li>
+    <li>Tarde — Digest de comunidades relevantes</li>
+  </ul>
+
+  <p>20-30 minutos cada una. Casi 2 horas al día que dejas de tocar.</p>
+
+  <div class="divider-rule">· · ·</div>
+
+  <h2>6.5 · Dispatch</h2>
+
+  <h4>Qué es</h4>
+  <p>El puente entre tu celular y Claude Cowork en tu Mac. Desde el móvil le mandas instrucciones. Tu computadora las ejecuta mientras tú estás en movimiento.</p>
+
+  <h4>El caso de uso real</h4>
+  <p>Sales de una reunión importante. 3 horas de decisiones. 40 cosas por documentar. Tu equipo se fue a otra junta. Tú vas caminando al carro intentando no olvidar las 5 cosas más críticas.</p>
+
+  <p>Desde el celular:</p>
+  <div class="prompt">Lee las notas de la reunión de arquitectura que acabo de guardar en /reuniones. Compila las decisiones en un brief con: qué decidimos, quién es responsable, y deadlines. Deja un borrador en Gmail para [equipo] y actualiza el doc de arquitectura en Drive.</div>
+
+  <p>Cuando llegas a tu escritorio, todo listo. Solo revisas y envías.</p>
+
+  <h4>Setup en 5 minutos</h4>
+  <ul>
+    <li>Claude Desktop → Cowork → Dispatch en el sidebar</li>
+    <li>Activa "Keep awake" (sin esto, se detiene cuando la laptop duerme)</li>
+    <li>Claude móvil → Dispatch en el sidebar</li>
+    <li>Listo</li>
+  </ul>
+
+  <h4>3 cosas que nadie te dice</h4>
+  <ul>
+    <li>Dispatch no lee tu CLAUDE.md por defecto. Inclúyelo explícitamente: "lee mi CLAUDE.md antes de empezar."</li>
+    <li>Los Connectors se configuran en desktop ANTES de salir. Dispatch los hereda.</li>
+    <li>No puedes adjuntar archivos desde móvil. Mándalos por email y dile a Dispatch que los jale desde Gmail.</li>
+  </ul>
+
+  <p>Disponible en Pro y Max.</p>
+
+  <div class="divider-rule">· · ·</div>
+
+  <h2>6.6 · Channels (Claude Code)</h2>
+
+  <h4>Qué es</h4>
+  <p>Un MCP server que conecta tu sesión de Claude Code a Telegram, Discord o iMessage. Le escribes por chat. Claude procesa con acceso completo a tus archivos, git y herramientas. Te responde por el mismo chat.</p>
+
+  <h4>Cuándo lo usas</h4>
+  <ul>
+    <li>Sales por un café: le mandas la tarea, vuelves y está lista</li>
+    <li>En una reunión: corre los tests mientras tú hablas</li>
+    <li>Manejando: actualiza el changelog y prepara el deploy</li>
+    <li>Fin de semana: resuelves un bug sin abrir el laptop</li>
+  </ul>
+
+  <h4>Setup</h4>
+  <pre><code>/plugin install telegram@claude-plugins-official
+/telegram:configure &lt;TU_BOT_TOKEN&gt;
+claude --channels plugin:telegram@claude-plugins-official</code></pre>
+
+  <p>Mandas un mensaje al bot, te devuelve un código de pairing, conectas. Discord funciona igual con su propio plugin.</p>
+
+  <h4>El detalle que tienes que saber</h4>
+  <p>La sesión del terminal tiene que seguir corriendo. Usa tmux, screen, o un proceso en background. Si cierras la terminal, la sesión muere.</p>
+
+  <h4>Por qué importa</h4>
+  <p>Hace unos meses, la comunidad construyó OpenClaw — un proyecto open source para mandarle mensajes a tu IA por Telegram antes de que Anthropic tuviera algo oficial. Hoy Anthropic envió la versión oficial, nativa, construida sobre MCP.</p>
+
+  <blockquote>Dejó de sentirse como herramienta. Empezó a sentirse como infraestructura.</blockquote>
+</section>
+
+<!-- SECTION 7: LO QUE CLAUDE NO HACE -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-number">07</span>
+    <h1 class="section-title">Lo que Claude NO hace (todavía)</h1>
+  </div>
+
+  <p>El hype sobre IA es barato. La honestidad sobre qué no funciona es más valiosa. Si vas a apostarle a Claude, necesitas saber dónde todavía no llega.</p>
+
+  <ol>
+    <li><strong>Generación nativa de imágenes o video.</strong> Claude analiza imágenes, no las genera. Para crear imágenes o video usa Midjourney, DALL·E, Runway, Veo. Claude puede orquestarlos vía MCP, pero no los produce él mismo.</li>
+
+    <li><strong>Voz que habla de regreso.</strong> Voice Mode existe para input (Claude Code y móvil). Voice output (Claude hablándote con voz natural) no es una feature de primera clase todavía.</li>
+
+    <li><strong>Cowork Projects NO sincronizan entre miembros de un equipo.</strong> Los Projects viven en tu máquina. Si quieres estado de agente compartido en el equipo, necesitas Managed Agents o infraestructura custom.</li>
+
+    <li><strong>No hay generación de audio o música.</strong> Punto.</li>
+
+    <li><strong>Ojo con la diferencia Audit Logs vs. Compliance API.</strong> Los Audit Logs estándar (admin console, Team/Enterprise) registran actividad administrativa — pero NO prompts ni respuestas. Si necesitas audit de contenido (chat, files), existe un Compliance API separado, exclusivo de Enterprise bajo NDA.</li>
+
+    <li><strong>Channels muere cuando cierras la terminal.</strong> No es un entorno de coding hospedado. Tu Mac sigue siendo la superficie de ejecución.</li>
+
+    <li><strong>No hay vector store nativo ni RAG persistente.</strong> La memoria de Claude es basada en resúmenes, no en retrieval. Para RAG serio sigues necesitando Pinecone, Weaviate, Turbopuffer, o tu propio store.</li>
+
+    <li><strong>Managed Agents es beta pública.</strong> SLA de producción, residencia regional, y precio para GA aún no están fijos. Lo que pagues hoy puede cambiar.</li>
+
+    <li><strong>Fast Mode tiene precios hostiles.</strong> 6x el costo estándar de Opus. Es un tool de nicho para latencia, no un daily driver.</li>
+
+    <li><strong>Haiku 4.5 no tiene las protecciones anti-prompt-injection que tienen Sonnet y Opus.</strong> No le des a un agente Haiku tools sensibles (tu email, tu CRM, APIs de pago).</li>
+
+    <li><strong>No hay Claude-dentro-de-Google-Docs como Gemini.</strong> Connectors leen Workspace, pero no hay un add-in nativo estilo "Claude en el documento."</li>
+
+    <li><strong>Computer Use sigue en research preview.</strong> Espera errores, clicks muertos, y ocasionalmente "Claude hizo click en el botón equivocado durante 15 minutos." Supervísalo.</li>
+
+    <li><strong>Modelos se deprecan. Planifica.</strong> Opus 4 y 4.1 salieron del selector el 16 de enero. Sonnet 4 y Sonnet 4.5 con contexto de 1M tokens (beta) se retiran el 30 de abril de 2026. La vida útil de un modelo en uso activo es 6-12 meses.</li>
+  </ol>
+</section>
+
+<!-- SECTION 8: GLOSARIO -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-number">08</span>
+    <h1 class="section-title">Glosario técnico en español</h1>
+  </div>
+
+  <p>Términos que vas a encontrar. Traducidos sin perder precisión:</p>
+
+  <table>
+    <tr>
+      <th style="width: 40%">Término</th>
+      <th>Definición</th>
+    </tr>
+    <tr>
+      <td><strong>Agent / Agente</strong></td>
+      <td>Claude configurado para ejecutar una tarea autónomamente, no solo responder una pregunta. Tiene acceso a tools, memoria, y un objetivo.</td>
+    </tr>
+    <tr>
+      <td><strong>Agent SDK</strong></td>
+      <td>La librería que te permite construir agentes usando el mismo motor que usa Claude Code. Disponible en Python y TypeScript.</td>
+    </tr>
+    <tr>
+      <td><strong>Claude.ai</strong></td>
+      <td>La interfaz web y móvil donde chateas con Claude directamente.</td>
+    </tr>
+    <tr>
+      <td><strong>Claude Code</strong></td>
+      <td>El CLI (terminal) orientado a construir software. Incluye Agent Teams, Skills, Hooks, Channels.</td>
+    </tr>
+    <tr>
+      <td><strong>Claude Cowork</strong></td>
+      <td>La app de escritorio donde Claude trabaja en tus archivos reales. Disponible en Mac y Windows.</td>
+    </tr>
+    <tr>
+      <td><strong>Computer Use</strong></td>
+      <td>Capacidad de Claude para controlar tu mouse y teclado — abrir apps, llenar formularios, navegar. Research preview.</td>
+    </tr>
+    <tr>
+      <td><strong>Connector</strong></td>
+      <td>Una integración nativa entre Claude y una herramienta externa (Gmail, Drive, Slack). Se autoriza una vez.</td>
+    </tr>
+    <tr>
+      <td><strong>Context Window</strong></td>
+      <td>La cantidad de tokens (palabras, aproximadamente) que Claude puede procesar en una sola conversación. Opus y Sonnet 4.6 tienen 1M tokens.</td>
+    </tr>
+    <tr>
+      <td><strong>Hooks</strong></td>
+      <td>Comandos de shell que se ejecutan automáticamente antes o después de acciones de Claude Code. Guardarraíles deterministas.</td>
+    </tr>
+    <tr>
+      <td><strong>Managed Agents</strong></td>
+      <td>Infraestructura hospedada por Anthropic para correr agentes autónomos. Pagas por session-hour + tokens.</td>
+    </tr>
+    <tr>
+      <td><strong>MCP (Model Context Protocol)</strong></td>
+      <td>El protocolo que permite a Claude conectarse con herramientas externas de forma estándar. Es el "USB-C de la IA." Stewarded por la Linux Foundation.</td>
+    </tr>
+    <tr>
+      <td><strong>Plugin</strong></td>
+      <td>Un paquete de skills, comandos y connectors orientado a una función (Marketing, Legal, Ventas). Instalable desde el marketplace.</td>
+    </tr>
+    <tr>
+      <td><strong>Prompt Caching</strong></td>
+      <td>Técnica para evitar pagar por contexto repetido. El cache-hit cuesta 10% del input estándar.</td>
+    </tr>
+    <tr>
+      <td><strong>Routines</strong></td>
+      <td>Automatizaciones de Claude Code que corren en la infraestructura de Anthropic (no en tu máquina local).</td>
+    </tr>
+    <tr>
+      <td><strong>Scheduled Tasks</strong></td>
+      <td>Tareas recurrentes que Claude Cowork ejecuta en tu Mac a horas específicas. Requieren tu máquina encendida.</td>
+    </tr>
+    <tr>
+      <td><strong>Skill</strong></td>
+      <td>Una capacidad reusable configurada en <code>.claude/skills/</code>. Cada skill es una carpeta con scripts, assets e instrucciones.</td>
+    </tr>
+    <tr>
+      <td><strong>Token</strong></td>
+      <td>La unidad mínima de texto que Claude procesa. ~0.75 palabras = 1 token en español.</td>
+    </tr>
+  </table>
+</section>
+
+<!-- SECTION 9: QUE SIGUE -->
+<section class="final-cta">
+  <div class="section-header">
+    <span class="section-number">09</span>
+    <h1 class="section-title">Qué sigue</h1>
+  </div>
+
+  <p>Si llegaste hasta aquí, ya tienes el mapa completo del stack Claude 2026. Pero saber qué existe y configurarlo son dos cosas distintas.</p>
+
+  <h3>Esta semana (14-20 de abril)</h3>
+  <p>Voy a publicar un post por día en LinkedIn explicando una de las 6 features del capítulo 6 con detalle. Si quieres seguir la serie con más contexto, busca los posts.</p>
+
+  <h3>En los próximos días</h3>
+  <p>Te voy a mandar 2 emails cortos. El primero el día 2 — con la feature de esta guía que casi nadie está usando bien (y que tiene el ROI más alto). El segundo el día 5 — con una invitación a algo que estoy preparando para los que quieren pasar de "conozco Claude" a "opero Claude en mi trabajo."</p>
+
+  <h3>Si esta guía te sirvió</h3>
+  <p>La mejor forma de agradecerla es usarla. Configura 2 features esta semana. No 10, no 20. Dos.</p>
+
+  <blockquote>La diferencia entre quienes leen sobre IA y quienes la operan es exactamente esta semana.</blockquote>
+
+  <div class="colophon">
+    <strong>Irina Vélez</strong><br>
+    San Francisco · Abril 2026<br><br>
+    Esta guía se actualiza trimestralmente. La próxima versión (julio 2026) incluirá las features que se lancen en Q2.
+  </div>
+</section>
+
+</body>
+</html>

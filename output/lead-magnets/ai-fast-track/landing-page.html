@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Fast Track · De usuario a power user de Claude en 7 días · Modo Build</title>
+  <meta name="description" content="Curso gratuito por email. 7 emails, 7 frameworks, 7 días. De usar Claude para lo básico a dominarlo como un profesional. Sin código.">
+
+  <!--
+    AI FAST TRACK — Landing page v4
+    Adjustments:
+      · 1 mention of "gratis" total (hero microcopy)
+      · No em-dashes
+      · No newsletter link in nav (zero distractions)
+      · No unsubscribe microcopy (trust the product)
+      · No SF attribution (course ≠ geography)
+      · Para-quién cards: single-line descriptions
+      · Curriculum: v2 short format (title + one-line description)
+      · Final CTA: big-type "7 días. 7 emails. De usuario a power user."
+      · Book mockup in hero for tangibility
+    Built: 2026-04-17
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==== Reset ==== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #0A0A0C;
+      color: #FBE8D9;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ==== Layout ==== */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 112px 0; border-bottom: 1px solid rgba(251, 232, 217, 0.08); }
+    .section:last-of-type { border-bottom: none; }
+
+    /* ==== Typography ==== */
+    h1, h2, h3, h4 {
+      font-family: 'Manrope', sans-serif;
+      color: #FBE8D9;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+    }
+    h1 {
+      font-size: clamp(44px, 7.5vw, 96px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.92;
+    }
+    h2 { font-size: clamp(36px, 6vw, 64px); font-weight: 700; }
+    h3 { font-size: clamp(22px, 2.8vw, 32px); font-weight: 600; letter-spacing: -0.02em; }
+    h4 { font-size: clamp(18px, 2vw, 22px); font-weight: 600; }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      color: #FF5941;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 28px;
+    }
+
+    .deck {
+      font-size: clamp(18px, 2.1vw, 22px);
+      color: #FBE8D9;
+      opacity: 0.85;
+      max-width: 560px;
+      line-height: 1.5;
+      margin-top: 24px;
+      font-weight: 400;
+    }
+
+    .byline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      color: #88898C;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-top: 32px;
+    }
+    .byline strong {
+      color: #FBE8D9;
+      font-weight: 600;
+    }
+
+    /* ==== CTA ==== */
+    .cta-form {
+      display: flex;
+      gap: 12px;
+      max-width: 560px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .cta-form input[type="email"] {
+      flex: 1;
+      min-width: 240px;
+      background: rgba(251, 232, 217, 0.06);
+      border: 1px solid rgba(251, 232, 217, 0.18);
+      color: #FBE8D9;
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      padding: 20px 22px;
+      outline: none;
+      transition: border-color 150ms ease;
+    }
+    .cta-form input[type="email"]:focus {
+      border-color: #FF5941;
+    }
+    .cta-form input[type="email"]::placeholder {
+      color: #88898C;
+    }
+    .cta-form button {
+      background: #FF5941;
+      color: #0A0A0C;
+      font-family: 'Manrope', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 0 36px;
+      border: none;
+      cursor: pointer;
+      letter-spacing: -0.01em;
+      transition: transform 150ms ease;
+      white-space: nowrap;
+    }
+    .cta-form button:hover { transform: translate(0, -2px); }
+
+    .cta-microcopy {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #88898C;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-top: 20px;
+    }
+    .cta-microcopy .dot {
+      color: #FF5941;
+      font-weight: 800;
+      margin: 0 10px;
+    }
+
+    /* ==== Brand mark ==== */
+    .cursor-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .cursor-block {
+      display: inline-block;
+      width: 10px;
+      height: 18px;
+      background: #FF5941;
+      animation: blink 1.2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+    /* ==== Hero layout with book mockup ==== */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-book { order: -1; justify-self: center; }
+    }
+
+    /* ==== Book mockup (pure CSS, 3D perspective) ==== */
+    .book-stage {
+      perspective: 1800px;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+    }
+    .book {
+      position: relative;
+      width: 280px;
+      height: 380px;
+      transform-style: preserve-3d;
+      transform: rotateY(-24deg) rotateX(2deg);
+      transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .book:hover {
+      transform: rotateY(-16deg) rotateX(2deg);
+    }
+    .book-cover {
+      position: absolute;
+      inset: 0;
+      background: #0A0A0C;
+      border: 1px solid rgba(251, 232, 217, 0.1);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow:
+        -26px 26px 60px rgba(0, 0, 0, 0.55),
+        -8px 8px 24px rgba(255, 89, 65, 0.06);
+      overflow: hidden;
+    }
+    .book-cover::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      width: 6px;
+      background: #FF5941;
+    }
+    .book-cover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 10%, rgba(255, 89, 65, 0.10) 0, transparent 45%);
+      pointer-events: none;
+    }
+    .book-pages {
+      position: absolute;
+      top: 6px; bottom: 6px;
+      right: -8px;
+      width: 8px;
+      background: repeating-linear-gradient(
+        90deg,
+        #FBE8D9 0, #FBE8D9 1px,
+        #EFE5D6 1px, #EFE5D6 2px
+      );
+      transform: rotateY(0deg);
+    }
+    .book-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .book-header {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      color: #88898C;
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .book-header .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #FBE8D9;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: -0.01em;
+    }
+    .book-header .mark-block {
+      width: 6px;
+      height: 10px;
+      background: #FF5941;
+      display: inline-block;
+    }
+    .book-title-block { margin-top: 24px; }
+    .book-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #FF5941;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .book-title {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      color: #FBE8D9;
+      margin-bottom: 14px;
+    }
+    .book-title .lime { color: #D4FF3A; }
+    .book-subtitle {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.3;
+      color: #FBE8D9;
+      opacity: 0.78;
+    }
+    .book-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .book-badge {
+      display: inline-block;
+      background: #D4FF3A;
+      color: #0A0A0C;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      padding: 5px 10px;
+    }
+    .book-author {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: #88898C;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-align: right;
+    }
+    .book-author strong {
+      display: block;
+      color: #FBE8D9;
+      font-weight: 600;
+      font-size: 10px;
+      margin-top: 2px;
+    }
+
+    /* ==== Audience cards ==== */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .audience-card {
+      border-top: 2px solid #FF5941;
+      padding-top: 28px;
+    }
+    .audience-card .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: #FF5941;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      margin-bottom: 14px;
+    }
+    .audience-card h3 {
+      margin-bottom: 14px;
+    }
+    .audience-card p {
+      color: #FBE8D9;
+      opacity: 0.82;
+      line-height: 1.5;
+      font-size: 17px;
+    }
+
+    /* ==== Responsive helpers ==== */
+    @media (max-width: 768px) {
+      .section { padding: 72px 0; }
+      h1 { line-height: 0.95; }
+      .cta-form { flex-direction: column; }
+      .cta-form button { padding: 20px; }
+      .book { width: 240px; height: 330px; }
+      .book-title { font-size: 34px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     NAV — minimal, no distractions
+     ============================================================ -->
+<nav style="padding: 28px 0;">
+  <div class="container">
+    <a href="#" class="cursor-mark">
+      <span class="cursor-block"></span> MODO BUILD
+    </a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     01. HERO — text left, book mockup right
+     ============================================================ -->
+<section class="section" style="padding-top: 48px; padding-bottom: 112px;">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Text column -->
+      <div>
+        <p class="eyebrow">
+          ▌▌▌&nbsp;&nbsp;CURSO · 7 DÍAS · POR EMAIL
+        </p>
+
+        <h1 style="margin-bottom: 20px;">
+          De usuario a power user de Claude en 7 días.
+        </h1>
+
+        <p class="deck">
+          7 emails. 7 frameworks. Los mismos que uso cada semana para construir con Claude.
+        </p>
+
+        <p class="byline">
+          Por <strong>Irina Vélez</strong>
+        </p>
+
+        <form class="cta-form" action="https://modobuild.beehiiv.com/subscribe" method="post" novalidate>
+          <input type="email" name="email" placeholder="tu@email.com" required>
+          <button type="submit">Empezar ahora&nbsp;&nbsp;→</button>
+        </form>
+
+        <p class="cta-microcopy">
+          Gratis <span class="dot">·</span> 15 min / día <span class="dot">·</span> Sin tarjeta de crédito
+        </p>
+      </div>
+
+      <!-- Book mockup column -->
+      <div class="hero-book">
+        <div class="book-stage">
+          <div class="book">
+            <div class="book-pages"></div>
+            <div class="book-cover">
+              <div class="book-inner">
+
+                <div class="book-header">
+                  <span class="mark"><span class="mark-block"></span> MODO BUILD</span>
+                  <span>NO.01</span>
+                </div>
+
+                <div class="book-title-block">
+                  <p class="book-eyebrow">▌▌▌ AI FAST TRACK</p>
+                  <h2 class="book-title">De usuario a <span class="lime">power user</span> de Claude.</h2>
+                  <p class="book-subtitle">Curso por email. 7 días. 7 frameworks.</p>
+                </div>
+
+                <div class="book-footer">
+                  <span class="book-badge">7 DÍAS</span>
+                  <div class="book-author">
+                    Por
+                    <strong>Irina Vélez</strong>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     02. PARA QUIÉN — punchy cards, one line each
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">▌&nbsp;&nbsp;Para quién</p>
+    <h2 style="max-width: 960px;">
+      Para profesionales que ya saben que Claude importa, y quieren sacarle el máximo.
+    </h2>
+
+    <div class="audience-grid">
+      <div class="audience-card">
+        <p class="label">Ya usas Claude</p>
+        <h3>Y sabes que hay más</h3>
+        <p>Usas Claude ocasionalmente, pero sientes que estás en la superficie.</p>
+      </div>
+      <div class="audience-card">
+        <p class="label">Usuario de ChatGPT</p>
+        <h3>Listo para dar el salto</h3>
+        <p>Claude tiene capacidades que ChatGPT no. Aprendes cuándo usar cada uno.</p>
+      </div>
+      <div class="audience-card">
+        <p class="label">Líderes y emprendedores</p>
+        <h3>Necesitas resultados reales</h3>
+        <p>Sin tiempo para teoría. Aplicas cada framework a algo real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     03. QUÉ VAS A LOGRAR — 4 imperative bullets, no em-dashes
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">▌&nbsp;&nbsp;Qué vas a lograr</p>
+    <h2 style="margin-bottom: 48px; max-width: 860px;">
+      Al terminar los 7 días habrás hecho esto:
+    </h2>
+
+    <ul style="list-style: none; display: grid; gap: 24px; max-width: 880px;">
+      <li style="display: grid; grid-template-columns: 44px 1fr; gap: 20px; align-items: baseline;">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 32px; font-weight: 800; color: #FF5941; line-height: 1;">→</span>
+        <p style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 500; color: #FBE8D9; line-height: 1.35; letter-spacing: -0.015em;">
+          Escribir prompts que funcionan a la primera. Sin reformular, sin repetir.
+        </p>
+      </li>
+      <li style="display: grid; grid-template-columns: 44px 1fr; gap: 20px; align-items: baseline;">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 32px; font-weight: 800; color: #FF5941; line-height: 1;">→</span>
+        <p style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 500; color: #FBE8D9; line-height: 1.35; letter-spacing: -0.015em;">
+          Convertir Claude en tu segundo cerebro con Projects y bases de conocimiento.
+        </p>
+      </li>
+      <li style="display: grid; grid-template-columns: 44px 1fr; gap: 20px; align-items: baseline;">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 32px; font-weight: 800; color: #FF5941; line-height: 1;">→</span>
+        <p style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 500; color: #FBE8D9; line-height: 1.35; letter-spacing: -0.015em;">
+          Construir reportes, apps y prototipos con Artifacts, sin programar.
+        </p>
+      </li>
+      <li style="display: grid; grid-template-columns: 44px 1fr; gap: 20px; align-items: baseline;">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 32px; font-weight: 800; color: #FF5941; line-height: 1;">→</span>
+        <p style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 500; color: #FBE8D9; line-height: 1.35; letter-spacing: -0.015em;">
+          Analizar Excel, PDFs y documentos complejos en segundos.
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     04. EL PROGRAMA DÍA POR DÍA — short v2 format
+     ============================================================ -->
+<section class="section" id="curriculum">
+  <div class="container">
+    <p class="eyebrow">▌&nbsp;&nbsp;Qué incluye</p>
+    <h2 style="margin-bottom: 72px; max-width: 860px;">
+      El programa día por día.
+    </h2>
+
+    <div style="display: grid; gap: 40px;">
+
+      <article style="display: grid; grid-template-columns: 96px 1fr; gap: 28px; align-items: start; padding-bottom: 40px; border-bottom: 1px solid rgba(251, 232, 217, 0.08);">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 56px; font-weight: 800; color: #FF5941; line-height: 1; letter-spacing: -0.04em;">1.</span>
+        <div>
+          <h3 style="margin-bottom: 12px;">El concepto que lo cambia todo: ventana de contexto</h3>
+          <p style="color: #FBE8D9; opacity: 0.82; line-height: 1.6;">
+            El contexto es la piedra angular para obtener los mejores resultados de la IA. Por eso es el primer paso.
+          </p>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: 96px 1fr; gap: 28px; align-items: start; padding-bottom: 40px; border-bottom: 1px solid rgba(251, 232, 217, 0.08);">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 56px; font-weight: 800; color: #FF5941; line-height: 1; letter-spacing: -0.04em;">2.</span>
+        <div>
+          <h3 style="margin-bottom: 12px;">Anatomía de un prompt efectivo</h3>
+          <p style="color: #FBE8D9; opacity: 0.82; line-height: 1.6;">
+            Frameworks profesionales que funcionan: Chain of Thought, Few-Shot Learning, y herramientas para optimizar tus prompts.
+          </p>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: 96px 1fr; gap: 28px; align-items: start; padding-bottom: 40px; border-bottom: 1px solid rgba(251, 232, 217, 0.08);">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 56px; font-weight: 800; color: #FF5941; line-height: 1; letter-spacing: -0.04em;">3.</span>
+        <div>
+          <h3 style="margin-bottom: 12px;">Projects: tu segundo cerebro con memoria</h3>
+          <p style="color: #FBE8D9; opacity: 0.82; line-height: 1.6;">
+            Cómo crear bases de conocimiento personalizadas y automatizar tareas repetitivas sin contratar a nadie.
+          </p>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: 96px 1fr; gap: 28px; align-items: start; padding-bottom: 40px; border-bottom: 1px solid rgba(251, 232, 217, 0.08);">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 56px; font-weight: 800; color: #FF5941; line-height: 1; letter-spacing: -0.04em;">4.</span>
+        <div>
+          <h3 style="margin-bottom: 12px;">Artifacts: un prompt, un entregable</h3>
+          <p style="color: #FBE8D9; opacity: 0.82; line-height: 1.6;">
+            Claude es tu partner para crear y completar tu lista de tareas más rápido. Deja que Claude haga el trabajo por ti.
+          </p>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: 96px 1fr; gap: 28px; align-items: start; padding-bottom: 40px; border-bottom: 1px solid rgba(251, 232, 217, 0.08);">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 56px; font-weight: 800; color: #FF5941; line-height: 1; letter-spacing: -0.04em;">5.</span>
+        <div>
+          <h3 style="margin-bottom: 12px;">Tu Excel tiene respuestas ocultas</h3>
+          <p style="color: #FBE8D9; opacity: 0.82; line-height: 1.6;">
+            Usa Claude para analizar hojas de cálculo, PDFs y extraer insights de documentos complejos en segundos.
+          </p>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: 96px 1fr; gap: 28px; align-items: start; padding-bottom: 40px; border-bottom: 1px solid rgba(251, 232, 217, 0.08);">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 56px; font-weight: 800; color: #FF5941; line-height: 1; letter-spacing: -0.04em;">6.</span>
+        <div>
+          <h3 style="margin-bottom: 12px;">Cómo hacer que Claude hable como tú</h3>
+          <p style="color: #FBE8D9; opacity: 0.82; line-height: 1.6;">
+            Crea artículos, emails, reportes y contenido de alta calidad adaptado a tu voz y estilo.
+          </p>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: 96px 1fr; gap: 28px; align-items: start;">
+        <span style="font-family: 'Manrope', sans-serif; font-size: 56px; font-weight: 800; color: #FF5941; line-height: 1; letter-spacing: -0.04em;">7.</span>
+        <div>
+          <h3 style="margin-bottom: 12px;">Ya eres power user de Claude</h3>
+          <p style="color: #FBE8D9; opacity: 0.82; line-height: 1.6;">
+            Diseña aplicaciones personalizadas para tu trabajo y construye tu mapa para seguir creciendo.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     05. FINAL CTA — big-type closer
+     ============================================================ -->
+<section id="empezar" class="section" style="padding: 144px 0; text-align: center; border-bottom: none;">
+  <div class="container">
+    <p class="eyebrow" style="display: inline-block; margin-bottom: 32px;">▌▌▌&nbsp;&nbsp;Empezar</p>
+
+    <h2 style="font-size: clamp(48px, 9vw, 104px); font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; margin-bottom: 48px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+      7 días. 7 emails.<br>De usuario a power user.
+    </h2>
+
+    <form class="cta-form" style="margin: 0 auto; justify-content: center;" action="https://modobuild.beehiiv.com/subscribe" method="post" novalidate>
+      <input type="email" name="email" placeholder="tu@email.com" required>
+      <button type="submit">Empezar ahora&nbsp;&nbsp;→</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER — cursor mark + minimal
+     ============================================================ -->
+<footer style="padding: 40px 0 56px; border-top: 1px solid rgba(251, 232, 217, 0.08);">
+  <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; align-items: center;">
+    <a href="#" class="cursor-mark" style="color: #88898C;">
+      <span class="cursor-block" style="background: #88898C;"></span> MODO BUILD
+    </a>
+    <p class="byline" style="margin: 0;">© 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>

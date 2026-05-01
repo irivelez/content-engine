@@ -25,14 +25,15 @@ node_modules/
 
 # Output folders (drafts are work-in-progress, not versioned)
 output/linkedin/drafts/
-output/beehiiv/drafts/
+output/newsletter/drafts/
 
-# Keep published content
-!output/linkedin/published/
-!output/beehiiv/published/
+# Keep shipped/published content (LinkedIn = workflow kanban; newsletter = canonical)
+!output/linkedin/shipped/
+!output/newsletter/published/
 
 # Research is local working files
 research/
 
 # Input briefings (generated, not versioned)
 input/
+.gstack/

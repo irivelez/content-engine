@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="La Red — network grid with highlighted node, systems and connections">
+  <!-- Hero illustration: "La Red" — the network -->
+  <!-- Systems + connections: dot grid with network lines + one highlighted node. -->
+  <!-- Palette: obsidian #0A0A0C dots + lines, coral #FF5941 highlighted node -->
+
+  <defs>
+    <style>
+      .node       { fill: #0A0A0C; opacity: 0.5; }
+      .link       { stroke: #0A0A0C; stroke-width: 1; opacity: 0.7; }
+      .link-hero  { stroke: #FF5941; stroke-width: 1.5; }
+      .meta-mark  { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #88898C; letter-spacing: 0.2em; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <!-- Dot grid: 10 columns × 6 rows -->
+  <!-- Columns x: 60, 113, 167, 220, 273, 327, 380, 433, 487, 540 -->
+  <!-- Rows y: 70, 126, 182, 238, 294, 350 -->
+
+  <!-- Row 1 (y=70) -->
+  <circle class="node" cx="60"  cy="70" r="2"/>
+  <circle class="node" cx="113" cy="70" r="2"/>
+  <circle class="node" cx="167" cy="70" r="2"/>
+  <circle class="node" cx="220" cy="70" r="2"/>
+  <circle class="node" cx="273" cy="70" r="2"/>
+  <circle class="node" cx="327" cy="70" r="2"/>
+  <circle class="node" cx="380" cy="70" r="2"/>
+  <circle class="node" cx="433" cy="70" r="2"/>
+  <circle class="node" cx="487" cy="70" r="2"/>
+  <circle class="node" cx="540" cy="70" r="2"/>
+
+  <!-- Row 2 (y=126) -->
+  <circle class="node" cx="60"  cy="126" r="2"/>
+  <circle class="node" cx="113" cy="126" r="2"/>
+  <circle class="node" cx="167" cy="126" r="2"/>
+  <circle class="node" cx="220" cy="126" r="2"/>
+  <circle class="node" cx="273" cy="126" r="2"/>
+  <circle class="node" cx="327" cy="126" r="2"/>
+  <circle class="node" cx="380" cy="126" r="2"/>
+  <circle class="node" cx="433" cy="126" r="2"/>
+  <circle class="node" cx="487" cy="126" r="2"/>
+  <circle class="node" cx="540" cy="126" r="2"/>
+
+  <!-- Row 3 (y=182) — contains the hero node at x=273 -->
+  <circle class="node" cx="60"  cy="182" r="2"/>
+  <circle class="node" cx="113" cy="182" r="2"/>
+  <circle class="node" cx="167" cy="182" r="2"/>
+  <circle class="node" cx="220" cy="182" r="2"/>
+  <!-- Hero node placeholder (will overlay coral below) -->
+  <circle class="node" cx="327" cy="182" r="2"/>
+  <circle class="node" cx="380" cy="182" r="2"/>
+  <circle class="node" cx="433" cy="182" r="2"/>
+  <circle class="node" cx="487" cy="182" r="2"/>
+  <circle class="node" cx="540" cy="182" r="2"/>
+
+  <!-- Row 4 (y=238) -->
+  <circle class="node" cx="60"  cy="238" r="2"/>
+  <circle class="node" cx="113" cy="238" r="2"/>
+  <circle class="node" cx="167" cy="238" r="2"/>
+  <circle class="node" cx="220" cy="238" r="2"/>
+  <circle class="node" cx="273" cy="238" r="2"/>
+  <circle class="node" cx="327" cy="238" r="2"/>
+  <circle class="node" cx="380" cy="238" r="2"/>
+  <circle class="node" cx="433" cy="238" r="2"/>
+  <circle class="node" cx="487" cy="238" r="2"/>
+  <circle class="node" cx="540" cy="238" r="2"/>
+
+  <!-- Row 5 (y=294) -->
+  <circle class="node" cx="60"  cy="294" r="2"/>
+  <circle class="node" cx="113" cy="294" r="2"/>
+  <circle class="node" cx="167" cy="294" r="2"/>
+  <circle class="node" cx="220" cy="294" r="2"/>
+  <circle class="node" cx="273" cy="294" r="2"/>
+  <circle class="node" cx="327" cy="294" r="2"/>
+  <circle class="node" cx="380" cy="294" r="2"/>
+  <circle class="node" cx="433" cy="294" r="2"/>
+  <circle class="node" cx="487" cy="294" r="2"/>
+  <circle class="node" cx="540" cy="294" r="2"/>
+
+  <!-- Row 6 (y=350) -->
+  <circle class="node" cx="60"  cy="350" r="2"/>
+  <circle class="node" cx="113" cy="350" r="2"/>
+  <circle class="node" cx="167" cy="350" r="2"/>
+  <circle class="node" cx="220" cy="350" r="2"/>
+  <circle class="node" cx="273" cy="350" r="2"/>
+  <circle class="node" cx="327" cy="350" r="2"/>
+  <circle class="node" cx="380" cy="350" r="2"/>
+  <circle class="node" cx="433" cy="350" r="2"/>
+  <circle class="node" cx="487" cy="350" r="2"/>
+  <circle class="node" cx="540" cy="350" r="2"/>
+
+  <!-- Network connections radiating from hero node at (273, 182) -->
+  <line class="link-hero" x1="273" y1="182" x2="220" y2="182"/>
+  <line class="link-hero" x1="273" y1="182" x2="327" y2="182"/>
+  <line class="link-hero" x1="273" y1="182" x2="273" y2="126"/>
+  <line class="link-hero" x1="273" y1="182" x2="273" y2="238"/>
+  <line class="link-hero" x1="273" y1="182" x2="220" y2="238"/>
+  <line class="link-hero" x1="273" y1="182" x2="327" y2="238"/>
+  <line class="link-hero" x1="273" y1="182" x2="380" y2="182"/>
+  <line class="link-hero" x1="273" y1="182" x2="220" y2="126"/>
+
+  <!-- Secondary connections (subtle, suggests propagation) -->
+  <line class="link" x1="220" y1="126" x2="167" y2="126"/>
+  <line class="link" x1="327" y1="182" x2="380" y2="238"/>
+  <line class="link" x1="220" y1="238" x2="167" y2="294"/>
+  <line class="link" x1="380" y1="182" x2="433" y2="182"/>
+
+  <!-- Hero node ring (coral circle outline) -->
+  <circle cx="273" cy="182" r="14" fill="none" stroke="#FF5941" stroke-width="1.5"/>
+
+  <!-- Hero node (solid coral dot) -->
+  <circle cx="273" cy="182" r="5" fill="#FF5941"/>
+
+  <!-- Corner metadata -->
+  <text x="40"  y="385" class="meta-mark">La Red 03</text>
+  <text x="560" y="385" class="meta-mark" text-anchor="end">Node 273.182</text>
+</svg>

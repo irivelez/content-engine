@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Amanecer — minimalist dawn with rising coral sun above horizon">
+  <!-- Hero illustration: "Amanecer" — the dawn -->
+  <!-- New era opening. Brutal minimalism: one horizon, one sun, one signal. -->
+  <!-- Palette: obsidian #0A0A0C horizon, coral #FF5941 sun + signal dot -->
+
+  <defs>
+    <style>
+      .horizon { fill: none; stroke: #0A0A0C; stroke-width: 1.5; }
+      .horizon-fine { fill: none; stroke: #0A0A0C; stroke-width: 0.5; opacity: 0.35; }
+      .meta-mark { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #88898C; letter-spacing: 0.2em; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <!-- Sun — solid coral half-circle rising above horizon -->
+  <path d="M 190,280 A 110,110 0 0 1 410,280 Z" fill="#FF5941"/>
+
+  <!-- Horizon line (primary) -->
+  <line class="horizon" x1="60" y1="280" x2="540" y2="280"/>
+
+  <!-- Secondary horizon hints (subtle atmospheric bands) -->
+  <line class="horizon-fine" x1="80"  y1="320" x2="220" y2="320"/>
+  <line class="horizon-fine" x1="380" y1="320" x2="520" y2="320"/>
+  <line class="horizon-fine" x1="120" y1="350" x2="480" y2="350"/>
+
+  <!-- Distant signal point (planet/star/satellite) -->
+  <circle cx="450" cy="175" r="4" fill="#FF5941"/>
+
+  <!-- Tiny secondary mark -->
+  <circle cx="475" cy="165" r="1.5" fill="#FF5941" opacity="0.6"/>
+
+  <!-- Corner metadata -->
+  <text x="40"  y="370" class="meta-mark">Amanecer 02</text>
+  <text x="560" y="370" class="meta-mark" text-anchor="end">07:00 PT</text>
+</svg>

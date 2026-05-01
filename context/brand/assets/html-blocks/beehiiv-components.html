@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Beehiiv Components — Señal v2</title>
+  <!--
+    Beehiiv HTML Component Library — Señal (v2, adopted 2026-04-14)
+
+    Purpose: Copy-paste snippets for Beehiiv custom HTML blocks.
+    Each component self-contained with inline styles for email safety.
+
+    Palette:
+      --obsidian:  #0A0A0C   (text, structure, dark-block fills)
+      --paper:     #FBE8D9   (coral-tinted cream base — ~55-60%)
+      --coral:     #FF5941   (ACTION weapon — CTAs, quotes, emotion)
+      --lime:      #D4FF3A   (DATA weapon — metrics, code, system — dark bg ONLY)
+      --titanium:  #88898C   (metadata)
+
+    Typography:
+      Display:  'Manrope', sans-serif           (Google Fonts, variable 400-800)
+      Body:     'Inter', sans-serif          (Google Fonts)
+      Mono:     'JetBrains Mono', monospace  (Google Fonts)
+
+    CORAL vs LIME — critical:
+      CORAL = action/warmth/emotion — CTAs, pull quotes, primary weapon
+      LIME  = data/code/system — metrics, tags, code (on obsidian ONLY)
+      Lime on paper bg = illegible. Never use lime as text on paper.
+  -->
+
+  <style>
+    body { background: #FBE8D9; margin: 0; padding: 40px 20px; font-family: 'Inter', sans-serif; }
+    .preview { max-width: 600px; margin: 0 auto 80px; background: #FBE8D9; }
+    .preview-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #FF5941; text-transform: uppercase; letter-spacing: 0.2em; margin: 0 0 12px; padding: 0 20px; }
+  </style>
+</head>
+<body>
+
+<!-- ===============================================================
+     01. MASTHEAD — Broadcast header with massive issue number
+     =============================================================== -->
+<p class="preview-label">01 — Masthead</p>
+<div class="preview">
+
+<!-- START: Masthead -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FBE8D9;">
+  <tr>
+    <td style="padding:56px 32px 32px 32px;">
+      <p style="font-family:'JetBrains Mono','SF Mono',Consolas,monospace; font-size:11px; font-weight:500; color:#FF5941; text-transform:uppercase; letter-spacing:0.2em; margin:0 0 20px 0;">
+        SF &nbsp;/&nbsp; [DATE_ES]  &nbsp;/&nbsp; 07:00
+      </p>
+      <h1 style="font-family:'Manrope',-apple-system,sans-serif; font-size:96px; font-weight:800; color:#0A0A0C; letter-spacing:-0.05em; line-height:0.88; margin:0 0 16px 0;">
+        NO.[NUMBER]
+      </h1>
+      <p style="font-family:'Inter',-apple-system,Arial,sans-serif; font-size:13px; font-weight:500; color:#0A0A0C; text-transform:uppercase; letter-spacing:0.3em; margin:0 0 24px 0;">
+        Guía Práctica &nbsp;·&nbsp; Por Irina Velez
+      </p>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding-right:4px;"><div style="width:10px; height:10px; background:#0A0A0C;"></div></td>
+          <td style="padding-right:4px;"><div style="width:10px; height:10px; background:#FF5941;"></div></td>
+          <td><div style="width:10px; height:10px; background:#0A0A0C;"></div></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- END: Masthead -->
+
+</div>
+
+<!-- ===============================================================
+     02. HERO — TYPOGRAPHIC (default, no image needed)
+     =============================================================== -->
+<p class="preview-label">02 — Hero Typographic</p>
+<div class="preview">
+
+<!-- START: Hero Typographic -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FBE8D9;">
+  <tr>
+    <td style="padding:40px 32px 56px 32px;">
+      <p style="font-family:'JetBrains Mono','SF Mono',monospace; font-size:11px; font-weight:500; color:#FF5941; text-transform:uppercase; letter-spacing:0.2em; margin:0 0 24px 0;">
+        ▌▌▌&nbsp;&nbsp;Dispatch
+      </p>
+      <h2 style="font-family:'Manrope',-apple-system,sans-serif; font-size:56px; font-weight:800; color:#0A0A0C; line-height:0.95; letter-spacing:-0.035em; margin:0 0 24px 0;">
+        [HOOK — 6 a 12 palabras declarativas]
+      </h2>
+      <p style="font-family:'Inter',-apple-system,Arial,sans-serif; font-size:18px; font-weight:400; color:#0A0A0C; line-height:1.4; margin:0;">
+        [Deck — una línea que expande el hook, 20 palabras máx.]
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- END: Hero Typographic -->
+
+</div>
+
+<!-- ===============================================================
+     03. HERO — WITH ILLUSTRATION (Señal / Amanecer / Red)
+     =============================================================== -->
+<p class="preview-label">03 — Hero with Illustration</p>
+<div class="preview">
+
+<!-- START: Hero with Illustration -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FBE8D9;">
+  <tr>
+    <td align="center" style="padding:32px 32px 16px 32px;">
+      <!-- Rotation: Señal ~40%, Amanecer ~30%, Red ~20%, typographic-only ~10%.
+           Convert SVG → PNG at 2x (1200x800) for email compatibility. -->
+      <img src="[ILLUSTRATION_URL]" alt="" width="540" style="display:block; max-width:100%; height:auto; margin:0 auto;">
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:32px 32px 56px 32px;">
+      <p style="font-family:'JetBrains Mono','SF Mono',monospace; font-size:11px; font-weight:500; color:#FF5941; text-transform:uppercase; letter-spacing:0.2em; margin:0 0 16px 0;">
+        ▌▌▌&nbsp;&nbsp;Dispatch
+      </p>
+      <h2 style="font-family:'Manrope',-apple-system,sans-serif; font-size:52px; font-weight:800; color:#0A0A0C; line-height:0.95; letter-spacing:-0.035em; margin:0 0 20px 0;">
+        [HOOK]
+      </h2>
+      <p style="font-family:'Inter',-apple-system,Arial,sans-serif; font-size:18px; color:#0A0A0C; line-height:1.4; margin:0;">
+        [Deck]
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- END: Hero with Illustration -->
+
+</div>
+
+<!-- ===============================================================
+     04. HERO — WITH PHOTO (single pro photo, rotating treatments)
+     =============================================================== -->
+<p class="preview-label">04 — Hero with Photo</p>
+<div class="preview">
+
+<!-- START: Hero with Photo -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FBE8D9;">
+  <tr>
+    <td style="padding:0;">
+      <!-- Photo treatments to rotate (see README.md):
+           1. Warm natural  2. Obsidian×Paper duotone  3. Warm B&W  4. Coral×Obsidian duotone
+           Target: 3:1 landscape crop, 1800x600px, <150KB -->
+      <img src="[PHOTO_URL]" alt="Irina Velez" width="600" style="display:block; width:100%; height:auto;">
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:40px 32px 56px 32px;">
+      <p style="font-family:'JetBrains Mono','SF Mono',monospace; font-size:11px; font-weight:500; color:#FF5941; text-transform:uppercase; letter-spacing:0.2em; margin:0 0 20px 0;">
+        Desde la trinchera
+      </p>
+      <h2 style="font-family:'Manrope',-apple-system,sans-serif; font-size:52px; font-weight:800; color:#0A0A0C; line-height:0.95; letter-spacing:-0.035em; margin:0 0 20px 0;">
+        [HOOK]
+      </h2>
+      <p style="font-family:'Inter',-apple-system,Arial,sans-serif; font-size:18px; color:#0A0A0C; line-height:1.4; margin:0;">
+        [Deck]
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- END: Hero with Photo -->
+
+</div>
+
+<!-- ===============================================================
+     05. SECTION HEADER — Numbered section ("01.", "02.", "03.")
+     =============================================================== -->
+<p class="preview-label">05 — Section Header</p>
+<div class="preview">
+
+<!-- START: Section Header -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FBE8D9;">
+  <tr>
+    <td style="padding:48px 32px 16px 32px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td valign="top" style="padding-right:20px;">
+            <p style="font-family:'JetBrains Mono','SF Mono',monospace; font-size:14px; font-weight:600; color:#FF5941; letter-spacing:0.1em; margin:0; line-height:1;">
+              0[N].
+            </p>
+          </td>
+          <td valign="top">
+            <h3 style="font-family:'Manrope',-apple-system,sans-serif; font-size:28px; font-weight:700; color:#0A0A0C; line-height:1.1; letter-spacing:-0.02em; margin:0;">
+              [Título de sección]
+            </h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- END: Section Header -->
+
+</div>
+
+<!-- ===============================================================
+     06. PULL QUOTE — The Conviction Weapon (one per issue max, coral)
+     =============================================================== -->
+<p class="preview-label">06 — Pull Quote (once per issue)</p>
+<div class="preview">
+
+<!-- START: Pull Quote -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FBE8D9;">
+  <tr>
+    <td style="padding:48px 32px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="border-left:4px solid #FF5941; padding:8px 0 8px 32px;">
+            <p style="font-family:'Manrope',-apple-system,sans-serif; font-size:32px; font-weight:600; color:#FF5941; line-height:1.15; letter-spacing:-0.025em; margin:0;">
+              [Claim contrarian — la frase que nadie se atreve a decir, 20 palabras máx.]
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- END: Pull Quote -->
+
+</div>
+
+<!-- ===============================================================
+     07. SECTION DIVIDER — 5-bar signal pattern, coral
+     =============================================================== -->
+<p class="preview-label">07 — Section Divider</p>
+<div class="preview">
+
+<!-- START: Section Divider -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FBE8D9;">
+  <tr>
+    <td align="center" style="padding:32px 0;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding:0 3px;"><div style="width:3px; height:6px; background:#FF5941;"></div></td>
+          <td style="padding:0 3px;"><div style="width:3px; height:14px; background:#FF5941;"></div></td>
+          <td style="padding:0 3px;"><div style="width:3px; height:20px; background:#FF5941;"></div></td>
+          <td style="padding:0 3px;"><div style="width:3px; height:14px; background:#FF5941;"></div></td>
+          <td style="padding:0 3px;"><div style="width:3px; height:6px; background:#FF5941;"></div></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- END: Section Divider -->
+
+</div>
+
+<!-- ===============================================================
+     08. METRIC HERO — Obsidian block + lime number
+     THE data moment. High contrast. Signature technical identity.
+     =============================================================== -->
+<p class="preview-label">08 — Metric Hero</p>
+<div class="preview">
+
+<!-- START: Metric Hero -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#0A0A0C;">
+  <tr>
+    <td align="left" style="padding:56px 40px;">
+      <p style="margin:0 0 20px 0;">
+        <span style="display:inline-block; background:#D4FF3A; color:#0A0A0C; font-family:'JetBrains Mono','SF Mono',monospace; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.2em; padding:4px 10px;">
+          Data
+        </span>
+      </p>
+      <p style="font-family:'JetBrains Mono','SF Mono',monospace; font-size:11px; font-weight:500; color:#FBE8D9; text-transform:uppercase; letter-spacing:0.2em; margin:0 0 12px 0; opacity:0.6;">
+        [Label del dato]
+      </p>
+      <p style="font-family:'Manrope',-apple-system,sans-serif; font-size:112px; font-weight:800; color:#D4FF3A; line-height:0.9; letter-spacing:-0.05em; margin:0 0 20px 0;">
+        [NÚMERO]
+      </p>
+      <p style="font-family:'Inter',-apple-system,Arial,sans-serif; font-size:16px; color:#FBE8D9; line-height:1.5; margin:0; max-width:420px;">
+        [contexto del dato — una línea que explica por qué este número importa]
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- END: Metric Hero -->
+
+</div>
+
+<!-- ===============================================================
+     09. "PRUEBA ESTO" BLOCK — Action closer (obsidian + coral accent)
+     Action = coral (human) not lime (data).
+     =============================================================== -->
+<p class="preview-label">09 — Prueba Esto</p>
+<div class="preview">
+
+<!-- START: Prueba Esto Block -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#0A0A0C;">
+  <tr>
+    <td style="padding:56px 40px;">
+      <p style="font-family:'JetBrains Mono','SF Mono',monospace; font-size:11px; font-weight:500; color:#FF5941; text-transform:uppercase; letter-spacing:0.2em; margin:0 0 16px 0;">
+        ▌&nbsp;&nbsp;Prueba Esto
+      </p>
+      <h3 style="font-family:'Manrope',-apple-system,sans-serif; font-size:32px; font-weight:700; color:#FBE8D9; line-height:1.1; letter-spacing:-0.025em; margin:0 0 24px 0;">
+        [Instrucción accionable en una línea]
+      </h3>
+      <p style="font-family:'Inter',-apple-system,Arial,sans-serif; font-size:16px; font-weight:400; color:#FBE8D9; line-height:1.6; margin:0 0 20px 0;">
+        [Pasos — qué hacer, cuánto tiempo, qué vas a ver de resultado.]
+      </p>
+      <p style="font-family:'JetBrains Mono','SF Mono',monospace; font-size:13px; color:#FF5941; line-height:1.4; margin:0; letter-spacing:0.02em;">
+        → Responde este email cuando lo hagas.
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- END: Prueba Esto Block -->
+
+</div>
+
+<!-- ===============================================================
+     10. CTA SUBSCRIBE — Coral fill, obsidian text, no border radius
+     =============================================================== -->
+<p class="preview-label">10 — CTA Subscribe</p>
+<div class="preview">
+
+<!-- START: CTA Subscribe -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FBE8D9;">
+  <tr>
+    <td align="center" style="padding:56px 32px;">
+      <p style="font-family:'Manrope',-apple-system,sans-serif; font-size:28px; font-weight:500; font-style:italic; color:#0A0A0C; margin:0 0 24px 0; line-height:1.2; letter-spacing:-0.02em;">
+        ¿Te lo reenviaron?
+      </p>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="background:#FF5941;">
+            <a href="[SUBSCRIBE_URL]" target="_blank" style="display:inline-block; font-family:'Manrope',-apple-system,sans-serif; font-size:16px; font-weight:700; color:#0A0A0C; text-decoration:none; padding:18px 36px; letter-spacing:0em;">
+              Suscríbete &nbsp;→
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- END: CTA Subscribe -->
+
+</div>
+
+<!-- ===============================================================
+     11. FOOTER / SIGNATURE
+     =============================================================== -->
+<p class="preview-label">11 — Footer / Signature</p>
+<div class="preview">
+
+<!-- START: Footer Signature -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FBE8D9;">
+  <tr>
+    <td align="center" style="padding:48px 32px 16px 32px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 40px;">
+        <tr>
+          <td style="padding:0 3px;"><div style="width:6px; height:6px; background:#0A0A0C;"></div></td>
+          <td style="padding:0 3px;"><div style="width:6px; height:6px; background:#FF5941;"></div></td>
+          <td style="padding:0 3px;"><div style="width:6px; height:6px; background:#0A0A0C;"></div></td>
+        </tr>
+      </table>
+      <p style="font-family:'Manrope',-apple-system,sans-serif; font-size:28px; font-weight:500; font-style:italic; color:#0A0A0C; margin:0 0 24px 0; line-height:1.3; letter-spacing:-0.02em;">
+        Con convicción,<br>Irina
+      </p>
+      <img src="[PHOTO_CIRCLE_URL]" alt="Irina Velez" width="72" height="72" style="display:block; margin:0 auto 16px; border-radius:50%;">
+      <p style="font-family:'Inter',-apple-system,Arial,sans-serif; font-size:14px; font-weight:600; color:#0A0A0C; margin:0 0 4px 0;">
+        Irina Velez Lopez
+      </p>
+      <p style="font-family:'Inter',-apple-system,Arial,sans-serif; font-size:12px; color:#0A0A0C; margin:0 0 24px 0;">
+        Fundadora &nbsp;·&nbsp; Guía Práctica
+      </p>
+      <p style="margin:0 0 40px 0;">
+        <a href="[LINKEDIN_URL]" style="font-family:'JetBrains Mono','SF Mono',monospace; font-size:11px; font-weight:500; color:#0A0A0C; text-decoration:none; text-transform:uppercase; letter-spacing:0.2em;">
+          LinkedIn &nbsp;→
+        </a>
+      </p>
+      <p style="font-family:'JetBrains Mono','SF Mono',monospace; font-size:10px; color:#88898C; text-transform:uppercase; letter-spacing:0.15em; margin:0;">
+        <a href="%%unsubscribe_url%%" style="color:#88898C; text-decoration:none;">Darse de baja</a>
+        &nbsp;·&nbsp;
+        <a href="[ARCHIVE_URL]" style="color:#88898C; text-decoration:none;">Archivo</a>
+        &nbsp;·&nbsp;
+        NO.[NUMBER] / [YEAR]
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- END: Footer Signature -->
+
+</div>
+
+<!-- ===============================================================
+     12. DATA TAG — Inline lime badge for data moments in body
+     =============================================================== -->
+<p class="preview-label">12 — Data Tag (inline)</p>
+<div class="preview">
+
+<!-- START: Data Tag -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FBE8D9;">
+  <tr>
+    <td style="padding:32px;">
+      <p style="font-family:'Inter',-apple-system,Arial,sans-serif; font-size:18px; color:#0A0A0C; line-height:1.6; margin:0;">
+        Esta semana probé Claude Code y los resultados fueron claros.
+        <span style="display:inline-block; background:#D4FF3A; color:#0A0A0C; font-family:'JetBrains Mono','SF Mono',monospace; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.2em; padding:3px 8px; vertical-align:middle;">Data</span>
+        Construí un flujo completo en 47 minutos — lo que antes me tomaba tres tardes.
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- END: Data Tag -->
+
+</div>
+
+<!-- ===============================================================
+     13. CODE INLINE — Lime highlight for tool names, commands
+     =============================================================== -->
+<p class="preview-label">13 — Code Inline</p>
+<div class="preview">
+
+<!-- START: Code Inline -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FBE8D9;">
+  <tr>
+    <td style="padding:32px;">
+      <p style="font-family:'Inter',-apple-system,Arial,sans-serif; font-size:18px; color:#0A0A0C; line-height:1.6; margin:0;">
+        Abrí
+        <code style="background:#D4FF3A; color:#0A0A0C; font-family:'JetBrains Mono','SF Mono',monospace; font-size:15px; font-weight:500; padding:2px 6px;">claude.ai</code>
+        y pegué el mensaje. Luego corrí
+        <code style="background:#D4FF3A; color:#0A0A0C; font-family:'JetBrains Mono','SF Mono',monospace; font-size:15px; font-weight:500; padding:2px 6px;">npm&nbsp;run&nbsp;fetch</code>
+        desde la terminal. Dos minutos después tenía todo funcionando.
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- END: Code Inline -->
+
+</div>
+
+</body>
+</html>

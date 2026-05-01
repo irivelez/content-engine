@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Señal — concentric broadcast pattern emanating from center">
+  <!-- Hero illustration: "Señal" — the broadcast -->
+  <!-- Abstract transmission: concentric wavefronts emanating from a signal origin -->
+  <!-- Palette: obsidian #0A0A0C wavefronts, coral #FF5941 origin + highlighted wavefront -->
+  <!-- Compositional signature: outermost wavefronts extend beyond canvas (signal continues) -->
+
+  <defs>
+    <style>
+      .wave       { fill: none; stroke: #0A0A0C; stroke-width: 1; opacity: 0.85; }
+      .wave-fine  { fill: none; stroke: #0A0A0C; stroke-width: 0.75; opacity: 0.5; }
+      .wave-signal { fill: none; stroke: #FF5941; stroke-width: 2.5; }
+      .meta-mark { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #88898C; letter-spacing: 0.2em; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <!-- Concentric wavefronts (broadcast radiating outward) -->
+  <circle class="wave-fine" cx="300" cy="200" r="30"/>
+  <circle class="wave"      cx="300" cy="200" r="60"/>
+  <circle class="wave"      cx="300" cy="200" r="95"/>
+  <!-- Highlighted signal wavefront (coral) -->
+  <circle class="wave-signal" cx="300" cy="200" r="135"/>
+  <circle class="wave"      cx="300" cy="200" r="180"/>
+  <circle class="wave-fine" cx="300" cy="200" r="230"/>
+  <circle class="wave-fine" cx="300" cy="200" r="290"/>
+
+  <!-- Signal origin (coral solid) -->
+  <circle cx="300" cy="200" r="5" fill="#FF5941"/>
+
+  <!-- Corner metadata -->
+  <text x="40" y="370" class="meta-mark">Señal 01</text>
+  <text x="560" y="370" class="meta-mark" text-anchor="end">SF → LATAM</text>
+
+  <!-- Coordinate crosshair marker at origin (subtle, adds interface feel) -->
+  <line x1="292" y1="200" x2="288" y2="200" stroke="#FF5941" stroke-width="1"/>
+  <line x1="312" y1="200" x2="308" y2="200" stroke="#FF5941" stroke-width="1"/>
+  <line x1="300" y1="192" x2="300" y2="188" stroke="#FF5941" stroke-width="1"/>
+  <line x1="300" y1="212" x2="300" y2="208" stroke="#FF5941" stroke-width="1"/>
+</svg>

@@ -1,0 +1,181 @@
+/* ===============================================================
+   Señal — Design Tokens (v2, adopted 2026-04-14)
+   Source of truth: context/brand/design-guidelines.md
+   Direction: Dispatch from SF — future-forward, AI-native, bold
+   =============================================================== */
+
+:root {
+  /* ===== Palette ===== */
+  --obsidian:    #0A0A0C;   /* Primary — text, structure, Metric Hero + Prueba Esto fills */
+  --paper:       #FBE8D9;   /* Coral-tinted cream base — ~55-60% (distinct from Anthropic/Stripe/Every cream) */
+  --coral:       #FF5941;   /* Weapon — ACTION, warmth, emotion — CTAs, pull quotes, primary signal — ~10% */
+  --lime:        #D4FF3A;   /* Weapon — DATA, code, system — metric numbers, tags, code highlights — ~2% */
+  --titanium:    #88898C;   /* Metadata, secondary text — ~3% */
+
+  /* ===== Typography Stacks ===== */
+  --font-display: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  --font-mono:    'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  /* ===== Type Scale ===== */
+  --size-massive:    96px;   /* Issue number "NO.47", Metric Hero number */
+  --size-display-xl: 64px;   /* Hero headline */
+  --size-display-lg: 48px;   /* Major section titles */
+  --size-display-md: 32px;   /* Pull quotes, "Prueba Esto" heading */
+  --size-display-sm: 24px;   /* Cards, minor display */
+  --size-body-lg:    18px;   /* Body (desktop) */
+  --size-body:       16px;   /* Body (mobile), UI */
+  --size-small:      14px;
+  --size-meta:       11px;   /* Mono eyebrows, coordinates */
+
+  /* ===== Weight (Manrope variable 400-800) ===== */
+  --w-display-black: 800;
+  --w-display-bold:  700;
+  --w-display-med:   600;
+  --w-display-reg:   500;
+  --w-body-bold:     600;
+  --w-body-med:      500;
+  --w-body:          400;
+
+  /* ===== Line Heights ===== */
+  --lh-massive:  0.9;
+  --lh-display:  0.95;
+  --lh-body:     1.6;
+  --lh-caption:  1.4;
+
+  /* ===== Letter Spacing ===== */
+  --ls-massive:    -0.05em;
+  --ls-display:    -0.03em;
+  --ls-normal:     0;
+  --ls-mono-tight: 0.1em;
+  --ls-mono-wide:  0.2em;
+  --ls-mono-xwide: 0.3em;
+
+  /* ===== Spacing ===== */
+  --space-xs:   8px;
+  --space-sm:   16px;
+  --space-md:   24px;
+  --space-lg:   40px;
+  --space-xl:   64px;
+  --space-2xl:  96px;
+  --space-3xl:  128px;
+
+  /* ===== Rules ===== */
+  --rule-coral-bar: 4px solid var(--coral);
+  --rule-lime-bar:  4px solid var(--lime);
+  --radius-none:  0;
+  --radius-pill:  999px;
+}
+
+/* ===============================================================
+   CORAL vs LIME — Semantic Rules (CRITICAL)
+
+   CORAL #FF5941 = ACTION, warmth, emotion, human signal
+     Where it appears: CTAs, pull quotes, masthead eyebrows, "Prueba Esto"
+     eyebrow, section-header number, ornamental marks on paper bg.
+     Contrast: works on both paper and obsidian backgrounds.
+
+   LIME #D4FF3A = DATA, code, system, technical signal
+     Where it appears: Metric Hero number (on obsidian), Data Tag fills
+     (obsidian text inside), Code Inline highlights (obsidian text inside),
+     technical eyebrow labels on dark backgrounds.
+     Contrast: USE ONLY on obsidian bg or as fill w/ obsidian text.
+     NEVER as text on paper bg (#D4FF3A on #FBE8D9 = illegible).
+
+   When both would fit: default to coral. Lime is the scarce signal
+   reserved specifically for data/code/system content.
+   =============================================================== */
+
+/* Utility classes (reference — use inline styles in Beehiiv) */
+
+.paper-bg { background: var(--paper); }
+.obsidian-bg { background: var(--obsidian); color: var(--paper); }
+
+.data-tag {
+  display: inline-block;
+  background: var(--lime);
+  color: var(--obsidian);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--w-body-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-mono-wide);
+  padding: 3px 8px;
+  border-radius: var(--radius-none);
+}
+
+.code-inline {
+  background: var(--lime);
+  color: var(--obsidian);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: var(--w-body-med);
+  padding: 2px 6px;
+  border-radius: var(--radius-none);
+}
+
+.pull-quote {
+  font-family: var(--font-display);
+  font-size: var(--size-display-md);
+  font-weight: var(--w-display-med);
+  color: var(--coral);
+  line-height: 1.15;
+  letter-spacing: var(--ls-display);
+  border-left: var(--rule-coral-bar);
+  padding: var(--space-sm) 0 var(--space-sm) var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+.metric-hero-block {
+  background: var(--obsidian);
+  color: var(--paper);
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.metric-hero-number {
+  font-family: var(--font-display);
+  font-size: 112px;
+  font-weight: var(--w-display-black);
+  color: var(--lime);
+  line-height: var(--lh-massive);
+  letter-spacing: var(--ls-massive);
+}
+
+.prueba-esto-block {
+  background: var(--obsidian);
+  color: var(--paper);
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.cta-button {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--size-body);
+  font-weight: var(--w-body-bold);
+  color: var(--obsidian);
+  background: var(--coral);
+  padding: 18px 36px;
+  text-decoration: none;
+  letter-spacing: var(--ls-normal);
+  border-radius: var(--radius-none);
+}
+
+/* ===============================================================
+   Beehiiv Brand Settings — paste these in:
+   Settings → Design → Brand colors
+
+   Primary:     #0A0A0C
+   Secondary:   #FBE8D9
+   Accent:      #FF5941
+   Background:  #FBE8D9
+   Custom:      #D4FF3A   (if 5th color slot available — for Signal/Data)
+   =============================================================== */
+
+/* ===============================================================
+   Google Fonts import (web archive — email uses fallback stacks):
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+   =============================================================== */

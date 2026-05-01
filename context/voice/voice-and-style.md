@@ -1,509 +1,244 @@
-# Voice and Style Guidelines - IRINA
+# Voice and Style Guidelines
 
-> The "Engineer-turned-Economist" / The Authentic Builder
-
-## Overview
-This document defines Irina's unique voice, writing style, and tone for LinkedIn content. All agents will reference this to maintain consistency and authenticity.
-
-**Core Archetype**: The Authentic Builder who admits when she's a beginner but explains technical concepts with authority.
-
-**IMPORTANT**: This file focuses on **HOW** to execute content. For **WHAT** you stand for (values, positioning, beliefs), see `core-values.md`.
-
-**Hierarchy**: Strategy ([core-values.md](core-values.md)) → Voice (this file) → Execution (agents/*.md)
+> **Source of truth:** [Voice and Style Guidelines](https://www.notion.so/33c0198cead58121b2b1ccef61137e17) in Notion.
+> **Identity (Who I am? Irina):** [Notion page](https://www.notion.so/30b0198cead580028dc2c14d9d4546b4).
+> **Audience archetypes:** `context/audience-profile.md`.
+> **Last updated:** April 30, 2026 (rebuilt from URL-verified Apr 22–29 top performers).
 
 ---
 
-## Voice Characteristics
+## 0. Hard Rule: AI Never Writes Her Prose
 
-### Primary Voice Attributes
+This file exists so AI can offer **structural** options and **hook patterns** — not so AI can imitate her sentences. The polisher and any downstream agent must:
 
-**Your Attributes**:
-- **Confident Builder**: I speak from experience because I already did it. Less "todavía estoy conectando los puntos", more "esto es lo que descubrí después de hacerlo todos los días." I highlight the value of what I build — even when the result is raw, shipping fast beats perfect.
-- **Technical but Accessible**: I break down complex engineering/AI concepts using simple analogies (e.g., "containers share the brain" for kernel explanation). I make the complex feel simple.
-- **Energetic and Direct**: I bring energy. Short, punchy, forward-moving. No hesitation, no over-qualifying. I did the thing, here's what happened.
-- **Contrarian Thinker**: I challenge conventional wisdom ("Plan B is overrated, go all-in on Plan A"). I'm not afraid to go against common advice when I have conviction.
-- **Value-First Educator**: Every post teaches something practical. I curate resources, share playbooks, demonstrate tools. Learning by doing, not just theory.
+- Suggest hook options as REAL examples sourced from her published posts (URL-verified), never as descriptions.
+- Suggest structural beats (sections / bullets / order), not sentences.
+- Never fabricate a personal claim ("Irina built X / tried Y / discovered Z") unless the brief came with that fact.
 
-### Voice Evolution
-
-**Direction**: Moving from vulnerable beginner → confident, authoritative builder who ships fast. The vulnerability was relatable and built the audience. Now the voice graduates to someone who HAS the experience and shares from authority, not uncertainty.
-
-**When unsure**: Ground in proven techniques from reference files (`hook-bank.md`, `post-templates.md`, `copywriting-frameworks.md`). These are extracted from creators with 700K+ followers. Use what works for others to move faster — don't wait for the voice to evolve organically.
-
-| Phase | Voice | Example |
-|-------|-------|---------|
-| Before | "Me había resistido a X hasta que no pude más" | Vulnerability-first |
-| Now | "Llevo meses usando X. Esto es lo que nadie te dice." | Confidence-first |
-| Next | "Construí X en Y minutos. Así es como tú también puedes." | Authority + generosity |
+If the agent isn't sure whether a claim is grounded → omit it.
 
 ---
 
-## Tone Guidelines
+## 1. Archetype & Voice
 
-### Formality Level
-- [ ] Very formal (corporate, professional distance)
-- [ ] Professional but approachable (LinkedIn standard)
-- [x] Conversational and warm (friendly expert)
-- [ ] Casual and personal (close friend)
+**Core Archetype:** The Authentic Builder who explains technical concepts with authority — because she's built them, broken them, and shipped them.
 
-**Your Choice**: Professional but deeply personal. I use "tú" (informal) in Spanish, creating intimacy while maintaining technical credibility. I write like I'm having coffee with a smart friend.
+**5 Voice Attributes:**
 
-### Emotional Range
-What emotions do you commonly express?
+- **Confident Builder** — Speaks from experience. Less "todavía estoy conectando los puntos", more "esto es lo que descubrí después de hacerlo todos los días". Shipping fast beats perfect.
+- **Technical but Accessible** — Complex concepts through simple analogies. Makes the complex feel simple.
+- **Energetic and Direct** — Short, punchy, forward-moving. No hesitation, no over-qualifying.
+- **Contrarian Thinker** — Challenges conventional wisdom with conviction, not for shock value.
+- **Value-First Educator** — Every post teaches something practical.
 
-**Your Range**:
-- **Excitement**: About AI disruption, new tools, possibilities ("Es realmente sorprendente")
-- **Vulnerability**: Admitting uncertainty, sharing failures, being a beginner ("Para ser honesta, todavía estoy conectando los puntos")
-- **Conviction**: Strong beliefs about learning, growth, taking risks ("Solo Plan A")
-- **Wonder**: Flow states, realizations, connecting dots ("Cuando el tiempo se te pasa volando...")
-- **Authenticity**: No hype, no fake motivation - just real experiences
+**Emotional Range:** Excitement (new tools, possibilities) · Transparency (what worked, what didn't — as data, not identity) · Conviction · Wonder · Authenticity (no hype, no fake motivation)
 
 ---
 
-## Writing Style
+## 2. Audience Reality (April 2026)
 
-### Sentence Structure
-- **Average sentence length**: Mixed - very short to medium
-- **Paragraph length**: 1-3 lines max (optimized for mobile reading)
-- **Preferred style**:
-  - [x] Mix of short and medium (varies for rhythm)
-  - [x] List-heavy structure (with specific emoji systems)
-  - [x] Flowing, narrative style (for storytelling posts)
+**Total followers (2026-04-30):** 3,731.
 
-**Your Style**:
-- **Rhythm variation**: "Short. Punchy. Then a slightly longer sentence that builds context."
-- **White space mastery**: Strategic line breaks every 1-3 sentences
-- **Visual scanning**: Heavy use of bullets, arrows, and structure to guide the eye
-- **One idea per paragraph**: Never walls of text
+**Composition (from her real .xlsx export):**
+- **62% Senior IC + Entry-level** (Valentina-tier in the audience profile)
+- **7% CXO** (Camila-tier)
+- **4.7% Founders** (Andrés-tier)
+- **30% from Bogotá**
 
-### Language Choices
+**Implication:** Optimize content for **Valentina** — let it bleed up to Andrés/Camila. The "Camila first" strategy was producing consultant-deck Spanish drafts that never shipped (24 graveyard drafts, Apr 15–23 batch). Top performers all hit Valentina and bled up.
 
-**Do's** (What you ALWAYS do):
-- ✅ Use "tú" form in Spanish (informal, direct, personal)
-- ✅ Include specific numbers and timelines ("Hace 3 meses...", "+25,600 Impressions")
-- ✅ Keep English tech terms in Spanish posts (AI, cloud, kernel, containers, LLMs, prompts, workflows)
-- ✅ Reference visuals immediately ("Esta foto no es un highlight...")
-- ✅ Use personal examples and real data from your journey
-- ✅ Start with years/timestamps when telling stories (2022, 2023, 2024)
-- ✅ Build credibility through experience ("Llevo meses haciendo esto", "Esto es lo que descubrí")
-
-**Don'ts** (What you NEVER do):
-- ❌ Corporate buzzwords or fake corporate motivation
-- ❌ Hype or over-promising ("10x your results!")
-- ❌ Pretend to be an expert when you're learning
-- ❌ Generic LinkedIn guru speak
-- ❌ Hide struggles or only show wins
-- ❌ Use "usted" form (too formal for your voice)
+The audience profile still has 3 tiers; that's fine as a model. Just stop optimizing for the 7%.
 
 ---
 
-## Formatting Preferences
+## 3. Style Rules
 
-### Visual Structure - The "Irina Visual System"
+**Language:**
+- Always "tú", never "usted". Spanish LATAM (neutral Colombian base).
+- English tech terms kept as-is — and used liberally. Verified from her real top performers: `harness`, `outcome`, `leverage`, `moat`, `guardrails`, `context management`, `orchestration`, `tooling`.
+- Platform/company names in English: Claude.ai, Claude Code, Claude Agent SDK, ChatGPT, Gemini, n8n, Anthropic, OpenAI.
 
-**White Space**:
-- Line break after every 1-3 sentences (mobile-first thinking)
-- Double line breaks between major sections
-- Creates visual "breathing room" for easier scanning
+**Structure:**
+- Paragraphs: 1–3 sentences max. Heavy white space. Mobile-first.
+- Hooks: 6–15 words max (most winners are 8–15).
+- Rhythm: "Short. Punchy. Then a slightly longer sentence that builds context."
+- One idea per paragraph. Never walls of text.
 
-**Bullets/Lists** - CRITICAL EMOJI SYSTEM:
-**Format preference** (emojis are NOT decoration, they are punctuation):
-- `•` for standard lists and explanations
-- `→` for outcomes, results, "what you get" benefits
-- `✔` for validation, facts, checklist items
-- `‣` for sub-bullets within a section
+**Voice signatures (URL-verified from her winners):**
+- **Lowercase rhythm mid-flow** — "mi cara cuando me acabo de dar cuenta que…" (Apr 29). Used in meme-template hooks and reflective beats.
+- **Vernacular cultural format** — "chuleado, sí o qué?" (Apr 29 close). Colombian/LATAM colloquial closer.
+- **Specific numbers + place + time** — "+700 personas… A frontiertower llegaron +250" (Apr 23); "Miércoles 22 de abril | 5:30 PM | San Francisco" (Apr 22).
+- **English tech terms in Spanish prose** — "leverage de la ia", "el harness es lo que…", "outcome concreto" (verified across multiple posts).
 
-**When you use them**:
-- Breaking down technical concepts (VM vs Containers example)
-- Resource lists with explanations
-- Step-by-step processes
-- Timeline/chronological events
+**Emoji System** (punctuation, NOT decoration):
+- `•` standard lists and explanations
+- `→` outcomes, results, benefits
+- `✔` validation, facts, checklist items
+- `‣` sub-bullets
+- Decorative emoji only for visual structure (😎, ✨, 👋🏼, ♻️, 👇). Never for color.
 
-**Example pattern**:
-```
-**Máquinas Virtuales:**
-• Virtualización a nivel de hardware
-• Cada una con su propio sistema operativo
-• Kernel independiente
+**Formatting:**
+- **Bold** for headers within bullets, company names, key concepts.
+- CAPS for tutorial section headers ("PRIMER PROMPT").
+- No italics. No hashtags.
 
-Lo que encontrarás:
-→ Prompts específicos por rol
-→ Casos de uso por departamento
-→ Mejores prácticas
-```
+**Do's:**
+- Specific numbers and timelines ("Hace 3 meses…", "+25,600 impressions", "5 minutos").
+- Reference visuals immediately (the image/video is part of the post).
+- Personal examples and real data.
+- Build credibility through experience ("Llevo meses haciendo esto").
 
-**Emojis**:
-- **Frequency**: Strategically (as punctuation, not decoration)
-- **Where**: In bullets (system above), occasional accent at end of post
-- **Style**: Professional but warm (😎, ✨, 👋🏼, ☺️, ♻️)
-- **Rule**: Never use emojis just for color - they must serve a visual structure purpose
-
-**Bold/Italics**:
-- **Bold**: For headers within bullets ("**Máquinas Virtuales:**"), company names, emphasis on key concepts
-- Use CAPS for major section headers in tutorials ("PRIMER PROMPT", "MEJORA EL DISEÑO")
-- No italics - not part of your system
+**Don'ts:**
+- Corporate buzzwords or hype ("10x your results!").
+- Claim expertise not earned through building.
+- Generic LinkedIn guru speak.
+- Hide struggles or only show wins.
 
 ---
 
-## Signature Patterns
+## 4. Hook Patterns — VERIFIED (URL-anchored, Apr 22–29 2026)
 
-### Opening Patterns - "The Irina Hooks"
+The patterns below are drawn from her real LinkedIn URLs. Each entry cites activity ID + date + impressions. **For body verification, fetch the LinkedIn URL live** — `output/linkedin/shipped/` is NOT a faithful record of what's live (Irina edits at posting time).
 
-**Your Go-To Hooks**:
+### Pattern A — Numbers + Scene (event-recap)
 
-1. **Technical Question Hook** (Educational posts):
-   - "¿Por qué un contenedor se inicia en segundos y una máquina virtual en minutos?"
-   - Pattern: Question that reveals a technical curiosity
+**Verified winners:**
+- **Apr 23, 8,876 impressions** · activity:7453222894534365184
+  > "+700 personas registradas en el primer evento de Claude en español desde SF (A frontiertower llegaron +250) 5 speakers y fila para entrar."
+- **Apr 22, 4,382 impressions** · activity:7452768298179530753
+  > "5 latinos construyendo con Claude. Hoy en San Francisco. Claude San Francisco tiene por primera vez edición latina."
 
-2. **Contrarian Resource Hook** (Value posts):
-   - "Las 4 empresas de IA más grandes publicaron sus playbooks. Gratis. Y casi nadie los está aprovechando."
-   - Pattern: [Big claim]. [Surprising detail]. [Nobody using it]
+**Why it wins:** Quantified specifics ("+700", "+250", "5 speakers", "5 latinos") + a real scene (place + time) + identity stake ("español", "latinos"). Reader can picture the room. Zero abstraction.
 
-3. **Timeline Hook** (Personal story):
-   - "Hace 3½ meses empecé a compartir mi aprendizaje en público y me di cuenta de algo:"
-   - Pattern: Specific timeframe + realization
+**Formula:** [Number] [people/things] [in specific place/event]. ([Second number that adds texture]). [Third number or named human].
 
-4. **Resistance Hook** (Tool/process posts):
-   - "Me había resistido a n8n hasta que no pude más."
-   - Pattern: Admit resistance, then breakthrough
+**Use when:** event recaps, launches, real moments she was physically in.
 
-5. **Result + Visual Hook**:
-   - "Hace 3 semanas conocí a Andrew Ng" (with photo)
-   - "Acabo de construir una app con Gemini 3 en 5 minutos"
-   - Pattern: Achievement + immediate visual reference
+### Pattern B — Meme Template / Personal Achievement
 
-6. **Contrarian Philosophy Hook**:
-   - "La gente dice que debes tener plan B. Pues bien, haré todo lo contrario, sólo Plan A."
-   - Pattern: Common advice + my contrarian stance
+**Verified winner:**
+- **Apr 29, 6,305 impressions** · activity:7455075382753554433
+  > "mi cara cuando me acabo de dar cuenta que logré un aspirational yearly goal."
 
-7. **Flow State Observation**:
-   - "Cuando trabajas +6 horas seguidas un domingo y no te das cuenta en qué momento pasó el tiempo..."
-   - Pattern: Relatable moment + deeper meaning
+**Why it wins:** Vernacular cultural format ("mi cara cuando…") + intimate personal stake (private achievement) + lowercase rhythm + selfie/visual implied. Feels like her, not a template.
 
-### Closing Patterns - "The Irina CTAs"
+**Formula (Spanish):** "mi cara cuando [intimate realization / discovery]." [body: what happened + the meaning].
 
-**Your Go-To Closings**:
+**Status:** 1 verified sample. Strong signal but needs more reps to confirm replicability across topics. Use deliberately when there's an actual personal moment.
 
-1. **Reflective Question**:
-   - "¿Qué si ya llegué a mi meta? Para nada (y probablemente la meta se aleje más de mí)."
-   - "¿Crees que aprender sobre IA sigue siendo opcional? O debería ser parte de tu Plan A?"
+### Pattern C — Action + Contradiction Reveal
 
-2. **Invitation to Journey**:
-   - "Si esto te parece interesante, vamos juntos en este camino :)"
-   - "Te invito a acompañarme en mi viaje. De forma auténtica, sin pretensiones y con total transparencia."
+**Verified winner:**
+- **Apr 26, 3,480 impressions** · activity:7453989310271442944
+  > "Hoy desinstalé Claude Code. No porque piense reemplazarlo. Lo reinstalé en 5 minutos."
 
-3. **Resource Offer**:
-   - "Si quieres el prompt que usé, déjame saber en los comentarios o escríbeme un DM"
-   - "Acceso directo a las guías: [links]"
+**Why it wins:** Concrete behavior in line 1 ("desinstalé") + immediate twist that breaks the assumption ("no porque…") + concrete reversal ("reinstalé en 5 minutos"). The reader has to read the body to resolve the tension.
 
-4. **Share for Others** (viral mechanic):
-   - "♻️ Repostealo para que otros no cierren el 2025 usando los LLMs al 20%"
-   - "♻️ Repostea para que alguien más vea lo fácil que es"
+**Formula:** "Hoy [concrete action that sounds drastic]. No porque [obvious reason the reader assumes]. [Twist that resolves toward the actual point]."
 
-5. **Learning Check**:
-   - "Aprendiste algo nuevo?"
-   - Pattern: Simple validation question
-
-6. **Attention Prompt**:
-   - "La próxima vez que el tiempo se te pase volando trabajando en algo, préstale atención. Porque ahí puede estar la pista más clara de hacia dónde avanzar. 😎"
-   - Pattern: Actionable reflection + emoji accent
+**Use when:** insight comes from a counterintuitive thing she actually did.
 
 ---
 
-## Language-Specific Considerations
+## 5. Anti-Patterns — VERIFIED (do not use)
 
-### Spanish Writing Style
+These are her real underperformers. They share one feature: **abstract / no scene / no concrete behavior**.
 
-**Formality in Spanish**:
-- **Tú vs. Usted**: Always "tú" - creates intimacy and directness
-- **Tone**: Conversational, warm, accessible (like talking to a smart friend over coffee)
-- **Cultural references**: Latin American tech culture, startup ecosystem, AI/cloud learning journey
+### Anti-pattern: Authoritative thesis (year prediction)
 
-**English in Spanish Posts - The Bilingual Tech Rule**:
+- **Apr 21, 1,436 impressions** · activity:7452479718668480512
+  > "En 2026 se están sentando las bases de la IA autónoma. Lo que decidas este año determina tu posición en 2028."
 
-**ALWAYS keep in English**:
-- ✅ Core tech terms: **AI, LLMs, cloud, kernel, containers, VM, prompts, workflows**
-- ✅ Platform names: **Claude.ai, ChatGPT, Gemini, n8n, LinkedIn**
-- ✅ Technical concepts: **multimodal, vibe coding, playbooks, grounded**
-- ✅ Company names: **OpenAI, Anthropic, Perplexity, Google, DeepLearning.AI**
-- ✅ Specific tools: **Google AI Studio, Notion, Telegram, WhatsApp**
+**Why it loses:** Pure thesis statement. No moment, no quantified specific, no personal action. Reads as op-ed framing — and her audience is here for builders, not pundits.
 
-**Translation pattern**:
-- Write in natural Spanish but preserve English terms that are standard in the tech industry
-- Example: "Gemini 3 tiene capacidad multimodal" (NOT "capacidad multimodal" → keep "multimodal")
-- Example: "construir prompts" (NOT "construir instrucciones" → keep "prompts")
+**Companion anti-patterns** (no live reference, but flagged from the dataset):
+- **Aphoristic contrarian reframe** ("X is not Y, X is Z") — Naval / Codie / Sahil shape. Rejected by her data 2026-04-30.
+- **Stat-first claim without scene** ("87% of X don't Y") — abstract authority signal.
+- **"Reflexión de…"** — Philosopher mode, validated as a failure pattern.
 
-**Why this works**:
-Your audience (Spanish-speaking tech professionals) uses these English terms naturally. Translating them sounds forced and less credible.
+### Anti-pattern: Permission framing
 
-**Regional Considerations**:
-- [x] Latin American Spanish (neutral) - Colombian base but universally understandable
-- [ ] Spain Spanish
-- [x] Colombian identity present but not limiting (references to Colombia, but content is universal)
+- "Todavía estoy conectando los puntos…", "Aún estoy aprendiendo…"
+- This was Phase 1 voice (2024). Retired. The new audience follows the builder, not the beginner.
 
-**Your Preference**:
-Write in clear, neutral Latin American Spanish that any Spanish-speaking professional can understand, regardless of country. Keep technical English terms as they are industry standard.
+### Untested (do NOT promote until validated)
+
+- **Pivot-reveal** ("Iba a X. Terminé con Y.") — exists as a draft hook locally and as a *body sentence* in shipped posts. Never deployed as a published opener. Don't recommend until there's a verified sample.
+- **Scene + timestamp + named human** as a standalone hook — appears inside bodies (Apr 22 has "Christian Van Der Henst, Ricardo Lira de la Vega, Esteban Gorupicz") but not as the opener. Re-check next dataset before claiming.
 
 ---
 
-## Voice Examples
+## 6. CTA Patterns
 
-### Example 1: The Technical Educator (BEST Voice Match)
-**Post Type**: Technical explanation
-**Metrics**: +25,600 Impressions • 250 engagement
+| CTA Type | Example | Use when |
+|----------|---------|----------|
+| **Reflective question** | "Te ha pasado algo así? 👇" (Apr 26) · "Crees que aprender sobre IA sigue siendo opcional?" | Default. Invites reply, not just a like. |
+| **Repost / share** | "Repostealo para que otros no cierren el 2025 usando los LLMs al 20%" | Resource posts where redistribution = the goal. |
+| **Funnel CTA** | RSVP / link to course / lead magnet | Always after value, never as hook. |
 
-> ¿Por qué un contenedor se inicia en segundos y una máquina virtual en minutos?
->
-> La razón:
-> Los contenedores comparten el cerebro del sistema (kernel), mientras que cada VM necesita su propio cerebro completo.
->
-> La diferencia técnica es:
->
-> **Máquinas Virtuales:**
-> • Virtualización a nivel de hardware
-> • Cada una con su propio sistema operativo
-> • Kernel independiente
-> • Mayor aislamiento, más recursos
->
-> **Contenedores:**
-> • Virtualización a nivel de SO
-> • Comparten el kernel del host
-> • Solo necesitan sus dependencias
-> • Más ligeros, arranque instantáneo
->
-> Es por esto que los contenedores son perfectos para microservicios y aplicaciones cloud-native.
-
-**Why This Works**:
-- ✅ Technical Question Hook (creates curiosity)
-- ✅ Simple analogy ("cerebro del sistema") makes complex concept accessible
-- ✅ Perfect emoji system: `•` for lists, structured comparison
-- ✅ Authority without arrogance ("La diferencia técnica es:")
-- ✅ Keeps English tech terms (kernel, cloud-native, microservicios)
-- ✅ Mobile-optimized spacing and structure
+**Hard rule:** never combine a reflective question AND a repost CTA in the same close — it dilutes the trigger.
 
 ---
 
-### Example 2: The Vulnerable Journey Post (BEST Voice Match)
-**Post Type**: Personal story / identity
-**Metrics**: +11,200 Impressions • 419 engagement
+## 7. Content Type Playbook
 
-> Hace 3½ meses empecé a compartir mi aprendizaje en público y me di cuenta de algo:
->
-> Si quieres hacer algo nuevo, tienes que aceptar ser principiante.
->
-> Y eso ha definido mi vida los últimos tres años y en gran medida mi carrera.
->
-> Hola, soy Irina 👋🏼 (no Lina, no Irene), y este es un pequeño vistazo sobre mí:
->
-> 📚 2022: Decidí estudiar Economía porque para mí, entender lo fundamental es relevante, aunque mi background fuera ingeniería y no tuviera sentido para todos.
->
-> ⛄️ 2023: Renuncié al trabajo de toda mi vida por irme a Finlandia—sí, cerca del Polo Norte—. ¿A qué? A terminar la maestría en Economía.
->
-> 😱 2024: Fue el año de mayor incertidumbre, pero siento que aprendí lo equivalente a mi década pasada.
->
-> [...]
->
-> En el camino aprendí que:
-> - Pensar que algo es difícil es resistencia mental.
-> - Los desconocidos también están dispuestos a ayudarte.
-> - La confianza puede preceder a la experiencia.
->
-> ¿Qué si ya llegué a mi meta?
-> Para nada (y probablemente la meta se aleje más de mí).
->
-> Para ser honesta, todavía estoy conectando los puntos.
->
-> Pero aprendo cada día y te invito a acompañarme en mi viaje. De forma auténtica, sin pretensiones y con total transparencia.
-
-**Why This Works**:
-- ✅ Timeline Hook ("Hace 3½ meses") - specific timeframe
-- ✅ Vulnerable but confident ("todavía estoy conectando los puntos")
-- ✅ Year-based timeline structure (2022, 2023, 2024)
-- ✅ Personality in details ("no Lina, no Irene", "cerca del Polo Norte")
-- ✅ Honest about uncertainty ("Para nada")
-- ✅ Journey invitation CTA (signature closing)
-- ✅ No fake motivation - just real, messy authenticity
+| Content Type | Hook | Structure | CTA |
+|-------------|------|-----------|-----|
+| **Event recap / launch** | Numbers + scene (Pattern A) | Quantified specific → context → meaning → named humans | Reflective question |
+| **Personal milestone** | Meme template (Pattern B) | Lowercase reflection → reveal → philosophical close | Vernacular question ("sí o qué?") |
+| **Builder how-to / fix-it** | Action + contradiction (Pattern C) | Problem → twist → mechanism → result | Reflective question |
+| **Resource / curation** | Numbers-first list framing | Arrow bullets (→) by category | Repost CTA |
+| **Tool/process demo** | Result + visual reference | Step-by-step with screenshots | Resource offer or funnel |
 
 ---
 
-### Example 3: The Contrarian Philosophy (BEST Voice Match)
-**Post Type**: Mindset / contrarian
+## 8. Quality Gates
 
-> La gente dice que debes tener plan B en caso de que el A no funcione.
->
-> Pues bien, haré todo lo contrario, sólo Plan A.
->
-> Cuando me gradué como ingeniera, quise estudiar afuera.
-> Pero tenia un plan B: estudiar en Colombia era más factible que irse al extranjero.
->
-> Años más tarde, alguien me cambió la perspectiva:
-> ¿Y si solo tienes un Plan A?
->
-> Eso me permitió irme a Finlandia a estudiar.
-> Y en ese momento eliminé la opción de no viajar.
->
-> [...]
->
-> Ayer, apagué el botón de Open to work.
-> Ese botón me mantenía expectante, mantenía una parte de mí esperando.
-> Como si una mejor opción pudiera aparecer.
->
-> Pero las mejores opciones se construyen.
->
-> Si la única alternativa para mantenerse vigente es ser parte de esto,
-> entonces el único enfoque posible es: Solo Plan A.
->
-> ¿Crees que aprender sobre IA sigue siendo opcional? O debería ser parte de tu Plan A?
+### The Builder Test (CRITICAL — #1 performance predictor)
 
-**Why This Works**:
-- ✅ Contrarian Philosophy Hook (challenges common advice)
-- ✅ Personal story proves the philosophy ("me permitió irme a Finlandia")
-- ✅ Vulnerable admission ("ese botón me mantenía expectante")
-- ✅ Strong conviction ("las mejores opciones se construyen")
-- ✅ Question CTA that connects philosophy to current moment
-- ✅ No generic motivation - real decision with real stakes
+**Before posting, ask:** "What did I BUILD / FIND / DO?" If you can't answer specifically, reframe or kill the idea.
 
----
+- **Builder mode:** "I built this…", "I shipped this in 3 days…", "Here's what I found…" → grounded in DOING.
+- **Philosopher mode:** "Reflexión de…", abstract concepts, borrowed wisdom.
+- **Permission mode:** "I'm still learning…", "todavía estoy conectando los puntos" → framing from uncertainty.
 
-> **Note on What NOT to Do**: For detailed analysis of what doesn't work, see [performance-analysis.md](performance-analysis.md). This file focuses on what WORKS.
+The audience follows the BUILDER, not the philosopher. Not the beginner.
 
-> **Note on Strategy**: For strategic topics (what you talk about, audience definition, content boundaries), see [core-values.md](core-values.md).
+### Anti-Pattern Checklist (verify NONE apply)
 
----
+1. Philosopher mode — abstract reflection without specific action.
+2. Permission mode — framing from uncertainty instead of experience.
+3. English on LinkedIn — audience is Spanish-speaking, always.
+4. Borrowed authority — reflecting on famous people without personal stake.
+5. Encyclopedia lists — concepts without "I used this when…" grounding.
+6. "Reflexión de media noche" — random thought, not structured insight.
+7. Generic motivation — life advice without tech substance.
+8. Company commentary — what companies did without your personal action.
+9. Event recap with no specific technical takeaway.
+10. Promo-first — asking before giving value.
+11. **Year-prediction thesis** ("En 2026… determina tu posición en 2028") — verified loser Apr 21.
+12. **Aphoristic contrarian reframe** (Naval-style) — rejected by her data.
 
-## Adaptation Guidelines
+### Visual Rule
 
-### How to Apply This Voice to Different Content Types
-
-**Educational/Technical Post** (VM vs Containers example):
-- Start with technical question hook
-- Use simple analogies to explain complex concepts
-- Structured comparison with bullet system (`•`)
-- Authority without arrogance
-- Keep it scannable and mobile-optimized
-
-**Personal Story** (Finland, Andrew Ng example):
-- Timeline hook (specific timeframe)
-- Year-based or reverse chronological structure
-- Vulnerable but forward-looking
-- Connect personal to universal lesson
-- Invitation CTA at the end
-
-**Contrarian Take** (Plan A only example):
-- Challenge common advice directly
-- Personal story as proof of philosophy
-- Strong conviction mixed with vulnerability
-- Question CTA that applies philosophy to reader
-
-**Resource/Value Post** (Playbooks example):
-- "Nobody using this" hook
-- Arrow bullets (`→`) for benefits/outcomes
-- Structured breakdown by category
-- Personal favorites/recommendations
-- Share-for-others CTA ("♻️ Repostea")
-
-**Tool/Process Demo** (n8n, Gemini app example):
-- Resistance or achievement hook
-- CAPS headers for steps ("PRIMER PROMPT")
-- Lessons learned section
-- Practical takeaways
-- Resource offer in comments/DM
-
-**Flow State/Reflection** (Sunday work example):
-- Observation hook (relatable moment)
-- Deeper meaning extracted
-- Short form, punchy
-- Actionable reflection CTA
-
----
-
-## Anti-Pattern Checklist
-
-> Updated by pattern-analyzer from real performance data. Last updated: 2026-02-16.
-
-**Before publishing, verify NONE of these apply:**
-
-1. Philosopher mode — abstract reflection without specific action taken
-2. English on LinkedIn — audience is Spanish-speaking, always
-3. Borrowed authority — reflecting on what famous people said/did without personal stake
-4. Encyclopedia lists — explaining concepts without "I used this when..." grounding
-5. "Reflexión de media noche" — signals random thought, not structured insight
-6. Generic motivation — sunset photos, life advice without tech substance
-7. Company commentary — commenting on what companies do without personal action
-8. Event recaps without takeaway — "I was there" without "here's what I learned specifically"
-9. Abstract philosophy about simplicity/meta-thinking — "Tu cerebro ama complicar" without tech grounding
-10. Promo-first posts — asking before giving value
-
-**Quick test**: "What did I BUILD / FIND / DO?" — if you can't answer specifically, reframe or kill the idea.
-
----
-
-## Critical Visual Hook Rule
-
-**IMPORTANT**: Irina's posts are designed to accompany **visuals** (photos, videos, carousel designs).
-
-### The Visual-Text Integration Rule
-Every post should be written **knowing there is a specific image/video attached**.
-
-**Pattern**: Reference the visual immediately or implicitly in the text.
-
-**Examples from real posts**:
-- "Esta foto no es un highlight..." (direct visual reference)
-- "Acabo de construir una app..." (implies demo video)
-- "Hace 3 semanas conocí a Andrew Ng" (implies photo with Andrew)
-- Technical explanation posts (imply explanatory graphics)
-- Resource lists (imply Canva-style design showing the resources)
-
-**Why this matters**:
-LinkedIn shows image/video ABOVE the text. The text and visual should work together, not compete. The text often **explains** or **recontextualizes** what the visual shows.
-
-**For AI Agents**:
-- If writing a post, consider what visual would accompany it
-- If the user provides a visual, reference it in the text
-- Technical posts often pair with explainer graphics or demo videos
-- Personal posts pair with relevant photos (travel, events, workspace)
-- Resource posts pair with Canva designs listing the resources
-
----
-
-## Instructions for AI Agents
-
-**IMPORTANT**: Always reference BOTH files when creating content:
-1. **[core-values.md](core-values.md)** for strategic alignment (values, positioning, beliefs, what to talk about)
-2. **This file (voice-and-style.md)** for execution (how to write, voice patterns, formatting)
-
-When using this document:
-
-1. **Read BOTH files** before writing any content (core-values.md for strategy, this file for voice)
-2. **Check your output** against the examples - does it sound like the author?
-3. **Preserve** the signature patterns and style choices:
-   - The emoji punctuation system (`•`, `→`, `✔`, `‣`)
-   - Timeline hooks and structures
-   - Bilingual tech terms (keep English terms)
-   - White space and mobile optimization
-4. **Flag** any content that feels generic or off-brand
-5. **Remember the visual**: Consider what image/video would accompany this post
-6. **Remember**: Authenticity > Perfection
+Every post accompanies a visual (photo, video, carousel). Reference the visual immediately or implicitly. LinkedIn shows image ABOVE text — they must work together.
 
 ### Voice Preservation Checklist
-Before finalizing any content, ask:
-- ✅ Does this sound like Irina would say it?
-- ✅ Does it sound confident and energetic (not hesitant or over-qualifying)?
-- ✅ Are tech terms kept in English appropriately?
-- ✅ Is the emoji system used correctly (punctuation, not decoration)?
-- ✅ Is there a personal example or real experience?
-- ✅ Would the target audience (Spanish-speaking tech professionals learning/growing) find this valuable?
-- ✅ Does it avoid hype, guru language, and corporate buzzwords?
 
-### The Builder vs Philosopher Test (CRITICAL)
+- Does this sound like Irina? Confident, energetic, not hesitant?
+- Tech terms in English? Emoji system correct (punctuation, not decoration)?
+- Personal example or real experience grounding the post?
+- Avoids hype, guru language, corporate buzzwords?
+- Would Valentina save it? Would Andrés try it? Would Camila forward it?
 
-> **For full explanation and examples**, see [performance-analysis.md](performance-analysis.md).
+---
 
-**Quick test before posting:**
-- Builder mode (✅): "I built this...", "I was resistant until...", grounded in DOING
-- Philosopher mode (❌): "Reflexión de...", abstract concepts, borrowed wisdom
+## 9. Methodology Note (for agents)
 
-Your audience follows the BUILDER, not the philosopher.
+- **LinkedIn is the only source of truth** for what shipped.
+- **Don't rely on local `output/linkedin/shipped/`** — those are workflow status markers, not faithful records. Final refinements happen at posting time.
+- **For voice/hook analysis, fetch URLs live** using activity IDs from `data/post-analytics/Content_*.xlsx`.
+- **When this file is updated**, anchor every claim to a URL-verified post. Do not invent patterns from inference.
 
 ---
 

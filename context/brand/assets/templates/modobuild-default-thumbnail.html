@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Modo Build — Default Thumbnail (1200x630)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Inter:wght@400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1200px;
+    height: 630px;
+    background: #0A0A0C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 48px 120px;
+    overflow: hidden;
+  }
+
+  /* Top eyebrow: MODO BUILD in mono coral */
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 14px;
+    color: #FF5941;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+  }
+
+  /* Center group */
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Center wordmark: MODO BUILD. */
+  .wordmark {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 96px;
+    color: #FBE8D9;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .wordmark .period {
+    color: #FF5941;
+  }
+
+  /* Tagline below wordmark */
+  .tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(251, 232, 217, 0.70);
+    text-align: center;
+    margin-top: 24px;
+    line-height: 1.5;
+    max-width: 640px;
+  }
+
+  /* Bottom: cursor mark + dispatch label */
+  .bottom {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .bottom-cursor {
+    width: 6px;
+    height: 20px;
+    background: #FF5941;
+  }
+  .bottom-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(251, 232, 217, 0.40);
+    text-transform: uppercase;
+    letter-spacing: 0.20em;
+  }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Modo Build</div>
+
+  <div class="center">
+    <div class="wordmark">Modo Build<span class="period">.</span></div>
+    <div class="tagline">Cada semana construyo algo con IA y te muestro el proceso exacto</div>
+  </div>
+
+  <div class="bottom">
+    <div class="bottom-cursor"></div>
+    <span class="bottom-label">Dispatch Semanal</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,783 @@
+{
+  "generated_at": "2026-04-30T18:52:48.481037+00:00",
+  "source_xlsx": "Content_2026-04-17_2026-04-30_IrinaVélez.xlsx",
+  "snapshot_period": {
+    "start": "2026-04-17",
+    "end": "2026-04-30",
+    "iso_week": "2026-W18"
+  },
+  "linkedin": {
+    "discovery": {
+      "period_label": "4/17/2026 - 4/30/2026",
+      "impressions": 29932,
+      "members_reached": 10601
+    },
+    "engagement_per_day": [
+      {
+        "date": "2026-04-17",
+        "impressions": 921,
+        "engagements": 18
+      },
+      {
+        "date": "2026-04-18",
+        "impressions": 507,
+        "engagements": 8
+      },
+      {
+        "date": "2026-04-19",
+        "impressions": 424,
+        "engagements": 7
+      },
+      {
+        "date": "2026-04-20",
+        "impressions": 479,
+        "engagements": 11
+      },
+      {
+        "date": "2026-04-21",
+        "impressions": 498,
+        "engagements": 10
+      },
+      {
+        "date": "2026-04-22",
+        "impressions": 2054,
+        "engagements": 97
+      },
+      {
+        "date": "2026-04-23",
+        "impressions": 2523,
+        "engagements": 93
+      },
+      {
+        "date": "2026-04-24",
+        "impressions": 6460,
+        "engagements": 245
+      },
+      {
+        "date": "2026-04-25",
+        "impressions": 1888,
+        "engagements": 49
+      },
+      {
+        "date": "2026-04-26",
+        "impressions": 3451,
+        "engagements": 74
+      },
+      {
+        "date": "2026-04-27",
+        "impressions": 2002,
+        "engagements": 49
+      },
+      {
+        "date": "2026-04-28",
+        "impressions": 1053,
+        "engagements": 77
+      },
+      {
+        "date": "2026-04-29",
+        "impressions": 6371,
+        "engagements": 240
+      },
+      {
+        "date": "2026-04-30",
+        "impressions": 1301,
+        "engagements": 23
+      }
+    ],
+    "top_posts_by_engagements": [
+      {
+        "activity_id": "7453222894534365184",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7453222894534365184",
+        "publish_date": "2026-04-23",
+        "engagements": 319
+      },
+      {
+        "activity_id": "7452768298179530753",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7452768298179530753",
+        "publish_date": "2026-04-22",
+        "engagements": 186
+      },
+      {
+        "activity_id": "7455075382753554433",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7455075382753554433",
+        "publish_date": "2026-04-29",
+        "engagements": 130
+      },
+      {
+        "activity_id": "7445552731085504512",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7445552731085504512",
+        "publish_date": "2026-04-09",
+        "engagements": 76
+      },
+      {
+        "activity_id": "7453989310271442944",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7453989310271442944",
+        "publish_date": "2026-04-26",
+        "engagements": 71
+      },
+      {
+        "activity_id": "7452479718668480512",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7452479718668480512",
+        "publish_date": "2026-04-21",
+        "engagements": 57
+      },
+      {
+        "activity_id": "7444099999120154624",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7444099999120154624",
+        "publish_date": "2026-03-29",
+        "engagements": 20
+      },
+      {
+        "activity_id": "7447076323912527873",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7447076323912527873",
+        "publish_date": "2026-04-07",
+        "engagements": 18
+      },
+      {
+        "activity_id": "7449437518506221568",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7449437518506221568",
+        "publish_date": "2026-04-13",
+        "engagements": 17
+      },
+      {
+        "activity_id": "7443018149676998656",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7443018149676998656",
+        "publish_date": "2026-03-26",
+        "engagements": 14
+      },
+      {
+        "activity_id": "7449947946038493184",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7449947946038493184",
+        "publish_date": "2026-04-14",
+        "engagements": 14
+      },
+      {
+        "activity_id": "7450039788679733248",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7450039788679733248",
+        "publish_date": "2026-04-15",
+        "engagements": 12
+      },
+      {
+        "activity_id": "7450433331181035521",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7450433331181035521",
+        "publish_date": "2026-04-16",
+        "engagements": 10
+      },
+      {
+        "activity_id": "7445882424460423169",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7445882424460423169",
+        "publish_date": "2026-04-03",
+        "engagements": 9
+      },
+      {
+        "activity_id": "7448511620068175872",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7448511620068175872",
+        "publish_date": "2026-04-10",
+        "engagements": 7
+      },
+      {
+        "activity_id": "7444707747599740928",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7444707747599740928",
+        "publish_date": "2026-03-31",
+        "engagements": 5
+      },
+      {
+        "activity_id": "7448074733645955072",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7448074733645955072",
+        "publish_date": "2026-04-09",
+        "engagements": 5
+      },
+      {
+        "activity_id": "7455438037531951104",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7455438037531951104",
+        "publish_date": "2026-04-30",
+        "engagements": 5
+      },
+      {
+        "activity_id": "7443768040304828416",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7443768040304828416",
+        "publish_date": "2026-03-28",
+        "engagements": 4
+      },
+      {
+        "activity_id": "7445047429021835264",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7445047429021835264",
+        "publish_date": "2026-04-01",
+        "engagements": 4
+      },
+      {
+        "activity_id": "7448156722189324288",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7448156722189324288",
+        "publish_date": "2026-04-09",
+        "engagements": 3
+      },
+      {
+        "activity_id": "7442643069042278401",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7442643069042278401",
+        "publish_date": "2026-03-25",
+        "engagements": 2
+      },
+      {
+        "activity_id": "7445387749983158272",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7445387749983158272",
+        "publish_date": "2026-04-02",
+        "engagements": 2
+      },
+      {
+        "activity_id": "7441739150145249280",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7441739150145249280",
+        "publish_date": "2026-03-23",
+        "engagements": 2
+      },
+      {
+        "activity_id": "7442124548491292672",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7442124548491292672",
+        "publish_date": "2026-03-24",
+        "engagements": 2
+      },
+      {
+        "activity_id": "7444651333137166336",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7444651333137166336",
+        "publish_date": "2026-03-31",
+        "engagements": 2
+      },
+      {
+        "activity_id": "7438869982031020032",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7438869982031020032",
+        "publish_date": "2026-03-15",
+        "engagements": 1
+      },
+      {
+        "activity_id": "7439668137865932800",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7439668137865932800",
+        "publish_date": "2026-03-17",
+        "engagements": 1
+      },
+      {
+        "activity_id": "7442696710197473281",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7442696710197473281",
+        "publish_date": "2026-03-25",
+        "engagements": 1
+      },
+      {
+        "activity_id": "7442375923364114432",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7442375923364114432",
+        "publish_date": "2026-03-25",
+        "engagements": 1
+      },
+      {
+        "activity_id": "7443481095251243008",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7443481095251243008",
+        "publish_date": "2026-03-28",
+        "engagements": 1
+      },
+      {
+        "activity_id": "7439746327141412864",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7439746327141412864",
+        "publish_date": "2026-03-17",
+        "engagements": 0
+      }
+    ],
+    "top_posts_by_impressions": [
+      {
+        "activity_id": "7453222894534365184",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7453222894534365184",
+        "publish_date": "2026-04-23",
+        "impressions": 8876
+      },
+      {
+        "activity_id": "7455075382753554433",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7455075382753554433",
+        "publish_date": "2026-04-29",
+        "impressions": 6305
+      },
+      {
+        "activity_id": "7452768298179530753",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7452768298179530753",
+        "publish_date": "2026-04-22",
+        "impressions": 4382
+      },
+      {
+        "activity_id": "7453989310271442944",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7453989310271442944",
+        "publish_date": "2026-04-26",
+        "impressions": 3480
+      },
+      {
+        "activity_id": "7452479718668480512",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7452479718668480512",
+        "publish_date": "2026-04-21",
+        "impressions": 1436
+      },
+      {
+        "activity_id": "7450039788679733248",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7450039788679733248",
+        "publish_date": "2026-04-15",
+        "impressions": 514
+      },
+      {
+        "activity_id": "7449437518506221568",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7449437518506221568",
+        "publish_date": "2026-04-13",
+        "impressions": 506
+      },
+      {
+        "activity_id": "7450433331181035521",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7450433331181035521",
+        "publish_date": "2026-04-16",
+        "impressions": 479
+      },
+      {
+        "activity_id": "7443018149676998656",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7443018149676998656",
+        "publish_date": "2026-03-26",
+        "impressions": 419
+      },
+      {
+        "activity_id": "7447076323912527873",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7447076323912527873",
+        "publish_date": "2026-04-07",
+        "impressions": 321
+      },
+      {
+        "activity_id": "7449947946038493184",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7449947946038493184",
+        "publish_date": "2026-04-14",
+        "impressions": 309
+      },
+      {
+        "activity_id": "7445047429021835264",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7445047429021835264",
+        "publish_date": "2026-04-01",
+        "impressions": 235
+      },
+      {
+        "activity_id": "7445552731085504512",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7445552731085504512",
+        "publish_date": "2026-04-09",
+        "impressions": 224
+      },
+      {
+        "activity_id": "7448511620068175872",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7448511620068175872",
+        "publish_date": "2026-04-10",
+        "impressions": 213
+      },
+      {
+        "activity_id": "7445882424460423169",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7445882424460423169",
+        "publish_date": "2026-04-03",
+        "impressions": 200
+      },
+      {
+        "activity_id": "7448074733645955072",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7448074733645955072",
+        "publish_date": "2026-04-09",
+        "impressions": 194
+      },
+      {
+        "activity_id": "7455438037531951104",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7455438037531951104",
+        "publish_date": "2026-04-30",
+        "impressions": 179
+      },
+      {
+        "activity_id": "7444651333137166336",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7444651333137166336",
+        "publish_date": "2026-03-31",
+        "impressions": 164
+      },
+      {
+        "activity_id": "7448156722189324288",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7448156722189324288",
+        "publish_date": "2026-04-09",
+        "impressions": 156
+      },
+      {
+        "activity_id": "7443768040304828416",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7443768040304828416",
+        "publish_date": "2026-03-28",
+        "impressions": 143
+      },
+      {
+        "activity_id": "7444099999120154624",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7444099999120154624",
+        "publish_date": "2026-03-29",
+        "impressions": 136
+      },
+      {
+        "activity_id": "7445387749983158272",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7445387749983158272",
+        "publish_date": "2026-04-02",
+        "impressions": 113
+      },
+      {
+        "activity_id": "7442375923364114432",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7442375923364114432",
+        "publish_date": "2026-03-25",
+        "impressions": 94
+      },
+      {
+        "activity_id": "7439668137865932800",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7439668137865932800",
+        "publish_date": "2026-03-17",
+        "impressions": 90
+      },
+      {
+        "activity_id": "7442124548491292672",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7442124548491292672",
+        "publish_date": "2026-03-24",
+        "impressions": 86
+      },
+      {
+        "activity_id": "7428250771420282880",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7428250771420282880",
+        "publish_date": "2026-02-14",
+        "impressions": 85
+      },
+      {
+        "activity_id": "7442696710197473281",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7442696710197473281",
+        "publish_date": "2026-03-25",
+        "impressions": 71
+      },
+      {
+        "activity_id": "7444707747599740928",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7444707747599740928",
+        "publish_date": "2026-03-31",
+        "impressions": 70
+      },
+      {
+        "activity_id": "7443481095251243008",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7443481095251243008",
+        "publish_date": "2026-03-28",
+        "impressions": 50
+      },
+      {
+        "activity_id": "7404713615787999232",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7404713615787999232",
+        "publish_date": "2025-12-11",
+        "impressions": 47
+      },
+      {
+        "activity_id": "7442643069042278401",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7442643069042278401",
+        "publish_date": "2026-03-25",
+        "impressions": 36
+      },
+      {
+        "activity_id": "7441739150145249280",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7441739150145249280",
+        "publish_date": "2026-03-23",
+        "impressions": 34
+      },
+      {
+        "activity_id": "7440905847125438464",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7440905847125438464",
+        "publish_date": "2026-03-20",
+        "impressions": 27
+      },
+      {
+        "activity_id": "7439746327141412864",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7439746327141412864",
+        "publish_date": "2026-03-17",
+        "impressions": 22
+      },
+      {
+        "activity_id": "7440194839788564480",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7440194839788564480",
+        "publish_date": "2026-03-19",
+        "impressions": 14
+      },
+      {
+        "activity_id": "7434087899341602816",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7434087899341602816",
+        "publish_date": "2026-03-02",
+        "impressions": 14
+      },
+      {
+        "activity_id": "7424577975704162304",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7424577975704162304",
+        "publish_date": "2026-02-03",
+        "impressions": 12
+      },
+      {
+        "activity_id": "7397093021651025920",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7397093021651025920",
+        "publish_date": "2025-11-20",
+        "impressions": 10
+      },
+      {
+        "activity_id": "7419048650216980480",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7419048650216980480",
+        "publish_date": "2026-01-19",
+        "impressions": 10
+      },
+      {
+        "activity_id": "7440485633455800320",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7440485633455800320",
+        "publish_date": "2026-03-19",
+        "impressions": 9
+      },
+      {
+        "activity_id": "7422868313560514560",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7422868313560514560",
+        "publish_date": "2026-01-30",
+        "impressions": 9
+      },
+      {
+        "activity_id": "7417802403904765954",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7417802403904765954",
+        "publish_date": "2026-01-16",
+        "impressions": 8
+      },
+      {
+        "activity_id": "7429343055658496000",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7429343055658496000",
+        "publish_date": "2026-02-17",
+        "impressions": 8
+      },
+      {
+        "activity_id": "7388808897245028352",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7388808897245028352",
+        "publish_date": "2025-10-28",
+        "impressions": 7
+      },
+      {
+        "activity_id": "7420990747094466560",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7420990747094466560",
+        "publish_date": "2026-01-25",
+        "impressions": 7
+      },
+      {
+        "activity_id": "7430710521462652929",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7430710521462652929",
+        "publish_date": "2026-02-20",
+        "impressions": 6
+      },
+      {
+        "activity_id": "7423360666444513280",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7423360666444513280",
+        "publish_date": "2026-01-31",
+        "impressions": 6
+      },
+      {
+        "activity_id": "7427672737617268736",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7427672737617268736",
+        "publish_date": "2026-02-12",
+        "impressions": 6
+      },
+      {
+        "activity_id": "7438662674550304768",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7438662674550304768",
+        "publish_date": "2026-03-14",
+        "impressions": 6
+      },
+      {
+        "activity_id": "7421533632051273728",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7421533632051273728",
+        "publish_date": "2026-01-26",
+        "impressions": 6
+      }
+    ],
+    "total_followers": 3731,
+    "new_followers_per_day": [
+      {
+        "date": "2026-04-17",
+        "new_followers": 7
+      },
+      {
+        "date": "2026-04-18",
+        "new_followers": 4
+      },
+      {
+        "date": "2026-04-19",
+        "new_followers": 3
+      },
+      {
+        "date": "2026-04-20",
+        "new_followers": 4
+      },
+      {
+        "date": "2026-04-21",
+        "new_followers": 5
+      },
+      {
+        "date": "2026-04-22",
+        "new_followers": 8
+      },
+      {
+        "date": "2026-04-23",
+        "new_followers": 60
+      },
+      {
+        "date": "2026-04-24",
+        "new_followers": 77
+      },
+      {
+        "date": "2026-04-25",
+        "new_followers": 21
+      },
+      {
+        "date": "2026-04-26",
+        "new_followers": 18
+      },
+      {
+        "date": "2026-04-27",
+        "new_followers": 12
+      },
+      {
+        "date": "2026-04-28",
+        "new_followers": 9
+      },
+      {
+        "date": "2026-04-29",
+        "new_followers": 24
+      },
+      {
+        "date": "2026-04-30",
+        "new_followers": 18
+      }
+    ],
+    "demographics": {
+      "job_titles": [
+        {
+          "value": "Founder",
+          "percentage": 0.047299113124608994
+        },
+        {
+          "value": "Software Engineer",
+          "percentage": 0.03735554963350296
+        },
+        {
+          "value": "Co-Founder",
+          "percentage": 0.029024455696344376
+        },
+        {
+          "value": "Chief Executive Officer",
+          "percentage": 0.028486965224146843
+        },
+        {
+          "value": "Solutions Architect",
+          "percentage": 0.013168503530323505
+        }
+      ],
+      "locations": [
+        {
+          "value": "Bogotá D.C. Metropolitan Area",
+          "percentage": 0.3007256090641022
+        },
+        {
+          "value": "San Francisco Bay Area",
+          "percentage": 0.060736361891031265
+        },
+        {
+          "value": "Mexico City Metropolitan Area",
+          "percentage": 0.03950550779700279
+        },
+        {
+          "value": "Medellín Metropolitan Area",
+          "percentage": 0.03359312191605568
+        },
+        {
+          "value": "Greater Madrid Metropolitan Area",
+          "percentage": 0.029561946168541908
+        }
+      ],
+      "industries": [
+        {
+          "value": "IT Services and IT Consulting",
+          "percentage": 0.2308519184589386
+        },
+        {
+          "value": "Software Development",
+          "percentage": 0.11556033045053482
+        },
+        {
+          "value": "Telecommunications",
+          "percentage": 0.0959419533610344
+        },
+        {
+          "value": "Technology, Information and Internet",
+          "percentage": 0.09325449913740158
+        },
+        {
+          "value": "Business Consulting and Services",
+          "percentage": 0.0376242958009243
+        }
+      ],
+      "seniority": [
+        {
+          "value": "Senior",
+          "percentage": 0.370868057012558
+        },
+        {
+          "value": "Entry",
+          "percentage": 0.2510077953338623
+        },
+        {
+          "value": "CXO",
+          "percentage": 0.07014243304729462
+        },
+        {
+          "value": "Manager",
+          "percentage": 0.05831765756011009
+        },
+        {
+          "value": "Director",
+          "percentage": 0.053480248898267746
+        }
+      ],
+      "company_size": [
+        {
+          "value": "10,001+ employees",
+          "percentage": 0.1959150731563568
+        },
+        {
+          "value": "1-10 employees",
+          "percentage": 0.14619725942611694
+        },
+        {
+          "value": "11-50 employees",
+          "percentage": 0.10803547501564026
+        },
+        {
+          "value": "51-200 employees",
+          "percentage": 0.10373555123806
+        },
+        {
+          "value": "1001-5000 employees",
+          "percentage": 0.09513571858406067
+        }
+      ],
+      "companies": [
+        {
+          "value": "Claro Colombia",
+          "percentage": 0.030905671417713165
+        },
+        {
+          "value": "Globant",
+          "percentage": 0.005
+        },
+        {
+          "value": "Amazon Web Services (AWS)",
+          "percentage": 0.005
+        },
+        {
+          "value": "Mercado Libre",
+          "percentage": 0.005
+        },
+        {
+          "value": "Microsoft",
+          "percentage": 0.005
+        }
+      ]
+    }
+  },
+  "beehiiv": {
+    "status": "skipped",
+    "reason": "BEEHIIV_API_KEY or BEEHIIV_PUBLICATION_ID missing in .env",
+    "subscriptions": null,
+    "posts": []
+  }
+}

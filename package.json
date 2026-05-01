@@ -1,0 +1,12 @@
+{
+  "name": "content-engine-fetch",
+  "version": "1.0.0",
+  "description": "Local source fetcher for content engine — no AI, just HTTP calls",
+  "type": "module",
+  "scripts": {
+    "fetch": "node scripts/fetch-sources.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}

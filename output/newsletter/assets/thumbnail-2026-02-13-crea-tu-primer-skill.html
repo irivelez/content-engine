@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Thumbnail — Crea tu primer /skill (centered, crop-proof)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #0A0A0C;
+    color: #FBE8D9;
+    font-family: 'Inter', sans-serif;
+    padding: 48px 120px 52px 120px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 20px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .top-row {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+  }
+  .top-row .eyebrow { color: #FF5941; }
+  .top-row .sep { color: #88898C; margin: 0 16px; }
+  .top-row .issue { color: #88898C; }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .preheadline {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.3;
+    color: #FBE8D9;
+    opacity: 0.85;
+    max-width: 800px;
+  }
+  .preheadline .emphasis {
+    color: #FF5941;
+    opacity: 1;
+    font-weight: 500;
+  }
+
+  .headline {
+    font-family: 'Manrope', sans-serif;
+    font-size: 128px;
+    font-weight: 800;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    color: #FBE8D9;
+  }
+  .headline .accent { color: #FF5941; }
+
+  .meta-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FBE8D9;
+    opacity: 0.7;
+  }
+  .meta-line .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+  }
+  .meta-line .sep { color: #88898C; margin: 0 10px; }
+
+  .bottom-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+  }
+
+  .brand-mark { display: flex; align-items: center; gap: 12px; }
+
+  .cursor {
+    width: 4px;
+    height: 22px;
+    background: #FF5941;
+  }
+
+  .brand-name {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: #FBE8D9;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .dot {
+    width: 4px;
+    height: 4px;
+    background: #88898C;
+    border-radius: 50%;
+  }
+
+  .date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: #88898C;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    line-height: 1.2;
+  }
+</style>
+</head>
+<body>
+
+  <div class="top-row">
+    <span class="eyebrow">Modo Build</span><span class="sep">&middot;</span><span class="eyebrow">Tutorial</span><span class="sep">&middot;</span><span class="issue">NO.01</span>
+  </div>
+
+  <div class="hero">
+    <p class="preheadline">
+      La forma más rápida de estar al día en IA <span class="emphasis">no es leer más.</span>
+    </p>
+    <h1 class="headline">
+      CREA TU PRIMER<br>
+      <span class="accent">/</span>SKILL
+    </h1>
+    <div class="meta-line">
+      <span class="mono">/ai-briefing</span><span class="sep">&middot;</span>Claude Code<span class="sep">&middot;</span>tu primera automatización
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="brand-mark">
+      <div class="cursor"></div>
+      <span class="brand-name">Modo Build</span>
+    </div>
+    <div class="dot"></div>
+    <span class="date">02 / 13 / 2026</span>
+  </div>
+
+</body>
+</html>
