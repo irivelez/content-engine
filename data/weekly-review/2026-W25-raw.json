@@ -1,0 +1,291 @@
+{
+  "generated_at": "2026-06-21T11:34:00.000000+00:00",
+  "source_xlsx": "Content_2026-04-24_2026-04-30_IrinaVélez.xlsx",
+  "snapshot_period": {
+    "start": null,
+    "end": null,
+    "iso_week": "2026-W25",
+    "note": "No xlsx exported for W19-W25. Metrics below are from the last committed export (2026-W18, period 2026-04-24 to 2026-04-30). Use for trend context only. This is the FIFTH consecutive blackout review."
+  },
+  "linkedin": {
+    "status": "missing",
+    "last_known_week": "2026-W18",
+    "last_known_data": {
+      "discovery": {
+        "period_label": "4/24/2026 - 4/30/2026",
+        "impressions": 23664,
+        "members_reached": 9290
+      },
+      "engagement_per_day": [
+        {
+          "date": "2026-04-24",
+          "impressions": 6460,
+          "engagements": 245
+        },
+        {
+          "date": "2026-04-25",
+          "impressions": 1888,
+          "engagements": 49
+        },
+        {
+          "date": "2026-04-26",
+          "impressions": 3451,
+          "engagements": 74
+        },
+        {
+          "date": "2026-04-27",
+          "impressions": 2002,
+          "engagements": 49
+        },
+        {
+          "date": "2026-04-28",
+          "impressions": 1053,
+          "engagements": 77
+        },
+        {
+          "date": "2026-04-29",
+          "impressions": 6371,
+          "engagements": 240
+        },
+        {
+          "date": "2026-04-30",
+          "impressions": 2439,
+          "engagements": 52
+        }
+      ],
+      "top_posts_by_engagements": [
+        {
+          "activity_id": "7453222894534365184",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7453222894534365184",
+          "publish_date": "2026-04-23",
+          "engagements": 301
+        },
+        {
+          "activity_id": "7455075382753554433",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7455075382753554433",
+          "publish_date": "2026-04-29",
+          "engagements": 139
+        },
+        {
+          "activity_id": "7445552731085504512",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7445552731085504512",
+          "publish_date": "2026-04-09",
+          "engagements": 75
+        },
+        {
+          "activity_id": "7453989310271442944",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7453989310271442944",
+          "publish_date": "2026-04-26",
+          "engagements": 72
+        },
+        {
+          "activity_id": "7452768298179530753",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7452768298179530753",
+          "publish_date": "2026-04-22",
+          "engagements": 70
+        }
+      ],
+      "top_posts_by_impressions": [
+        {
+          "activity_id": "7453222894534365184",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7453222894534365184",
+          "publish_date": "2026-04-23",
+          "impressions": 8740
+        },
+        {
+          "activity_id": "7455075382753554433",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7455075382753554433",
+          "publish_date": "2026-04-29",
+          "impressions": 6949
+        },
+        {
+          "activity_id": "7453989310271442944",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7453989310271442944",
+          "publish_date": "2026-04-26",
+          "impressions": 3532
+        },
+        {
+          "activity_id": "7452768298179530753",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7452768298179530753",
+          "publish_date": "2026-04-22",
+          "impressions": 1655
+        },
+        {
+          "activity_id": "7452479718668480512",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7452479718668480512",
+          "publish_date": "2026-04-21",
+          "impressions": 469
+        }
+      ],
+      "total_followers": 3733,
+      "new_followers_per_day": [
+        {
+          "date": "2026-04-24",
+          "new_followers": 77
+        },
+        {
+          "date": "2026-04-25",
+          "new_followers": 21
+        },
+        {
+          "date": "2026-04-26",
+          "new_followers": 18
+        },
+        {
+          "date": "2026-04-27",
+          "new_followers": 12
+        },
+        {
+          "date": "2026-04-28",
+          "new_followers": 9
+        },
+        {
+          "date": "2026-04-29",
+          "new_followers": 24
+        },
+        {
+          "date": "2026-04-30",
+          "new_followers": 20
+        }
+      ],
+      "demographics": {
+        "job_titles": [
+          {
+            "value": "Founder",
+            "percentage": 0.047299113124608994
+          },
+          {
+            "value": "Software Engineer",
+            "percentage": 0.03735554963350296
+          },
+          {
+            "value": "Co-Founder",
+            "percentage": 0.029024455696344376
+          },
+          {
+            "value": "Chief Executive Officer",
+            "percentage": 0.028486965224146843
+          },
+          {
+            "value": "Solutions Architect",
+            "percentage": 0.013168503530323505
+          }
+        ],
+        "locations": [
+          {
+            "value": "Bogotá D.C. Metropolitan Area",
+            "percentage": 0.3007256090641022
+          },
+          {
+            "value": "San Francisco Bay Area",
+            "percentage": 0.060736361891031265
+          },
+          {
+            "value": "Mexico City Metropolitan Area",
+            "percentage": 0.03950550779700279
+          },
+          {
+            "value": "Medellín Metropolitan Area",
+            "percentage": 0.03359312191605568
+          },
+          {
+            "value": "Greater Madrid Metropolitan Area",
+            "percentage": 0.029561946168541908
+          }
+        ],
+        "industries": [
+          {
+            "value": "IT Services and IT Consulting",
+            "percentage": 0.2308519184589386
+          },
+          {
+            "value": "Software Development",
+            "percentage": 0.11556033045053482
+          },
+          {
+            "value": "Telecommunications",
+            "percentage": 0.0959419533610344
+          },
+          {
+            "value": "Technology, Information and Internet",
+            "percentage": 0.09325449913740158
+          },
+          {
+            "value": "Business Consulting and Services",
+            "percentage": 0.0376242958009243
+          }
+        ],
+        "seniority": [
+          {
+            "value": "Senior",
+            "percentage": 0.370868057012558
+          },
+          {
+            "value": "Entry",
+            "percentage": 0.2510077953338623
+          },
+          {
+            "value": "CXO",
+            "percentage": 0.07014243304729462
+          },
+          {
+            "value": "Manager",
+            "percentage": 0.05831765756011009
+          },
+          {
+            "value": "Director",
+            "percentage": 0.053480248898267746
+          }
+        ],
+        "company_size": [
+          {
+            "value": "10,001+ employees",
+            "percentage": 0.1959150731563568
+          },
+          {
+            "value": "1-10 employees",
+            "percentage": 0.14619725942611694
+          },
+          {
+            "value": "11-50 employees",
+            "percentage": 0.10803547501564026
+          },
+          {
+            "value": "51-200 employees",
+            "percentage": 0.10373555123806
+          },
+          {
+            "value": "1001-5000 employees",
+            "percentage": 0.09513571858406067
+          }
+        ],
+        "companies": [
+          {
+            "value": "Claro Colombia",
+            "percentage": 0.030905671417713165
+          },
+          {
+            "value": "Globant",
+            "percentage": 0.005
+          },
+          {
+            "value": "Amazon Web Services (AWS)",
+            "percentage": 0.005
+          },
+          {
+            "value": "Mercado Libre",
+            "percentage": 0.005
+          },
+          {
+            "value": "Microsoft",
+            "percentage": 0.005
+          }
+        ]
+      }
+    }
+  },
+  "beehiiv": {
+    "status": "skipped",
+    "reason": "BEEHIIV_API_KEY or BEEHIIV_PUBLICATION_ID missing in .env"
+  }
+}
