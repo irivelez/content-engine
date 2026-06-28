@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-06-28T11:33:57.597490+00:00",
+  "source_xlsx": "Content_2026-04-24_2026-04-30_IrinaVélez.xlsx",
+  "snapshot_period": {
+    "start": null,
+    "end": null,
+    "iso_week": "2026-W26",
+    "note": "No xlsx exported for W19-W26. Metrics below are from the last committed export (2026-W18, period 2026-04-24 to 2026-04-30). Use for trend context only. This is the SIXTH consecutive blackout review."
+  },
+  "linkedin": {
+    "status": "missing",
+    "last_known_week": "2026-W18",
+    "last_known_data": {
+      "discovery": {
+        "period_label": "4/24/2026 - 4/30/2026",
+        "impressions": 23664,
+        "members_reached": 9290
+      },
+      "total_followers": 3733,
+      "top_posts_by_engagements": [
+        {
+          "activity_id": "7453222894534365184",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7453222894534365184",
+          "publish_date": "2026-04-23",
+          "engagements": 301
+        },
+        {
+          "activity_id": "7455075382753554433",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7455075382753554433",
+          "publish_date": "2026-04-29",
+          "engagements": 139
+        },
+        {
+          "activity_id": "7453989310271442944",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7453989310271442944",
+          "publish_date": "2026-04-26",
+          "engagements": 72
+        }
+      ],
+      "top_posts_by_impressions": [
+        {
+          "activity_id": "7453222894534365184",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7453222894534365184",
+          "publish_date": "2026-04-23",
+          "impressions": 8740
+        },
+        {
+          "activity_id": "7455075382753554433",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7455075382753554433",
+          "publish_date": "2026-04-29",
+          "impressions": 6949
+        },
+        {
+          "activity_id": "7453989310271442944",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7453989310271442944",
+          "publish_date": "2026-04-26",
+          "impressions": 3532
+        }
+      ]
+    }
+  },
+  "beehiiv": {
+    "status": "skipped",
+    "reason": "BEEHIIV_API_KEY or BEEHIIV_PUBLICATION_ID missing in .env",
+    "subscriptions": null,
+    "posts": []
+  }
+}
